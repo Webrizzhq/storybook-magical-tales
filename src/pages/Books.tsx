@@ -3,17 +3,21 @@ import Layout from '@/components/Layout';
 import BookCard from '@/components/BookCard';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { books, categories, getBooksByCategory } from '@/data/books';
+import { books, categories, getBooksByCategory, getBooksByAge } from '@/data/books';
 import { BookOpen, Filter, Star } from 'lucide-react';
 
 const Books = () => {
   const [selectedCategory, setSelectedCategory] = useState("All Books");
-  const filteredBooks = getBooksByCategory(selectedCategory);
+  const [selectedAge, setSelectedAge] = useState("All Ages");
+  const filteredBooks = getBooksByCategory(selectedCategory)
+  .filter(book => selectedAge === "All Ages" || book.ageRange.includes(selectedAge.split(" ")[1]));
+
+
 
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-ocean overflow-hidden">
+      <section className="relative py-20 bg-gradient-sunset overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-10 left-10 w-20 h-20 bg-accent/20 rounded-full animate-float" />
           <div className="absolute top-32 right-16 w-16 h-16 bg-secondary/20 rounded-full animate-bounce-gentle" />
@@ -23,12 +27,12 @@ const Books = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center max-w-3xl mx-auto">
             <div className="flex justify-center mb-6">
-              <BookOpen className="w-16 h-16 text-primary animate-bounce-gentle" />
+              <BookOpen className="w-16 h-16 text-white/60 animate-bounce-gentle" />
             </div>
-            <h1 className="text-5xl md:text-6xl font-bold text-primary mb-6">
+            <h1 className="text-5xl md:text-6xl font-bold text-white/90  mb-6">
               Discover Amazing Stories
             </h1>
-            <p className="text-xl text-muted-foreground leading-relaxed">
+            <p className="text-xl text-white/70 leading-relaxed">
               Explore our curated collection of African children's literature, where every page opens a new world of wonder, learning, and adventure.
             </p>
           </div>
@@ -58,6 +62,8 @@ const Books = () => {
               </Button>
             ))}
           </div>
+
+          
           
           <div className="text-center mt-6">
             <p className="text-muted-foreground">

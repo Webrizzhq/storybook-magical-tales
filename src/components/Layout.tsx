@@ -2,6 +2,7 @@ import { ReactNode } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { BookOpen, Calendar, Users, Info, Sparkles } from 'lucide-react';
+import Footer from './Footer';
 
 interface LayoutProps {
   children: ReactNode;
@@ -26,7 +27,7 @@ const Layout = ({ children }: LayoutProps) => {
             <NavLink to="/" className="flex items-center gap-2 text-2xl font-bold text-primary">
               <Sparkles className="w-8 h-8 text-accent animate-sparkle" />
               <span className="bg-gradient-magic bg-clip-text text-transparent">
-                Storybook Hub
+                RedHot Africa
               </span>
             </NavLink>
 
@@ -67,44 +68,7 @@ const Layout = ({ children }: LayoutProps) => {
       </main>
 
       {/* Magical Footer */}
-      <footer className="bg-primary text-primary-foreground py-12 mt-20">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-3 gap-8">
-            <div>
-              <div className="flex items-center gap-2 text-xl font-bold mb-4">
-                <Sparkles className="w-6 h-6 text-accent animate-sparkle" />
-                Storybook Hub
-              </div>
-              <p className="text-primary-foreground/80">
-                A magical cultural hub celebrating African children's literature and storytelling.
-              </p>
-            </div>
-            <div>
-              <h3 className="font-semibold mb-4">Explore</h3>
-              <div className="space-y-2">
-                {navItems.slice(1).map(({ to, label }) => (
-                  <NavLink 
-                    key={to} 
-                    to={to} 
-                    className="block text-primary-foreground/80 hover:text-accent transition-colors"
-                  >
-                    {label}
-                  </NavLink>
-                ))}
-              </div>
-            </div>
-            <div>
-              <h3 className="font-semibold mb-4">Connect</h3>
-              <p className="text-primary-foreground/80">
-                Join our community of storytellers and book lovers.
-              </p>
-            </div>
-          </div>
-          <div className="border-t border-primary-foreground/20 mt-8 pt-8 text-center text-sm text-primary-foreground/60">
-            © 2024 Storybook Hub. Celebrating African stories for young minds.
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };
