@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom';
 import Layout from '@/components/Layout';
 import BookCard from '@/components/BookCard';
+import BookCarousel from '@/components/BookCarousel';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
 import { getFeaturedBooks } from '@/data/books';
 import { BookOpen, Calendar, Users, ArrowRight, Sparkles, Star, Heart } from 'lucide-react';
-import heroImage from '@/assets/hero-reading.jpg';
 import EventsSection from '@/components/EventsSection';
 import Partners from '@/components/Partners';
 
@@ -15,57 +15,8 @@ const Index = () => {
 
   return (
     <Layout>
-      {/* Hero Section */}
-      <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${heroImage})` }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/80 via-primary/60 to-transparent" />
-        
-        {/* Floating Elements */}
-        <div className="absolute inset-0">
-          <div className="absolute top-1/4 left-1/4 w-4 h-4 bg-accent rounded-full animate-sparkle" />
-          <div className="absolute top-1/3 right-1/3 w-3 h-3 bg-secondary rounded-full animate-bounce-gentle" />
-          <div className="absolute bottom-1/4 left-1/3 w-5 h-5 bg-accent/60 rounded-full animate-float" />
-          <Sparkles className="absolute top-20 right-20 w-8 h-8 text-accent animate-sparkle" />
-          <Star className="absolute bottom-32 left-16 w-6 h-6 text-secondary animate-bounce-gentle" />
-        </div>
-        
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center max-w-4xl mx-auto text-white">
-            <Badge className="bg-white text-primary-glow mb-6 px-4 py-2 text-sm font-medium animate-bounce-gentle">
-              ✨ Discover African Stories
-            </Badge>
-            
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-              Where Stories Come
-              <span className="block bg-muted bg-clip-text text-transparent">
-                Alive
-              </span>
-            </h1>
-            
-            <p className="text-xl md:text-xl text-white/90 leading-relaxed mb-8 max-w-3xl mx-auto">
-              Embark on magical journeys through African children's literature. From wildlife adventures to historical tales, discover stories that inspire, educate, and delight young minds.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/books">
-                <Button size="lg" className="bg-gradient-magic hover:shadow-glow transition-all duration-300 text-lg px-8 py-6">
-                  <BookOpen className="w-5 h-5 mr-2" />
-                  Explore Books
-                </Button>
-              </Link>
-              <Link to="/events">
-                <Button variant="outline" size="lg" className="border-white text-primary hover:bg-white hover:text-destructive text-lg px-8 py-6">
-                  <Calendar className="w-5 h-5 mr-2" />
-                  Upcoming Events
-                </Button>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Amazing Book Carousel Hero Section */}
+      <BookCarousel />
 
      
 
