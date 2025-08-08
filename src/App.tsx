@@ -12,20 +12,10 @@ import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import ScrollToTopButton from "./components/ui/ScrollToTopButton";
+import { AnimatedLayout } from "./components/AnimatedLayout";
 
 const queryClient = new QueryClient();
-
-
-
-const ScrollToTop = () => {
-  const { pathname } = useLocation();
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
-
-  return null;
-};
 
 
 const App = () => (
@@ -34,15 +24,18 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-      <ScrollToTop />
+      <ScrollToTopButton />
         <Routes>
+          <Route element={<AnimatedLayout />}>
           <Route path="/" element={<Index />} />
           <Route path="/books" element={<Books />} />
           <Route path="/book/:id" element={<BookDetail />} />
           <Route path="/events" element={<Events />} />
           <Route path="/campaigns" element={<Campaigns />} />
           <Route path="/about" element={<About />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          </Route>
+          
+
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
