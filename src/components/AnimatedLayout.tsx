@@ -1,11 +1,10 @@
-// components/AnimatedLayout.tsx
 import { Outlet, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 
 const variants = {
-  initial: { opacity: 0, y: 10 },
+  initial: { opacity: 0, y: 2 },
   animate: { opacity: 1, y: 0 },
-  exit: { opacity: 0, y: -10 },
+  exit: { opacity: 0, y: -2 },
 };
 
 export const AnimatedLayout = () => {
@@ -19,7 +18,7 @@ export const AnimatedLayout = () => {
         animate="animate"
         exit="exit"
         variants={variants}
-        transition={{ duration: 0.3 }}
+        transition={{ duration: 0.2, ease: "easeOut" }}
         className="min-h-screen"
       >
         <Outlet />

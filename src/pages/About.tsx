@@ -67,12 +67,12 @@ const About = () => {
         </div>
         
         <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center max-w-4xl mx-auto text-white">
+          <div className="text-center max-w-4xl mx-auto text-white/50">
             <Sparkles className="w-16 h-16 mx-auto mb-6 animate-sparkle" />
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
               Our Story
             </h1>
-            <p className="text-xl text-white/90 leading-relaxed">
+            <p className="text-xl text-white/40 leading-relaxed">
               When you can't see yourself in the story, flip the script.
 
 Redhot Africa books star smart African kids who solve, invent, rebel

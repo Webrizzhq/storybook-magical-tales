@@ -121,12 +121,12 @@ const Campaigns = () => {
         </div>
         
         <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center max-w-3xl mx-auto text-white">
+          <div className="text-center max-w-3xl mx-auto text-white/50">
             <Heart className="w-16 h-16 mx-auto mb-6 animate-bounce-gentle" />
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
               Reading Campaigns
             </h1>
-            <p className="text-xl text-white/90 leading-relaxed">
+            <p className="text-xl text-white/40 leading-relaxed">
               When kids read tales rooted in their heritage, they grow taller in spirit and
 bolder in thought. 
 
