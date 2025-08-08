@@ -1,6 +1,7 @@
 import { useParams, Link } from 'react-router-dom';
 import Layout from '@/components/Layout';
 import BookCard from '@/components/BookCard';
+import BookReviews from '@/components/BookReviews';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
@@ -158,6 +159,13 @@ const BookDetail = () => {
               </Card>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Reviews Section */}
+      <section className="py-16 border-t border-border">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <BookReviews bookId={book.id} bookTitle={book.title} />
         </div>
       </section>
 

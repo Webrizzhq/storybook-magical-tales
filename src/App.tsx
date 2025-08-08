@@ -9,10 +9,13 @@ import BookDetail from "./pages/BookDetail";
 import Events from "./pages/Events";
 import Campaigns from "./pages/Campaigns";
 import About from "./pages/About";
+import GamificationPage from "./pages/Gamification";
+import CalendarPage from "./pages/Calendar";
 import NotFound from "./pages/NotFound";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import ScrollToTopButton from "./components/ui/ScrollToTopButton";
+import DarkModeToggle from "./components/ui/DarkModeToggle";
 import { AnimatedLayout } from "./components/AnimatedLayout";
 
 const queryClient = new QueryClient();
@@ -25,6 +28,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
       <ScrollToTopButton />
+      <DarkModeToggle />
         <Routes>
           <Route element={<AnimatedLayout />}>
           <Route path="/" element={<Index />} />
@@ -33,6 +37,8 @@ const App = () => (
           <Route path="/events" element={<Events />} />
           <Route path="/campaigns" element={<Campaigns />} />
           <Route path="/about" element={<About />} />
+          <Route path="/gamification" element={<GamificationPage />} />
+          <Route path="/calendar" element={<CalendarPage />} />
           </Route>
           
 

@@ -2,6 +2,7 @@ import { ReactNode } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { BookOpen, Calendar, Users, Info, Sparkles } from 'lucide-react';
+import MultilingualSupport from './MultilingualSupport';
 import Footer from './Footer';
 
 interface LayoutProps {
@@ -50,10 +51,16 @@ const Layout = ({ children }: LayoutProps) => {
                   )}
                 </NavLink>
               ))}
+              
+              {/* Language Selector */}
+              <div className="ml-4">
+                <MultilingualSupport />
+              </div>
             </div>
 
             {/* Mobile Navigation */}
-            <div className="md:hidden">
+            <div className="md:hidden flex items-center gap-2">
+              <MultilingualSupport />
               <Button variant="ghost" size="sm">
                 <BookOpen className="w-5 h-5" />
               </Button>
