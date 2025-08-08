@@ -1,0 +1,38 @@
+import React, { useState, useEffect } from 'react';
+import { Moon, Sun } from 'lucide-react';
+
+const DarkModeToggle = () => {
+  const [darkMode, setDarkMode] = useState(false);
+
+  useEffect(() => {
+    // Check if dark mode is already enabled
+    const isDarkMode = document.documentElement.classList.contains('dark');
+    setDarkMode(isDarkMode);
+  }, []);
+
+  const toggleDarkMode = () => {
+    const newDarkMode = !darkMode;
+    setDarkMode(newDarkMode);
+    
+    if (newDarkMode) {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('darkMode', 'true');
+    } else {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('darkMode', 'false');
+    }
+  };
+
+  return (
+    <button
+      onClick={toggleDarkMode}
+      className="fixed bottom-16 right-4 bg-gray-800 dark:bg-gray-200 text-white dark:text-gray-800 p-3 rounded-full shadow-lg z-50 transition-all duration-300 hover:scale-110"
+      aria-label="Toggle dark mode"
+    >
+      {darkMode ? <Sun size={20} /> : <Moon size={20} />}
+    </button>
+  );
+};
+
+export default DarkModeToggle;
+
