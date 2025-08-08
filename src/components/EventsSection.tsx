@@ -79,7 +79,7 @@ const eventColors = {
 
 const EventsSection = () => {
   return (
-    <section id="events" className="py-20 bg-muted/30">
+    <section id="events" className="py-20 bg-red-100 dark:bg-red-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16 space-y-6">
@@ -89,7 +89,7 @@ const EventsSection = () => {
                           <Star className="w-4 h-4 mr-2" />
                           Featured Events
                         </Badge>
-            <h2 className="text-4xl mt-5 lg:text-4xl font-display font-bold text-primary">
+            <h2 className="text-4xl mt-5 lg:text-4xl font-display font-bold text-main dark:text-submain">
               Cultural Calendar
             </h2>
             
@@ -108,7 +108,7 @@ const EventsSection = () => {
     {events.filter(event => event.featured).map((event, index) => (
       <div
         key={event.id}
-        className="group bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-500"
+        className="group bg-white dark:bg-red-600 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-500"
       >
         {/* Event Image */}
         <div className="relative overflow-hidden">
@@ -138,13 +138,13 @@ const EventsSection = () => {
 
         {/* Event Info */}
         <div className="p-6">
-          <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-orange-600 transition-colors">
+          <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-main transition-colors">
             {event.title}
           </h3>
           <p className="text-gray-600 leading-relaxed mb-6">{event.description}</p>
 
           <Button
-            className="inline-flex items-center px-6 py-3 bg-gradient-magic text-white font-semibold rounded-xl hover:scale-105 hover:shadow-lg transition-all duration-300"
+            className="inline-flex items-center px-6 py-3 bg-gold-gradient text-white font-semibold rounded-xl hover:scale-105 hover:shadow-lg transition-all duration-300"
           >
             Learn More
             <svg
@@ -180,7 +180,7 @@ const EventsSection = () => {
               return (
                 <Card 
                   key={event.id} 
-                  className="story-card border-0 shadow-lg hover:bg-card/95"
+                  className="story-card border-0 shadow-lg hover:bg-card/95 dark:bg-main"
                   style={{ animationDelay: `${(index + 2) * 0.1}s` }}
                 >
                   <CardHeader className="space-y-4">
@@ -210,7 +210,7 @@ const EventsSection = () => {
                       {event.description}
                     </CardDescription>
                     
-                    <Button variant="outline" className="w-full">
+                    <Button  className="w-full bg-submain">
                       Join Event
                     </Button>
                   </CardContent>
@@ -222,15 +222,15 @@ const EventsSection = () => {
 
         {/* Newsletter Signup */}
         <div className="mt-16 text-center">
-          <div className="bg-gradient-magic p-12 rounded-3xl text-white space-y-6">
-            <h3 className="text-3xl font-display font-bold">
+          <div className="bg-main p-12 rounded-3xl text-white space-y-6">
+            <h3 className="text-3xl font-display text-submain font-bold">
               Never Miss a Story
             </h3>
             <p className="text-lg opacity-90 max-w-2xl mx-auto">
               Get notified about new books, author visits, and special events. 
               Join our community of storytellers and dreamers.
             </p>
-            <Button size="lg" className="bg-white text-primary hover:bg-white/90 text-base px-8 py-4 h-auto">
+            <Button size="lg" className="bg-gold-gradient text-white hover:bg-white/90 text-base px-8 py-4 h-auto">
               Subscribe to Updates
             </Button>
           </div>

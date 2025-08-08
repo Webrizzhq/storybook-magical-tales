@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
 import { BookOpen, Heart, Users, Globe, Star, Target, Award, Sparkles } from 'lucide-react';
+import Partners from '@/components/Partners';
 
 const About = () => {
   const values = [
@@ -58,7 +59,7 @@ const About = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-magic overflow-hidden">
+      <section className="relative py-20 bg-gradient-redhot overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-16 left-16 w-20 h-20 bg-accent/20 rounded-full animate-float" />
           <div className="absolute top-32 right-20 w-16 h-16 bg-secondary/20 rounded-full animate-bounce-gentle" />
@@ -72,43 +73,50 @@ const About = () => {
               Our Story
             </h1>
             <p className="text-xl text-white/90 leading-relaxed">
-              We believe every child deserves to see themselves reflected in the stories they read. Our mission is to celebrate, promote, and preserve African children's literature for generations to come.
+              When you can't see yourself in the story, flip the script.
+
+Redhot Africa books star smart African kids who solve, invent, rebel
+and rise.
+
+
+They are not waiting for rescue, they are not sidekicks or victims.
+They are the main characters reimagining Africa on their own terms.
             </p>
           </div>
         </div>
       </section>
 
       {/* Mission Section */}
-      <section className="py-20">
+      <section className="py-20 bg-red-100 dark:bg-red-800">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="animate-fade-in-up">
-              <Badge className="bg-primary/10 text-primary mb-4 px-4 py-2">
+              <Badge className="bg-submain/10 text-submain mb-4 px-4 py-2">
                 <Target className="w-4 h-4 mr-2" />
-                Our Mission
+                Our Mission?
               </Badge>
-              <h2 className="text-4xl font-bold text-primary mb-6">
-                Celebrating African Stories for Young Minds
+              <h2 className="text-4xl font-bold text-submain mb-6">
+                Relevant stories rooted in Africanicity
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                Storybook Hub serves as a vibrant cultural center dedicated to African children's literature. We curate, celebrate, and share stories that reflect the rich diversity, wisdom, and imagination of African cultures.
+                Ignite young minds everywhere.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-                Through our platform, we connect young readers with authentic African narratives, support emerging authors, and foster a global community that values cultural storytelling as a cornerstone of childhood development.
+                Build a global community of storytellers, dreamers and rebels.
               </p>
               <div className="flex gap-4">
                 <Button className="bg-gradient-magic hover:shadow-glow transition-all duration-300">
                   Our Books
                 </Button>
-                <Button variant="outline" className="hover:bg-primary hover:text-primary-foreground transition-all duration-300">
+                <Button variant="outline" className="hover:bg-submain hover:text-submain-foreground transition-all duration-300">
                   Join Our Community
                 </Button>
               </div>
             </div>
             
             <div className="relative animate-fade-in-up" style={{ animationDelay: '200ms' }}>
-              <div className="bg-gradient-ocean rounded-3xl p-8 shadow-magical">
-                <div className="grid grid-cols-2 gap-6 text-center text-white">
+              <div className="bg-main rounded-3xl p-8 shadow-magical">
+                <div className="grid grid-cols-2 gap-6 text-center text-submain">
                   <div>
                     <div className="text-4xl font-bold mb-2">500+</div>
                     <div className="text-white/80">Books Curated</div>
@@ -133,14 +141,14 @@ const About = () => {
       </section>
 
       {/* Values Section */}
-      <section className="py-20 bg-muted">
+      <section className="py-20 bg-main">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-primary mb-6">
-              What We Stand For
+            <h2 className="text-4xl font-bold text-submain mb-6">
+              What do we stand for?
             </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Our core values guide everything we do, from book curation to community building
+            <p className="text-xl text-muted-foreground max-w-4xl mx-auto">
+              We tell stories that taste like nyama choma and sound like the stomp of Zulu dancers when their feet hit the ground. We re-vibrate excitement into childrens' minds by drawing universes where they are heroes. Redhot Africa is where imagination meets identity. We publish books that make kids laugh, gasp, question and cheer, all the while proudly repping African Culture.
             </p>
           </div>
 
@@ -148,14 +156,14 @@ const About = () => {
             {values.map((value, index) => (
               <Card 
                 key={value.title}
-                className="group border-0 bg-card hover:shadow-float transition-all duration-300 hover:-translate-y-2 animate-fade-in-up text-center"
+                className="group border-0 bg-card dark:bg-red-800 hover:shadow-float transition-all duration-300 hover:-translate-y-2 animate-fade-in-up text-center"
                 style={{ animationDelay: `${index * 150}ms` }}
               >
                 <CardContent className="p-8">
-                  <div className="w-16 h-16 bg-gradient-magic rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-16 h-16 bg-gold-gradient rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
                     <value.icon className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-primary mb-4">
+                  <h3 className="text-xl font-bold text-submain mb-4">
                     {value.title}
                   </h3>
                   <p className="text-muted-foreground leading-relaxed">
@@ -172,15 +180,16 @@ const About = () => {
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <Badge className="bg-primary/10 text-primary mb-4 px-4 py-2">
+            <Badge className="bg-submain/10 text-submain mb-4 px-4 py-2">
               <Users className="w-4 h-4 mr-2" />
               Meet Our Team
             </Badge>
-            <h2 className="text-4xl font-bold text-primary mb-6">
-              Passionate About Stories
+            <h2 className="text-4xl font-bold text-submain mb-6">
+               This crew? All killer, no filler.
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Our diverse team brings together expertise in literature, education, technology, and community building
+              We fuse literature, education, tech, and grassroots grit to light up young minds and build a unique African
+storyverse.
             </p>
           </div>
 
@@ -195,7 +204,7 @@ const About = () => {
                   <div className="text-6xl mb-4 group-hover:scale-110 transition-transform duration-300">
                     {member.image}
                   </div>
-                  <h3 className="text-xl font-bold text-primary mb-2">
+                  <h3 className="text-xl font-bold text-submain mb-2">
                     {member.name}
                   </h3>
                   <Badge className="mb-4 bg-accent/10 text-accent">
@@ -212,61 +221,10 @@ const About = () => {
       </section>
 
       {/* Awards & Recognition */}
-      <section className="py-20 bg-muted">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <Award className="w-12 h-12 text-accent mx-auto mb-4 animate-bounce-gentle" />
-            <h2 className="text-4xl font-bold text-primary mb-6">
-              Recognition & Impact
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Our work has been recognized by organizations dedicated to literacy, education, and cultural preservation
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                title: "UNESCO Literacy Award",
-                year: "2023",
-                description: "Recognized for outstanding contribution to African children's literacy"
-              },
-              {
-                title: "African Union Cultural Heritage Prize",
-                year: "2023", 
-                description: "Honored for preserving and promoting African storytelling traditions"
-              },
-              {
-                title: "Global Reading Initiative Partner",
-                year: "2024",
-                description: "Selected as a key partner in worldwide literacy advancement efforts"
-              }
-            ].map((award, index) => (
-              <Card 
-                key={award.title}
-                className="border-0 bg-card text-center animate-fade-in-up"
-                style={{ animationDelay: `${index * 200}ms` }}
-              >
-                <CardContent className="p-6">
-                  <Star className="w-8 h-8 text-accent mx-auto mb-4" />
-                  <h3 className="text-lg font-bold text-primary mb-2">
-                    {award.title}
-                  </h3>
-                  <Badge className="mb-3 bg-primary/10 text-primary">
-                    {award.year}
-                  </Badge>
-                  <p className="text-muted-foreground text-sm">
-                    {award.description}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+      <Partners />
 
       {/* Call to Action */}
-      <section className="py-20 bg-gradient-sunset text-white">
+      <section className="py-20 bg-gradient-redhot text-white">
         <div className="container mx-auto px-4 text-center">
           <BookOpen className="w-16 h-16 mx-auto mb-6 animate-bounce-gentle" />
           <h2 className="text-4xl font-bold mb-6">
@@ -276,10 +234,10 @@ const About = () => {
             Whether you're an author, educator, parent, or simply someone who believes in the power of stories, there's a place for you in our community.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-white text-primary hover:bg-white/90 transition-all duration-300">
+            <Button size="lg" className="bg-white text-submain hover:bg-white/90 transition-all duration-300">
               Get Involved
             </Button>
-            <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-primary">
+            <Button  size="lg" className="border-white text-white bg-gold-gradient hover:bg-white hover:text-submain">
               Contact Us
             </Button>
           </div>

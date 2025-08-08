@@ -28,7 +28,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
       <ScrollToTopButton />
-      <DarkModeToggle />
+     
         <Routes>
           <Route element={<AnimatedLayout />}>
           <Route path="/" element={<Index />} />

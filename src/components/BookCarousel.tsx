@@ -9,7 +9,7 @@ const BookCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const featuredBooks = getFeaturedBooks();
-  const allBooks = books.slice(0, 8); // Show first 8 books for variety
+  const allBooks = books.slice(0, 8); 
 
   // Auto-advance carousel
   useEffect(() => {
@@ -37,7 +37,7 @@ const BookCarousel = () => {
   const currentBook = allBooks[currentIndex];
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#660000] via-[#670000] to-[#630000]">
       {/* Animated Background Elements */}
       <div className="absolute inset-0">
         {/* Floating Books Animation */}
@@ -82,7 +82,7 @@ const BookCarousel = () => {
       </div>
 
       {/* Main Carousel Content */}
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-4 relative z-10 -mt-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           
           {/* Left Side - Book Showcase */}
@@ -92,11 +92,11 @@ const BookCarousel = () => {
               {/* Book Cover with 3D Effect */}
               <div className="relative transform transition-all duration-700 hover:scale-105 hover:rotate-y-12">
                 <div className="absolute inset-0 bg-gradient-to-r from-yellow-400/20 to-orange-500/20 rounded-2xl blur-xl transform rotate-6"></div>
-                <div className="relative bg-white rounded-2xl p-4 shadow-2xl transform -rotate-3 hover:rotate-0 transition-transform duration-500">
+                <div className="relative bg-transparent rounded-2xl p-10  shadow-2xl transform -rotate-3 hover:rotate-0 transition-transform duration-500">
                   <img
                     src={currentBook.coverImage}
                     alt={currentBook.title}
-                    className="w-full h-96 object-cover rounded-xl shadow-lg"
+                    className="w-full h-[400px] object-cover rounded-xl shadow-lg"
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;
                       target.src = 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400';
@@ -172,7 +172,7 @@ const BookCarousel = () => {
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Link to={`/books/${currentBook.id}`}>
-                <Button size="lg" className="bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-black font-bold px-8 py-4 text-lg shadow-xl hover:shadow-2xl transition-all duration-300">
+                <Button size="lg" className="bg-gold-gradient hover:from-yellow-500 hover:to-orange-600 text-white  px-8 py-4  shadow-xl hover:shadow-2xl transition-all duration-300">
                   <BookOpen className="w-5 h-5 mr-2" />
                   Read More
                 </Button>
@@ -181,7 +181,7 @@ const BookCarousel = () => {
               <Button 
                 variant="outline" 
                 size="lg" 
-                className="border-white/30 text-white hover:bg-white/10 px-8 py-4 text-lg"
+                className="border-white/30 text-white bg-white/10 hover:bg-white/30 px-8 py-4 "
                 onClick={() => setIsAutoPlaying(!isAutoPlaying)}
               >
                 {isAutoPlaying ? (
@@ -201,13 +201,13 @@ const BookCarousel = () => {
         </div>
 
         {/* Navigation Controls */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex items-center gap-6">
+        <div className="absolute -bottom-[60px] left-1/2 transform -translate-x-1/2 flex items-center gap-6">
           {/* Previous Button */}
           <Button
             variant="outline"
             size="icon"
             onClick={prevSlide}
-            className="w-12 h-12 rounded-full border-white/30 text-white hover:bg-white/10 backdrop-blur-sm"
+            className="w-12 h-12 rounded-full border-white/30 bg-white/10 text-white backdrop-blur-sm"
           >
             <ChevronLeft className="w-6 h-6" />
           </Button>
@@ -232,35 +232,17 @@ const BookCarousel = () => {
             variant="outline"
             size="icon"
             onClick={nextSlide}
-            className="w-12 h-12 rounded-full border-white/30 text-white hover:bg-white/10 backdrop-blur-sm"
+            className="w-12 h-12 rounded-full border-white/30 text-white bg-white/10 backdrop-blur-sm"
           >
             <ChevronRight className="w-6 h-6" />
           </Button>
         </div>
 
         {/* Progress Bar */}
-        <div className="absolute bottom-0 left-0 w-full h-1 bg-white/20">
-          <div 
-            className="h-full bg-gradient-to-r from-yellow-400 to-orange-500 transition-all duration-300"
-            style={{ width: `${((currentIndex + 1) / allBooks.length) * 100}%` }}
-          />
-        </div>
+       
       </div>
 
-      {/* Call to Action Overlay */}
-      <div className="absolute top-8 right-8 text-center">
-        <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
-          <h3 className="text-white font-bold text-lg mb-2">Discover More</h3>
-          <p className="text-white/80 text-sm mb-4">
-            {allBooks.length} Amazing Stories
-          </p>
-          <Link to="/books">
-            <Button className="bg-white text-purple-900 hover:bg-white/90 font-semibold">
-              View All Books
-            </Button>
-          </Link>
-        </div>
-      </div>
+      
     </section>
   );
 };

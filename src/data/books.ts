@@ -145,12 +145,12 @@ export const books: Book[] = [
     coverImage: "public/BookCovers/Book mock-up Maasai 1.png"
   },
 
-  // Anthologies
+  // Best African Series
   {
     id: "deception-and-other-stories",
     title: "Deception and Other Stories",
     author: "Multiple Authors",
-    category: "Anthologies",
+    category: "Best African Series",
     ageRange: "Ages 14–15",
     synopsis: "See the world from an insider's point of view. In Deception, feel the thrill of online gambling with Amadi as he seeks to finance the soft life he desires. In Where Pumpkin Leaves Dwell, experience the life of a young girl left in the village with her grandparents when her mother leaves for school in the city. In #Good Times Ahead, find out if a lifelong friendship can survive online trolling and social class differences. See how a coastal community grapples with the wrath of an ancient sea god in The God of the Sea. These and more are the thought-provoking, terrifying and intriguing stories you will interact with in this outstanding collection.",
     coverImage: "public/BookCovers/Deception mock-up 1.png",
@@ -160,7 +160,7 @@ export const books: Book[] = [
     id: "zero-tolerance",
     title: "Zero Tolerance and Other Stories",
     author: "Multiple Authors",
-    category: "Anthologies",
+    category: "Best African Series",
     ageRange: "Ages 14–15",
     synopsis: "In a world that demands Zero Tolerance for injustice, these powerful African stories illuminate paths of resistance and hope. From the darkened depths of a sunless world to the bright halls of an elite school, the anthology explores corruption, identity, and the courage to stand up for what's right.",
     coverImage: '/BookCovers/Zero Tolerance mock-up 1.png',
@@ -170,7 +170,7 @@ export const books: Book[] = [
     id: "fire-within",
     title: "A Fire Within and Other Stories",
     author: "Multiple Authors",
-    category: "Anthologies",
+    category: "Best African Series",
     ageRange: "Ages 14–15",
     synopsis: "A Fire Within and Other Stories is an anthology of short stories, written by award-winning authors from across Africa, to highlight or address the African continent's social and political issues.",
     coverImage: '/BookCovers/A Fire Within mock-up 1.png'
@@ -179,10 +179,11 @@ export const books: Book[] = [
 
 export const categories = [
   "All Books",
-  "Picture Books",
-  "SUDEF Wildlife Detective Fiction",
-  "Shizu Historical Fiction",
-  "Anthologies"
+  "RedHot Picture Books (< 8yrs)",
+  "SUDEF ( 9-12 yrs )",
+  "Shizu ( 10 - 14 yrs )",
+  "Best African Series (13+ yrs )", 
+  
 ];
 
 export const getFeaturedBooks = () => books.filter(book => book.featured);

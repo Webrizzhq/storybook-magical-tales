@@ -18,7 +18,15 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+      pacifico: ['Pacifico', 'cursive'],
+    },
 			colors: {
+				gold: "#9d6e0d",
+        goldLight: "#ffb347",
+        goldDark: "#5a3b01",
+				main: '#660000',
+				submain: '#9d6e0d',
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
@@ -71,7 +79,10 @@ export default {
 			backgroundImage: {
 				'gradient-sunset': 'var(--gradient-sunset)',
 				'gradient-ocean': 'var(--gradient-ocean)', 
-				'gradient-magic': 'var(--gradient-magic)'
+				'gradient-magic': 'var(--gradient-magic)',
+				"gold-gradient": "linear-gradient(135deg, #9d6e0d, #ffb347)",
+				'gradient-redhot': 'linear-gradient(to bottom , #660000, #670000, #670000)',
+
 			},
 			boxShadow: {
 				'magical': 'var(--shadow-magical)',

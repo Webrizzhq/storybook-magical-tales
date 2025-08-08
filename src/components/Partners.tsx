@@ -16,12 +16,12 @@ const partners: Partner[] = [
 
 const Partners: React.FC = () => {
   return (
-    <section className="relative py-16 pb-40 bg-gradient-to-br from-orange-50 via-pink-50 to-amber-50">
+    <section className="relative py-16 pb-40 bg-main/70">
       <div className="text-center mb-12">
         <h2 className="text-3xl md:text-4xl font-extrabold text-brown-800">
-          Our <span className="bg-gradient-to-r from-orange-500 to-pink-500 bg-clip-text text-transparent">Partners</span>
+          Our <span className="bg-submain bg-clip-text text-transparent">Partners</span>
         </h2>
-        <p className="mt-3 text-gray-700 max-w-2xl mx-auto">
+        <p className="mt-3 text-gray-200 max-w-2xl mx-auto">
           Working together to promote African literature across the continent
         </p>
       </div>

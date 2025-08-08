@@ -1,143 +1,76 @@
-import { Heart, Book, Mail, MapPin, Phone } from 'lucide-react';
-import { Link } from 'react-router-dom';
-
+import { Mail, Phone } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="bg-storytelling-earth text-white py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-8">
-          {/* Brand */}
-          <div className="space-y-6">
-            <div>
-              <h3 className="text-3xl font-display font-bold text-storytelling-orange">
-                RedHot Africa
-              </h3>
-              <p className="text-white/40 mt-2 text-sm">Books To Love</p>
-            </div>
-            
-            <p className="text-white/70 leading-relaxed text-sm">
-              A Pan-African publishing imprint dedicated to sparking curiosity, storytelling, and self-awareness among African children through bilingual, age-aligned, and culturally rich books.
-            </p>
-            
-            <div className="flex items-center text-storytelling-orange">
-              <Heart className="h-5 w-5 mr-2" />
-              <span className="text-sm">Made with love for young storytellers</span>
-            </div>
-          </div>
-
-          {/* Quick Links */}
-<div className="space-y-6">
-  <h4 className="text-xl font-display font-bold">Explore</h4>
-  <nav className="space-y-3">
-    <Link
-      to="/books"
-      className="block text-white/80 hover:text-storytelling-orange transition-colors"
-    >
-      Books
-    </Link>
-    <Link
-      to="/events"
-      className="block text-white/80 hover:text-storytelling-orange transition-colors"
-    >
-      Events &amp; Workshops
-    </Link>
-    <Link
-      to="/campaigns"
-      className="block text-white/80 hover:text-storytelling-orange transition-colors"
-    >
-      Our Campaigns
-    </Link>
-    <Link
-      to="/about"
-      className="block text-white/80 hover:text-storytelling-orange transition-colors"
-    >
-      About RedHot Africa
-    </Link>
-  </nav>
-</div>
-
-{/* Book Collections */}
-<div className="space-y-6">
-  <h4 className="text-xl font-display font-bold">Book Collections</h4>
-  <nav className="space-y-3">
-    <Link
-      to="/books"
-      className="block text-white/80 hover:text-storytelling-orange transition-colors flex items-center"
-    >
-      <Book className="h-4 w-4 mr-2" />
-      Historical Fiction (Ages 11-13)
-    </Link>
-    <Link
-      to="/books"
-      className="block text-white/80 hover:text-storytelling-orange transition-colors flex items-center"
-    >
-      <Book className="h-4 w-4 mr-2" />
-      Wildlife Detective (Ages 8-10)
-    </Link>
-    <Link
-      to="/books"
-      className="block text-white/80 hover:text-storytelling-orange transition-colors flex items-center"
-    >
-      <Book className="h-4 w-4 mr-2" />
-      Picture Books (Ages 5-7)
-    </Link>
-    <Link
-      to="/books"
-      className="block text-white/80 hover:text-storytelling-orange transition-colors flex items-center"
-    >
-      <Book className="h-4 w-4 mr-2" />
-      Anthologies (Ages 14-15)
-    </Link>
-  </nav>
-</div>
-          {/* Contact */}
-          <div className="space-y-6">
-            <h4 className="text-xl font-display font-bold">Connect With Us</h4>
-            <div className="space-y-4">
-              <div className="flex items-start">
-                <Mail className="h-5 w-5 mr-3 mt-0.5 text-storytelling-orange" />
-                <div>
-                  <p className="text-white/80">hello@redhotafrica.com</p>
-                  <p className="text-white/60 text-sm">For general inquiries</p>
-                </div>
-              </div>
-              
-              <div className="flex items-start">
-                <Phone className="h-5 w-5 mr-3 mt-0.5 text-storytelling-orange" />
-                <div>
-                  <p className="text-white/80">+254 700 123 456</p>
-                  <p className="text-white/60 text-sm">Author visits & events</p>
-                </div>
-              </div>
-              
-              <div className="flex items-start">
-                <MapPin className="h-5 w-5 mr-3 mt-0.5 text-storytelling-orange" />
-                <div>
-                  <p className="text-white/80">Nairobi, Kenya</p>
-                  <p className="text-white/60 text-sm">Storymoja Publishers Westlands</p>
-                </div>
-              </div>
-            </div>
-          </div>
+    <footer className="bg-main text-submain font-display py-20 px-6">
+      <div className="max-w-5xl mx-auto text-center space-y-8">
+        <div  className="flex flex-col items-center text-center">
+          {/* Top line: Redhot Africa */}
+          <span className="text-white text-4xl font-normal font-pacifico leading-tight">
+            Redhot Africa
+          </span>
+        
+          {/* Middle line: BOOKS TO LOVE */}
+          <span className="text-white tracking-[0.2em] text-sm font-bold mt-[-4px]">
+            BOOKS TO LOVE
+          </span>
+        
+          {/* Bottom line: Storymoja Gold Standard */}
+          <span className="text-[#B39B47] italic text-sm font-semibold mt-[-2px]">
+            Storymoja Gold Standard
+          </span>
         </div>
+        
 
-        {/* Bottom Bar */}
-        <div className="border-t border-white/20 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-white/60 text-sm">
-            © 2025 RedHot Africa. Celebrating African storytelling traditions.
-          </p>
-          
-          <div className="flex items-center space-x-6 mt-4 md:mt-0">
-            <a href="#" className="text-white/60 hover:text-storytelling-orange text-sm transition-colors">
-              Privacy Policy
-            </a>
-            <a href="#" className="text-white/60 hover:text-storytelling-orange text-sm transition-colors">
-              Terms of Use
-            </a>
-            <a href="#" className="text-white/60 hover:text-storytelling-orange text-sm transition-colors">
-              Support Us
-            </a>
+        {/* Tagline */}
+        <p className="text-lg leading-relaxed">
+          <span className="font-semibold text-submain">Books that burn boring to the ground.</span>
+          <br />
+          We don’t do dull. We publish <span className="text-white/50 font-semibold">wild, witty, and wonder-packed African stories</span> for kids who crave more than textbooks and tired tales.
+        </p>
+
+        <p className="leading-relaxed">
+          Our books shout in <span className="font-semibold">English</span> and whisper in <span className="italic">Kiswahili, Shona, Acholi, Igbo</span> and <span className="italic">Ma</span>.
+          <br />
+          They leap between <span className="font-semibold">ancient kingdoms</span> and <span className="font-semibold">future tech</span>. From wildlife detectives to warrior queens and myth-busting rebels…
+        </p>
+
+        <p className="text-xl font-bold text-submain">Bilingual. Bold. Built for Dreamers.</p>
+
+        <p className="leading-relaxed text-submain/90">
+          From picture books to epic adventures, every title we create is made with <span className="font-semibold">love, fire</span>, and a whole lot of heart.
+        </p>
+
+        {/* Divider */}
+        <div className="border-t border-submain/30 pt-10" />
+
+        {/* Info Grid */}
+        <div className="grid md:grid-cols-2 gap-12 text-left text-submain/90">
+          {/* Policies */}
+          <div className="space-y-3 md:ml-16">
+            <h5 className="text-lg font-bold text-white mb-2">Our Policies</h5>
+            <p className="hover:text-white cursor-pointer transition">FAQs</p>
+            <p className="hover:text-white cursor-pointer transition">Terms & Conditions</p>
+            <p className="hover:text-white cursor-pointer transition">Safeguarding Policy</p>
+            <p className="hover:text-white cursor-pointer transition">Children's Policy</p>
+            <p className="hover:text-white cursor-pointer transition">Legal Frameworks</p>
+          </div>
+
+          {/* Contact */}
+          <div className="space-y-5 md:mr-16">
+            <h5 className="text-lg font-bold text-white mb-2">Contact Us</h5>
+            <div className="flex items-center space-x-3">
+              <Mail className="w-5 h-5 text-submain" />
+              <span>redhot@storymojaafrica.co.ke</span>
+            </div>
+            <div className="flex items-center space-x-3">
+              <Phone className="w-5 h-5 text-submain" />
+              <span>
+                +254 733 838161
+                <br />
+                +254 202 089595
+              </span>
+            </div>
           </div>
         </div>
       </div>

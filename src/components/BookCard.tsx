@@ -44,7 +44,7 @@ const BookCard = ({ book, featured = false }: BookCardProps) => {
 
   return (
     <Card 
-      className={`group overflow-hidden transition-all duration-500 hover:shadow-magical hover:-translate-y-2 bg-card border-0 ${
+      className={`group overflow-hidden transition-all duration-500 hover:shadow-magical hover:-translate-y-2 bg-card dark:bg-red-900 border-0 ${
         featured ? 'md:col-span-2 lg:col-span-1' : ''
       }`}
       onMouseEnter={() => setIsHovered(true)}
@@ -119,7 +119,7 @@ const BookCard = ({ book, featured = false }: BookCardProps) => {
             <div className="flex justify-center items-center gap-3 pt-2">
               <Link to={`/book/${book.id}`} className="flex justify-center items-center">
                 <Button 
-                  className=" bg-gradient-magic hover:shadow-glow transition-all duration-300"
+                  className=" bg-gold-gradient hover:shadow-glow transition-all duration-300"
                   size={featured ? "default" : "sm"}
                 >
                   Read More
