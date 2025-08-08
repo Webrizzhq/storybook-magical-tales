@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { BookOpen, Calendar, Users, Info, Sparkles, Bell } from 'lucide-react';
+import { BookOpen, Calendar, Users, Info, Sparkles } from 'lucide-react';
 import Footer from './Footer';
 
 interface LayoutProps {
@@ -10,72 +10,51 @@ interface LayoutProps {
 
 const Layout = ({ children }: LayoutProps) => {
   const navItems = [
-    { to: '/', label: 'HOME' },
-    { to: '/events', label: 'REDHOT LIVE' },
-    { to: '/books', label: 'BOOKS' },
-    { to: '/campaigns', label: 'CAMPAIGNS' },
-    { to: '/about', label: 'US', hasNotification: true }
+    { to: '/', label: 'Home', icon: Sparkles },
+    { to: '/books', label: 'Books', icon: BookOpen },
+    { to: '/events', label: 'Events', icon: Calendar },
+    { to: '/campaigns', label: 'Campaigns', icon: Users },
+    { to: '/about', label: 'About', icon: Info }
   ];
 
   return (
-    <div className="min-h-screen bg-redhot-red">
-      {/* RedHot Africa Navigation - Matching PDF Design */}
-      <nav className="bg-redhot-red border-b border-red-800/30">
-        <div className="container mx-auto px-6 py-4">
+    <div className="min-h-screen bg-background">
+      {/* Magical Navigation */}
+      <nav className="sticky top-0 z-50 bg-background/90 backdrop-blur-md border-b border-border">
+        <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            {/* Logo - Matching PDF */}
-            <NavLink to="/" className="flex flex-col text-left">
-              <span className="text-2xl font-bold text-bright-yellow font-child-friendly">
+            {/* Logo */}
+            <NavLink to="/" className="flex items-center gap-2 text-2xl font-bold text-primary">
+              <Sparkles className="w-8 h-8 text-accent animate-sparkle" />
+              <span className="bg-gradient-magic bg-clip-text text-transparent">
                 RedHot Africa
-              </span>
-              <span className="text-xs text-bright-yellow/80 tracking-wider">
-                BOOKS TO LOVE
               </span>
             </NavLink>
 
-            {/* Navigation Links - Matching PDF Layout */}
-            <div className="hidden md:flex items-center gap-8">
-              {navItems.map(({ to, label, hasNotification }) => (
+            {/* Navigation Links */}
+            <div className="hidden md:flex items-center gap-2">
+              {navItems.map(({ to, label, icon: Icon }) => (
                 <NavLink key={to} to={to}>
                   {({ isActive }) => (
-                    <div className="relative">
-                      <span
-                        className={`text-sm font-medium tracking-wide transition-all duration-300 ${
-                          isActive 
-                            ? 'text-bright-yellow border-b-2 border-bright-yellow pb-1' 
-                            : 'text-white hover:text-bright-yellow'
-                        }`}
-                      >
-                        {label}
-                      </span>
-                      {hasNotification && (
-                        <div className="absolute -top-1 -right-2 w-4 h-4 bg-bright-yellow rounded-full flex items-center justify-center">
-                          <span className="text-xs text-redhot-red font-bold">1</span>
-                        </div>
-                      )}
-                    </div>
+                    <Button
+                      variant={isActive ? "default" : "ghost"}
+                      className={`gap-2 transition-all duration-300 ${
+                        isActive 
+                          ? 'bg-gradient-magic text-primary-foreground shadow-glow' 
+                          : 'hover:bg-primary/10 hover:text-primary'
+                      }`}
+                    >
+                      <Icon className="w-4 h-4" />
+                      {label}
+                    </Button>
                   )}
                 </NavLink>
               ))}
-              
-              {/* Auth Links */}
-              <div className="flex items-center gap-4 ml-8 border-l border-red-800/30 pl-8">
-                <NavLink to="/signin">
-                  <span className="text-sm font-medium text-white hover:text-bright-yellow transition-colors">
-                    SIGN IN
-                  </span>
-                </NavLink>
-                <NavLink to="/login">
-                  <span className="text-sm font-medium text-white hover:text-bright-yellow transition-colors">
-                    LOG IN
-                  </span>
-                </NavLink>
-              </div>
             </div>
 
             {/* Mobile Navigation */}
             <div className="md:hidden">
-              <Button variant="ghost" size="sm" className="text-bright-yellow">
+              <Button variant="ghost" size="sm">
                 <BookOpen className="w-5 h-5" />
               </Button>
             </div>
@@ -84,11 +63,11 @@ const Layout = ({ children }: LayoutProps) => {
       </nav>
 
       {/* Main Content */}
-      <main className="flex-1 bg-redhot-red">
+      <main className="flex-1">
         {children}
       </main>
 
-      {/* Footer */}
+      {/* Magical Footer */}
       <Footer />
     </div>
   );
