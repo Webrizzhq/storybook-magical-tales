@@ -16,7 +16,7 @@ const partners: Partner[] = [
 
 const Partners: React.FC = () => {
   return (
-    <section className="relative py-16 pb-40 bg-white">
+    <section className="relative py-16 pb-40 bg-main/10">
       <div className="text-center mb-12">
         <h2 className="text-3xl md:text-5xl font-extrabold text-primary">
           Our Partners

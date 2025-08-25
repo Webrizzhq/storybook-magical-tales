@@ -126,19 +126,15 @@ const Campaigns = () => {
           />
           <div className="absolute inset-0 bg-main/20" /> {/* overlay */}
         </div>
-        <div className="absolute inset-0">
-          <div className="absolute top-20 left-20 w-12 h-12 bg-white/20 rounded-full animate-float" />
-          <div className="absolute top-40 right-24 w-8 h-8 bg-white/15 rounded-full animate-bounce-gentle" />
-          <div className="absolute bottom-32 left-1/4 w-6 h-6 bg-white/25 rounded-full animate-sparkle" />
-        </div>
+       
         
         <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center max-w-3xl mx-auto text-white/50">
+          <div className="text-center max-w-3xl mx-auto text-white">
             <Heart className="w-16 h-16 mx-auto mb-6 animate-bounce-gentle" />
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
               Reading Campaigns
             </h1>
-            <p className="text-xl text-white/40 leading-relaxed">
+            <p className="text-xl text-white/80 leading-relaxed">
               When kids read tales rooted in their heritage, they grow taller in spirit and
               bolder in thought. 
               <br /><br />

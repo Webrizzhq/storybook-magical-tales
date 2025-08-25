@@ -2,7 +2,6 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Plus, Star, MessageSquare } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 
 const faqs = [
   {
@@ -31,15 +30,17 @@ const faqs = [
   }
 ];
 
-// alternating accents for each FAQ card
+// alternating accents
 const accents = [
   {
+    bg: "bg-white",
     ring: "border-primary/40 hover:border-primary/70",
     bar: "bg-primary",
     chip: "bg-primary/10 text-primary",
     icon: "text-primary"
   },
   {
+    bg: "bg-yellow-50",
     ring: "border-yellow-300/70 hover:border-yellow-400",
     bar: "bg-yellow-400",
     chip: "bg-yellow-400/15 text-yellow-700",
@@ -51,28 +52,28 @@ export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const container = {
-    hidden: { opacity: 0, y: 12 },
+    hidden: { opacity: 0, y: 20 },
     show: {
       opacity: 1,
       y: 0,
-      transition: { staggerChildren: 0.08, when: "beforeChildren" }
+      transition: { staggerChildren: 0.1, when: "beforeChildren" }
     }
   };
 
   const item = {
-    hidden: { opacity: 0, y: 16, scale: 0.98 },
+    hidden: { opacity: 0, y: 20, scale: 0.96 },
     show: {
       opacity: 1,
       y: 0,
       scale: 1,
-      transition: { type: "spring", stiffness: 260, damping: 22 }
+      transition: { type: "spring", stiffness: 260, damping: 20 }
     }
   };
 
   const toggle = (i: number) => setOpenIndex(openIndex === i ? null : i);
 
   return (
-    <section className="relative py-20 bg-main/10">
+    <section className="relative py-20 bg-white">
       {/* Decorative background glows */}
       <div className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute left-[-8%] top-10 h-48 w-48 rounded-full bg-yellow-400/10 blur-3xl" />
@@ -81,7 +82,13 @@ export default function FAQSection() {
 
       <div className="container mx-auto px-4">
         {/* Section Header */}
-        <div className="text-center mb-12">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          className="text-center mb-12"
+        >
           <Badge className="bg-primary/10 text-yellow-600 mb-6 px-4 py-2">
             <Star className="w-4 h-4 mr-2" />
             Frequently Asked Questions
@@ -92,7 +99,7 @@ export default function FAQSection() {
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Everything you need to know about Redhot Africa — from books to campaigns, support, and more.
           </p>
-        </div>
+        </motion.div>
 
         {/* FAQ Cards */}
         <motion.div
@@ -112,7 +119,8 @@ export default function FAQSection() {
                 key={i}
                 variants={item}
                 layout
-                className={`relative rounded-2xl bg-white border ${acc.ring} shadow-sm hover:shadow-xl transition-all`}
+                whileHover={{ scale: 1.01 }}
+                className={`relative rounded-2xl ${acc.bg} border ${acc.ring} shadow-sm hover:shadow-xl transition-all`}
               >
                 {/* accent bar */}
                 <div className={`absolute left-0 top-0 h-full w-1.5 ${acc.bar} rounded-l-2xl`} />
@@ -135,7 +143,7 @@ export default function FAQSection() {
                     transition={{ type: "spring", stiffness: 300, damping: 18 }}
                     className={`shrink-0 ${acc.icon}`}
                   >
-                    <Plus className="w-5 h-5" />
+                    {isOpen ? <MessageSquare className="w-5 h-5" /> : <Plus className="w-5 h-5" />}
                   </motion.span>
                 </button>
 
@@ -148,7 +156,7 @@ export default function FAQSection() {
                       initial={{ opacity: 0, height: 0 }}
                       animate={{ opacity: 1, height: "auto" }}
                       exit={{ opacity: 0, height: 0 }}
-                      transition={{ duration: 0.28, ease: "easeOut" }}
+                      transition={{ duration: 0.3, ease: "easeOut" }}
                       className="overflow-hidden"
                     >
                       <div className="px-6 pb-6 text-muted-foreground leading-relaxed">
@@ -161,8 +169,6 @@ export default function FAQSection() {
             );
           })}
         </motion.div>
-
-      
       </div>
     </section>
   );
