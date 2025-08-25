@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronLeft, ChevronRight, Star, BookOpen, Loader2 } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Star, BookOpen } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { books, getFeaturedBooks } from '@/data/books';
@@ -9,45 +9,34 @@ import { books, getFeaturedBooks } from '@/data/books';
 const BookCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
-  const [imageLoading, setImageLoading] = useState(true); // track image loading
+  const [imageLoadedMap, setImageLoadedMap] = useState<{ [id: string]: boolean }>({});
 
-  const featuredBooks = getFeaturedBooks();
   const allBooks = books.slice(0, 8);
 
   // Auto-advance carousel
   useEffect(() => {
     if (!isAutoPlaying) return;
-
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % allBooks.length);
-      setImageLoading(true); // reset loading when switching
     }, 5000);
-
     return () => clearInterval(interval);
   }, [isAutoPlaying, allBooks.length]);
 
-  const nextSlide = () => {
-    setCurrentIndex((prev) => (prev + 1) % allBooks.length);
-    setImageLoading(true);
-  };
-
-  const prevSlide = () => {
-    setCurrentIndex((prev) => (prev - 1 + allBooks.length) % allBooks.length);
-    setImageLoading(true);
-  };
-
-  const goToSlide = (index: number) => {
-    setCurrentIndex(index);
-    setImageLoading(true);
-  };
+  const nextSlide = () => setCurrentIndex((prev) => (prev + 1) % allBooks.length);
+  const prevSlide = () => setCurrentIndex((prev) => (prev - 1 + allBooks.length) % allBooks.length);
+  const goToSlide = (index: number) => setCurrentIndex(index);
 
   const currentBook = allBooks[currentIndex];
 
+  const handleImageLoad = (id: string) => {
+    setImageLoadedMap(prev => ({ ...prev, [id]: true }));
+  };
+
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#660000] via-[#670000] to-[#630000] pb-40">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#660000] via-[#670000] to-[#630000] pb-40 ">
       <div className="container mx-auto px-4 relative z-10 mt-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          
+
           {/* Left Side - Book Showcase */}
           <div className="relative">
             <AnimatePresence mode="wait">
@@ -59,25 +48,27 @@ const BookCarousel = () => {
                 transition={{ duration: 0.6, ease: "easeInOut" }}
                 className="relative group"
               >
-                <div className="relative bg-transparent rounded-2xl p-5 shadow-2xl flex items-center justify-center">
-                  {imageLoading && (
-                    <div className="absolute inset-0 flex items-center justify-center bg-black/10 rounded-xl">
-                      <Loader2 className="w-10 h-10 text-white animate-spin" />
+                <div className="relative bg-transparent rounded-2xl p-5 shadow-2xl">
+                  
+                  {/* Spinner */}
+                  {!imageLoadedMap[currentBook.id] && (
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="w-16 h-16 border-4 border-t-yellow-400 border-r-transparent border-b-yellow-400 border-l-transparent rounded-full animate-spin"></div>
                     </div>
                   )}
+
                   <img
                     src={currentBook.coverImage}
                     alt={currentBook.title}
-                    className={`w-full md:h-[450px] h-[300px] object-contain rounded-xl transition-opacity duration-500 ${
-                      imageLoading ? "opacity-0" : "opacity-100"
-                    }`}
-                    onLoad={() => setImageLoading(false)}
+                    className="w-full md:h-[450px] h-[300px] object-contain rounded-xl"
+                    onLoad={() => handleImageLoad(currentBook.id)}
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;
-                      target.src = "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400";
-                      setImageLoading(false);
+                      target.src = 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400';
+                      handleImageLoad(currentBook.id);
                     }}
                   />
+
                   {currentBook.featured && (
                     <motion.div
                       initial={{ scale: 0 }}
@@ -106,7 +97,7 @@ const BookCarousel = () => {
               transition={{ duration: 0.5, ease: "easeOut" }}
               className="text-white space-y-6 md:-mt-20"
             >
-              <Badge className="bg-white/20 text-white border-white/30 px-4 py-2 text-sm md:mb-6">
+              <Badge className="bg-white/20 text-white border-white/30 px-4 py-2 text-sm md:mb-6 ">
                 {currentBook.category}
               </Badge>
 
