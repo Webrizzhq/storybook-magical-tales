@@ -37,7 +37,7 @@ const BookCarousel = () => {
   const currentBook = allBooks[currentIndex];
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#660000] via-[#670000] to-[#630000]">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#660000] via-[#670000] to-[#630000] pb-40">
       {/* Animated Background Elements */}
       <div className="absolute inset-0">
         {/* Floating Books Animation */}
@@ -135,7 +135,7 @@ const BookCarousel = () => {
             </p>
 
             {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+            <div className="flex flex-col sm:flex-row gap-4 pt-4 mb-10">
               <Link to={`/books/${currentBook.id}`}>
                 <Button size="lg" className="bg-gold-gradient hover:from-yellow-500 hover:to-orange-600 text-white  px-8 py-4  shadow-xl hover:shadow-2xl transition-all duration-300">
                   <BookOpen className="w-5 h-5 mr-2" />
@@ -178,7 +178,7 @@ const BookCarousel = () => {
             variant="outline"
             size="icon"
             onClick={nextSlide}
-            className="w-12 h-12 rounded-full border-white/30 text-white bg-white/10 backdrop-blur-sm"
+            className="w-12 h-12 rounded-full border-white/30 text-white bg-white/10 backdrop-blur-sm "
           >
             <ChevronRight className="w-6 h-6" />
           </Button>

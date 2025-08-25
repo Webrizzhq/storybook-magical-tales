@@ -32,7 +32,7 @@ export default function HomeCampaignHighlights() {
       <div className="container mx-auto px-4">
         {/* Heading */}
         <div className="text-center mb-16">
-          <h2 className="text-5xl font-bold text-primary mb-6 mt-20">
+          <h2 className="text-5xl font-bold text-primary mb-6 pt-20">
             Current Campaigns
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
