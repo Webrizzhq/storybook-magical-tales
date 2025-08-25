@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
 import { Leaf, Shield, PenTool, Heart, Mic, Trophy, Star, Book, DollarSign, Target, Users } from 'lucide-react';
+import hero from "@/assets/hero-reading.jpg"
 
 const Campaigns = () => {
   const campaigns = [
@@ -105,15 +106,26 @@ const Campaigns = () => {
       icon: DollarSign,
       color: "bg-gradient-ocean"
     }
-];
+  ];
 
-  const featuredCampaigns = campaigns.filter(campaign => campaign.featured);
-  const otherCampaigns = campaigns.filter(campaign => !campaign.featured);
+  // Pick top 2 featured campaigns
+  const topCampaigns = campaigns.filter(c => c.featured).slice(0, 2);
+  const otherFeatured = campaigns.filter(c => c.featured && !topCampaigns.includes(c));
+  const otherCampaigns = campaigns.filter(c => !c.featured);
 
   return (
     <Layout>
       {/* Hero Section */}
       <section className="relative py-20 bg-gradient-redhot overflow-hidden">
+
+        <div className="absolute inset-0">
+          <img
+            src={hero} // <-- replace with your own image path
+            alt="Books background"
+            className="w-full h-full  object-cover opacity-20"
+          />
+          <div className="absolute inset-0 bg-main/20" /> {/* overlay */}
+        </div>
         <div className="absolute inset-0">
           <div className="absolute top-20 left-20 w-12 h-12 bg-white/20 rounded-full animate-float" />
           <div className="absolute top-40 right-24 w-8 h-8 bg-white/15 rounded-full animate-bounce-gentle" />
@@ -128,73 +140,94 @@ const Campaigns = () => {
             </h1>
             <p className="text-xl text-white/40 leading-relaxed">
               When kids read tales rooted in their heritage, they grow taller in spirit and
-bolder in thought. 
-
-Our campaigns put African books into the hands of the next generation so
-they can imagine more, believe bigger and be the leaders Africa aspires for.
+              bolder in thought. 
+              <br /><br />
+              Our campaigns put African books into the hands of the next generation so
+              they can imagine more, believe bigger and be the leaders Africa aspires for.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Featured Campaigns */}
+      {/* Top Campaigns */}
+      <section className="py-20 bg-red-50 dark:bg-red-900">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12 max-w-2xl mx-auto">
+            <Badge className="bg-gold-gradient text-white px-4 py-2 mb-4">
+              Top Campaigns
+            </Badge>
+            <h2 className="text-4xl font-bold text-primary mb-4">
+              Our Current Priorities
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              These two campaigns are at the heart of our mission right now —
+              preserving African heritage and empowering the next generation with
+              safe, inspiring stories.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {topCampaigns.map((campaign) => (
+              <Card key={campaign.id} className="border-0 bg-main shadow-magical">
+                <CardContent className="p-8 flex flex-col">
+                  <div className={`w-20 h-20 ${campaign.color} rounded-full flex items-center justify-center mb-6`}>
+                    <campaign.icon className="w-10 h-10 text-white" />
+                  </div>
+                  <h3 className="text-3xl font-bold text-primary mb-4">{campaign.title}</h3>
+                  <p className="text-muted-foreground mb-6 leading-relaxed">{campaign.description}</p>
+                  <div className="bg-muted/50 rounded-lg p-4 mb-6">
+                    <h4 className="font-semibold text-foreground mb-2">Impact So Far:</h4>
+                    <p className="text-sm text-foreground">{campaign.impact}</p>
+                  </div>
+                  <div className="flex gap-4 mt-auto">
+                    <Button className="bg-gold-gradient hover:shadow-glow">Support</Button>
+                    <Button variant="outline" className="hover:bg-primary hover:text-primary-foreground">Learn More</Button>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Other Featured Campaigns */}
       <section className="py-20 bg-red-100 dark:bg-red-800">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
+          <div className="text-center mb-16 max-w-2xl mx-auto">
             <Badge className="bg-primary/10 text-primary mb-4 px-4 py-2">
               <Target className="w-4 h-4 mr-2" />
               Featured Campaigns
             </Badge>
-            <h2 className="text-4xl font-bold text-primary mb-6">
-              EXCITE. EMPOWER. INSPIRE. REPEAT
+            <h2 className="text-4xl font-bold text-primary mb-4">
+              Excite. Empower. Inspire.
             </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Your support helps us reach more children and communities with the transformative power of storytelling
+            <p className="text-lg text-muted-foreground">
+              Beyond our top priorities, these featured campaigns are shaping
+              communities and building a love for African literature.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 mb-16">
-            {featuredCampaigns.map((campaign, index) => (
-              <Card 
-                key={campaign.id}
-                className="group border-0 bg-main hover:shadow-magical transition-all duration-500 hover:-translate-y-2 animate-fade-in-up"
-                style={{ animationDelay: `${index * 200}ms` }}
-              >
+            {otherFeatured.map((campaign) => (
+              <Card key={campaign.id} className="group border-0 bg-main hover:shadow-magical transition-all duration-500 hover:-translate-y-2">
                 <CardContent className="p-8">
                   <div className="flex items-center gap-4 mb-6">
-                    <div className={`w-16 h-16 ${campaign.color} rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
+                    <div className={`w-16 h-16 ${campaign.color} rounded-full flex items-center justify-center`}>
                       <campaign.icon className="w-8 h-8 text-white" />
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-2xl font-bold text-primary mb-2">
-                        {campaign.title}
-                      </h3>
-                      <p className="text-muted-foreground text-sm">
-                        {campaign.goal}
-                      </p>
+                      <h3 className="text-2xl font-bold text-primary mb-2">{campaign.title}</h3>
+                      <p className="text-muted-foreground text-sm">{campaign.goal}</p>
                     </div>
                   </div>
-
-                  
-                  
-                  <p className="text-muted-foreground mb-6 leading-relaxed">
-                    {campaign.description}
-                  </p>
-                  
+                  <p className="text-muted-foreground mb-6 leading-relaxed">{campaign.description}</p>
                   <div className="bg-muted/50 rounded-lg p-4 mb-6">
                     <h4 className="font-semibold text-foreground mb-2">Impact So Far:</h4>
-                    <p className="text-sm text-foreground">
-                      {campaign.impact}
-                    </p>
+                    <p className="text-sm text-foreground">{campaign.impact}</p>
                   </div>
-                  
                   <div className="flex gap-3">
-                    <Button className="flex-1 bg-gold-gradient hover:shadow-glow transition-all duration-300">
-                      Support Campaign
-                    </Button>
-                    <Button variant="outline" className="hover:bg-primary hover:text-primary-foreground transition-all duration-300">
-                      Learn More
-                    </Button>
+                    <Button className="flex-1 bg-gold-gradient hover:shadow-glow">Support</Button>
+                    <Button variant="outline" className="hover:bg-primary hover:text-primary-foreground">Learn More</Button>
                   </div>
                 </CardContent>
               </Card>
@@ -206,52 +239,34 @@ they can imagine more, believe bigger and be the leaders Africa aspires for.
       {/* Other Campaigns */}
       <section className="py-20 bg-white dark:bg-red-700">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-primary mb-6">
-              PUSH THE PLOT FORWARD
+          <div className="text-center mb-16 max-w-2xl mx-auto">
+            <h2 className="text-4xl font-bold text-primary mb-4">
+              Push the Plot Forward
             </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              While some build shelves, you build legacies.
-
-Got a vision? Got vibes? Let's Go.
+            <p className="text-lg text-muted-foreground">
+              Every campaign adds a new chapter to Africa’s story. Explore more
+              ways you can make a difference in young readers’ lives.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
-            {otherCampaigns.map((campaign, index) => (
-              <Card 
-                key={campaign.id}
-                className="group border-0 bg-main hover:shadow-float transition-all duration-300 hover:-translate-y-1 animate-fade-in-up"
-                style={{ animationDelay: `${index * 150}ms` }}
-              >
+            {otherCampaigns.map((campaign) => (
+              <Card key={campaign.id} className="group border-0 bg-main hover:shadow-float transition-all duration-300 hover:-translate-y-1">
                 <CardContent className="p-6">
                   <div className="flex items-center gap-3 mb-4">
                     <div className={`w-12 h-12 ${campaign.color} rounded-full flex items-center justify-center`}>
                       <campaign.icon className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold text-primary">
-                        {campaign.title}
-                      </h3>
-                      <p className="text-sm text-muted-foreground">
-                        {campaign.goal}
-                      </p>
+                      <h3 className="text-xl font-bold text-primary">{campaign.title}</h3>
+                      <p className="text-sm text-muted-foreground">{campaign.goal}</p>
                     </div>
                   </div>
-
-                 
-                  
-                  <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
-                    {campaign.description}
-                  </p>
-                  
-                  <div className=" rounded-lg p-3 mb-4">
-                    <p className="text-xs text-muted-foreground">
-                      {campaign.impact}
-                    </p>
+                  <p className="text-muted-foreground text-sm mb-4 leading-relaxed">{campaign.description}</p>
+                  <div className="rounded-lg p-3 mb-4">
+                    <p className="text-xs text-muted-foreground">{campaign.impact}</p>
                   </div>
-                  
-                  <Button variant="outline" className="w-full hover:bg-primary hover:text-primary-foreground transition-all duration-300">
+                  <Button variant="outline" className="w-full hover:bg-primary hover:text-primary-foreground">
                     Join Campaign
                   </Button>
                 </CardContent>
@@ -265,13 +280,11 @@ Got a vision? Got vibes? Let's Go.
       <section className="py-20 bg-primary text-primary-foreground">
         <div className="container mx-auto px-4 text-center">
           <Users className="w-16 h-16 mx-auto mb-6 text-accent animate-bounce-gentle" />
-          <h2 className="text-4xl font-bold mb-6">
-            Start Your Own Campaign
-          </h2>
+          <h2 className="text-4xl font-bold mb-6">Start Your Own Campaign</h2>
           <p className="text-xl text-primary-foreground/90 max-w-2xl mx-auto mb-8 leading-relaxed">
             Have an idea for promoting African children's literature in your community? We'd love to help you turn your vision into reality.
           </p>
-          <Button size="lg" className="bg-submain text-accent-foreground hover:bg-accent/90 transition-all duration-300">
+          <Button size="lg" className="bg-submain text-accent-foreground hover:bg-accent/90">
             Propose a Campaign
           </Button>
         </div>

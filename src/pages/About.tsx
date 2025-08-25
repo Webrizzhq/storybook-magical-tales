@@ -2,7 +2,7 @@ import Layout from '@/components/Layout';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
-import { BookOpen, Heart, Users, Globe, Star, Target, Award, Sparkles } from 'lucide-react';
+import { BookOpen, Heart, Users, Globe, Target, Sparkles, Share2 } from 'lucide-react';
 import Partners from '@/components/Partners';
 
 const About = () => {
@@ -29,6 +29,7 @@ const About = () => {
     }
   ];
 
+  // Leadership only
   const team = [
     {
       name: "Dr. Amara Okafor",
@@ -38,49 +39,48 @@ const About = () => {
     },
     {
       name: "Kwame Asante",
-      role: "Community Outreach Manager", 
-      bio: "Dedicated to connecting stories with communities across Africa and the diaspora.",
+      role: "Chief Marketing Lead", 
+      bio: "Strategist connecting Redhot Africa with global readers and communities.",
       image: "👨🏿‍💼"
     },
     {
       name: "Fatima Al-Rashid",
-      role: "Digital Programs Coordinator",
-      bio: "Technology enthusiast bringing African stories to the digital age.",
+      role: "Chief Editor",
+      bio: "Ensuring quality storytelling and cultural authenticity in every book.",
       image: "👩🏽‍💻"
-    },
-    {
-      name: "Themba Mthembu",
-      role: "Events & Partnerships Director",
-      bio: "Building bridges between authors, schools, and reading communities.",
-      image: "👨🏾‍🏫"
     }
   ];
 
   return (
     <Layout>
-      {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-redhot overflow-hidden">
+      {/* Hero Section with Background Image */}
+      <section
+        className="relative py-20 bg-main overflow-hidden "
+        
+      >
         <div className="absolute inset-0">
-          <div className="absolute top-16 left-16 w-20 h-20 bg-accent/20 rounded-full animate-float" />
-          <div className="absolute top-32 right-20 w-16 h-16 bg-secondary/20 rounded-full animate-bounce-gentle" />
-          <div className="absolute bottom-24 left-1/3 w-12 h-12 bg-accent/30 rounded-full animate-sparkle" />
-        </div>
+                  <img
+                    src='about-hero.png' // <-- replace with your own image path
+                    alt="Books background"
+                    className="w-full h-full object-cover opacity-20"
+                  />
+                  <div className="absolute inset-0 bg-main/20" /> {/* overlay */}
+                </div>
+
+       
         
         <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center max-w-4xl mx-auto text-white/50">
-            <Sparkles className="w-16 h-16 mx-auto mb-6 animate-sparkle" />
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">
+          <div className="text-center max-w-4xl mx-auto text-white">
+            <Sparkles className="w-16 h-16 mx-auto mb-6 animate-sparkle text-gold-400" />
+            <h1 className="text-3xl md:text-6xl font-bold mb-6 drop-shadow-lg">
               Our Story
             </h1>
-            <p className="text-xl text-white/40 leading-relaxed">
+            <p className="md:text-xl text- text-white/90 leading-relaxed drop-shadow">
               When you can't see yourself in the story, flip the script.
-
-Redhot Africa books star smart African kids who solve, invent, rebel
-and rise.
-
-
-They are not waiting for rescue, they are not sidekicks or victims.
-They are the main characters reimagining Africa on their own terms.
+              <br /><br />
+              Redhot Africa books star smart African kids who solve, invent, rebel
+              and rise. They are not waiting for rescue, they are not sidekicks or victims.
+              They are the main characters reimagining Africa on their own terms.
             </p>
           </div>
         </div>
@@ -109,7 +109,7 @@ They are the main characters reimagining Africa on their own terms.
                   Our Books
                 </Button>
                 <Button variant="outline" className="hover:bg-submain hover:text-submain-foreground transition-all duration-300">
-                  Join Our Community
+                  Join Our WhatsApp
                 </Button>
               </div>
             </div>
@@ -185,15 +185,14 @@ They are the main characters reimagining Africa on their own terms.
               Meet Our Team
             </Badge>
             <h2 className="text-4xl font-bold text-submain mb-6">
-               This crew? All killer, no filler.
+              Our Leadership
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              We fuse literature, education, tech, and grassroots grit to light up young minds and build a unique African
-storyverse.
+              Guided by experience, creativity, and passion for African storytelling.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {team.map((member, index) => (
               <Card 
                 key={member.name}
@@ -223,22 +222,22 @@ storyverse.
       {/* Awards & Recognition */}
       <Partners />
 
-      {/* Call to Action */}
+      {/* Social CTA */}
       <section className="py-20 bg-gradient-redhot text-white">
         <div className="container mx-auto px-4 text-center">
-          <BookOpen className="w-16 h-16 mx-auto mb-6 animate-bounce-gentle" />
+          <Share2 className="w-16 h-16 mx-auto mb-6 animate-bounce-gentle" />
           <h2 className="text-4xl font-bold mb-6">
-            Join Our Journey
+            Stay Connected
           </h2>
           <p className="text-xl text-white/90 max-w-2xl mx-auto mb-8 leading-relaxed">
-            Whether you're an author, educator, parent, or simply someone who believes in the power of stories, there's a place for you in our community.
+            Follow us on social media and subscribe to our newsletter to keep up with new books, campaigns, and opportunities to get involved.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="bg-white text-submain hover:bg-white/90 transition-all duration-300">
-              Get Involved
+              Follow on Social Media
             </Button>
-            <Button  size="lg" className="border-white text-white bg-gold-gradient hover:bg-white hover:text-submain">
-              Contact Us
+            <Button size="lg" className="border-white text-white bg-gold-gradient hover:bg-white hover:text-submain">
+              Subscribe to Newsletter
             </Button>
           </div>
         </div>

@@ -41,44 +41,9 @@ const BookCarousel = () => {
       {/* Animated Background Elements */}
       <div className="absolute inset-0">
         {/* Floating Books Animation */}
-        {[...Array(6)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute opacity-10"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${i * 2}s`,
-            }}
-          >
-            <BookOpen 
-              className="w-8 h-8 text-white animate-float" 
-              style={{
-                animationDuration: `${4 + Math.random() * 4}s`,
-              }}
-            />
-          </div>
-        ))}
+       
         
-        {/* Sparkles */}
-        {[...Array(12)].map((_, i) => (
-          <div
-            key={`sparkle-${i}`}
-            className="absolute"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${i * 0.5}s`,
-            }}
-          >
-            <Sparkles 
-              className="w-4 h-4 text-yellow-300 animate-sparkle opacity-60" 
-              style={{
-                animationDuration: `${2 + Math.random() * 3}s`,
-              }}
-            />
-          </div>
-        ))}
+        
       </div>
 
       {/* Main Carousel Content */}
@@ -91,12 +56,12 @@ const BookCarousel = () => {
             <div className="relative group">
               {/* Book Cover with 3D Effect */}
               <div className="relative transform transition-all duration-700 hover:scale-105 hover:rotate-y-12">
-                <div className="absolute inset-0 bg-gradient-to-r from-yellow-400/20 to-orange-500/20 rounded-2xl blur-xl transform rotate-6"></div>
-                <div className="relative bg-transparent rounded-2xl p-10  shadow-2xl transform -rotate-3 hover:rotate-0 transition-transform duration-500">
+                
+                <div className="relative bg-transparent rounded-2xl p-5 shadow-2xl transform  transition-transform duration-500">
                   <img
                     src={currentBook.coverImage}
                     alt={currentBook.title}
-                    className="w-full h-[400px] object-cover rounded-xl shadow-lg"
+                    className="w-full md:h-[450px] h-[300px] object-contain rounded-xl "
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;
                       target.src = 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400';
@@ -118,7 +83,7 @@ const BookCarousel = () => {
                 <img
                   src={allBooks[(currentIndex - 1 + allBooks.length) % allBooks.length]?.coverImage}
                   alt="Previous book"
-                  className="w-20 h-28 object-cover rounded-lg shadow-lg"
+                  className="w-16 h-24 object-cover rounded-lg shadow-lg"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
                     target.src = 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400';
@@ -130,7 +95,7 @@ const BookCarousel = () => {
                 <img
                   src={allBooks[(currentIndex + 1) % allBooks.length]?.coverImage}
                   alt="Next book"
-                  className="w-20 h-28 object-cover rounded-lg shadow-lg"
+                  className="w-16 h-24 object-cover rounded-lg shadow-lg"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
                     target.src = 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400';
@@ -141,29 +106,29 @@ const BookCarousel = () => {
           </div>
 
           {/* Right Side - Book Information */}
-          <div className="text-white space-y-6">
+          <div className="text-white space-y-6 md:-mt-20">
             {/* Category Badge */}
-            <Badge className="bg-white/20 text-white border-white/30 px-4 py-2 text-sm">
+            <Badge className="bg-white/20 text-white border-white/30 px-4 py-2 text-sm md:mb-6 ">
               {currentBook.category}
             </Badge>
 
             {/* Title with Gradient */}
-            <h1 className="text-5xl md:text-6xl font-bold leading-tight">
+            <h1 className="text-3xl md:text-5xl font-bold leading-tight md:mb-5">
               <span className="bg-gradient-to-r from-yellow-300 via-orange-300 to-pink-300 bg-clip-text text-transparent">
                 {currentBook.title}
               </span>
             </h1>
 
             {/* Author and Age */}
-            <div className="flex items-center gap-4 text-lg">
-              <span className="text-yellow-300 font-semibold">by {currentBook.author}</span>
+            <div className="flex items-center gap-4 md:text-lg">
+              <span className="text-yellow-300 font-semibold py-5">by {currentBook.author}</span>
               <Badge variant="outline" className="border-white/30 text-white">
                 {currentBook.ageRange}
               </Badge>
             </div>
 
             {/* Synopsis */}
-            <p className="text-lg text-white/90 leading-relaxed max-w-xl">
+            <p className="md:text-base text-sm text-white/90 leading-relaxed max-w-xl">
               {currentBook.synopsis.length > 200 
                 ? `${currentBook.synopsis.substring(0, 200)}...` 
                 : currentBook.synopsis}
@@ -174,28 +139,9 @@ const BookCarousel = () => {
               <Link to={`/books/${currentBook.id}`}>
                 <Button size="lg" className="bg-gold-gradient hover:from-yellow-500 hover:to-orange-600 text-white  px-8 py-4  shadow-xl hover:shadow-2xl transition-all duration-300">
                   <BookOpen className="w-5 h-5 mr-2" />
-                  Read More
+                  View Collection
                 </Button>
               </Link>
-              
-              <Button 
-                variant="outline" 
-                size="lg" 
-                className="border-white/30 text-white bg-white/10 hover:bg-white/30 px-8 py-4 "
-                onClick={() => setIsAutoPlaying(!isAutoPlaying)}
-              >
-                {isAutoPlaying ? (
-                  <>
-                    <Heart className="w-5 h-5 mr-2" />
-                    Pause Tour
-                  </>
-                ) : (
-                  <>
-                    <Play className="w-5 h-5 mr-2" />
-                    Resume Tour
-                  </>
-                )}
-              </Button>
             </div>
           </div>
         </div>
