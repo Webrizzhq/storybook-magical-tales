@@ -1,5 +1,8 @@
 import { Mail, Phone, Facebook, Twitter, Instagram } from "lucide-react";
 import { motion } from "framer-motion";
+import { NavLink } from "react-router-dom";
+
+
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -24,31 +27,15 @@ const Footer = () => {
           className="space-y-6"
         >
           <div>
-            <motion.h1
-              className="text-white text-5xl font-pacifico"
-              variants={fadeInUp}
-              custom={0.2}
-            >
-              Redhot Africa
-            </motion.h1>
-            <motion.p
-              className="text-white tracking-[0.2em] text-xs font-bold mt-1"
-              variants={fadeInUp}
-              custom={0.3}
-            >
-              BOOKS TO LOVE
-            </motion.p>
-            <motion.p
-              className="text-[#B39B47] italic text-sm font-semibold"
-              variants={fadeInUp}
-              custom={0.4}
-            >
-              Storymoja Gold Standard
-            </motion.p>
+            <NavLink to="/" className="flex items-center gap-5 text-center">
+                          <img src="/Redhot_logo_curves_white.png" alt="" className=' w-32' />
+                           <img src="/Storymoja_logo_1.png" alt="" className=' w-28' />
+                          
+                        </NavLink>
           </div>
 
           <motion.p
-            className="text-xl font-semibold text-submain leading-relaxed"
+            className="text-xl font-semibold text-yellow-500 leading-relaxed"
             variants={fadeInUp}
             custom={0.5}
           >
@@ -56,34 +43,17 @@ const Footer = () => {
           </motion.p>
 
           <motion.p
-            className="text-submain/90 leading-relaxed"
+            className="text-yellow-400 leading-relaxed"
             variants={fadeInUp}
             custom={0.6}
           >
-            We publish{" "}
-            <span className="font-semibold text-white/80">
-              wild, witty, and wonder-packed African stories
-            </span>{" "}
-            that speak in{" "}
-            <span className="font-semibold">English</span> and whisper in{" "}
-            <span className="italic">Kiswahili, Shona, Acholi, Igbo</span> and{" "}
-            <span className="italic">Ma</span>.
+           
+          Our Redhot Africa books are made with love and heart, and help children imagine, think and learn. Our SHIZU books uncover African's legends and ancient kingdoms. Our SUDEF Wildlife Detectives solve awful crimes against Africa's amazing wildlife. Our REDHOT PICTURE BOOKS are fun, feisty frolics that stimulate imagination and nurture a love of stories. 
           </motion.p>
 
+         
           <motion.p
-            className="text-submain/80 leading-relaxed"
-            variants={fadeInUp}
-            custom={0.7}
-          >
-            From <span className="font-semibold">ancient kingdoms</span> to{" "}
-            <span className="font-semibold">future tech</span>, from{" "}
-            <span className="font-semibold">wildlife detectives</span> to{" "}
-            <span className="font-semibold">warrior queens</span> — our books
-            are made with love, fire, and heart.
-          </motion.p>
-
-          <motion.p
-            className="text-lg font-bold text-submain"
+            className="text-lg font-bold text-yellow-500"
             variants={fadeInUp}
             custom={0.8}
           >
@@ -119,7 +89,7 @@ const Footer = () => {
               ].map((item, i) => (
                 <motion.li
                   key={i}
-                  className="hover:text-white transition-colors duration-200 cursor-pointer"
+                  className="hover:text-white text-yellow-300 transition-colors duration-200 cursor-pointer"
                   variants={fadeInUp}
                   custom={1.2 + i * 0.1}
                 >
@@ -138,13 +108,13 @@ const Footer = () => {
             >
               Contact Us
             </motion.h5>
-            <div className="space-y-4 text-submain/90">
+            <div className="space-y-4 text-yellow-300">
               <motion.div
                 className="flex items-center space-x-3"
                 variants={fadeInUp}
                 custom={1.2}
               >
-                <Mail className="w-5 h-5 text-submain" />
+                <Mail className="w-5 h-5 text-yellow-300" />
                 <span>redhot@storymojaafrica.co.ke</span>
               </motion.div>
               <motion.div
@@ -152,7 +122,7 @@ const Footer = () => {
                 variants={fadeInUp}
                 custom={1.3}
               >
-                <Phone className="w-5 h-5 text-submain" />
+                <Phone className="w-5 h-5 text-yellow-300" />
                 <span>
                   +254 733 838161
                   <br />+254 202 089595
@@ -174,7 +144,7 @@ const Footer = () => {
                   whileTap={{ scale: 0.9 }}
                   transition={{ type: "spring", stiffness: 300 }}
                 >
-                  <Icon className="w-6 h-6 cursor-pointer text-submain/80 hover:text-white" />
+                  <Icon className="w-6 h-6 cursor-pointer text-yellow-300 hover:text-white" />
                 </motion.div>
               ))}
             </motion.div>
@@ -189,7 +159,7 @@ const Footer = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ delay: 2, duration: 0.6 }}
       >
-        <p className="text-xs text-submain/70">
+        <p className="text-xs text-yellow-300">
           © {new Date().getFullYear()} Redhot Africa. All rights reserved.
         </p>
       </motion.div>

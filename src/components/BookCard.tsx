@@ -17,32 +17,9 @@ const BookCard = ({ book, featured = false }: BookCardProps) => {
   const [loaded, setLoaded] = useState(false);
   const imgRef = useRef<HTMLImageElement | null>(null);
 
-  useEffect(() => {
-    const img = imgRef.current;
-    if (!img) return;
+  
 
-    const extractColor = () => {
-      try {
-        const colorThief = new ColorThief();
-        const color = colorThief.getColor(img);
-        const lighten = (v: number) => Math.round(v + (255 - v) * 0.3);
-        setBgColor(
-          `rgb(${lighten(color[0])}, ${lighten(color[1])}, ${lighten(color[2])})`
-        );
-      } catch (error) {
-        console.warn("Color extraction failed, using fallback:", error);
-        setBgColor("rgb(239,68,68)");
-      }
-    };
-
-    if (img.complete) {
-      extractColor();
-    } else {
-      img.addEventListener("load", extractColor);
-    }
-
-    return () => img.removeEventListener("load", extractColor);
-  }, [book.coverImage]);
+    
 
   return (
     <Card
@@ -125,7 +102,7 @@ const BookCard = ({ book, featured = false }: BookCardProps) => {
 
             {/* Synopsis */}
             <p
-              className={`text-sm text-muted-foreground leading-relaxed ${
+              className={`text-sm text-black leading-relaxed ${
                 featured ? "line-clamp-4" : "line-clamp-3"
               }`}
             >

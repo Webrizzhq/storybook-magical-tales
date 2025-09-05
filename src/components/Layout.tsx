@@ -11,14 +11,21 @@ interface LayoutProps {
 
 const Layout = ({ children }: LayoutProps) => {
   const [mobileOpen, setMobileOpen] = useState(false);
-
-  const navItems = [
-    { to: '/', label: 'Home', icon: Sparkles },
-    { to: '/events', label: 'REDHOT LIVE', icon: Calendar },
-    { to: '/books', label: 'Books', icon: BookOpen },
-    { to: '/campaigns', label: 'Campaigns', icon: Users },
-    { to: '/about', label: 'US😁', icon: Info }
-  ];
+const navItems = [
+  { to: '/', label: 'Home', icon: Sparkles },
+  { to: '/events', label: 'REDHOT LIVE', icon: Calendar },
+  { to: '/books', label: 'Books', icon: BookOpen },
+  { to: '/campaigns', label: 'Campaigns', icon: Users },
+  { 
+    to: '/about', 
+    label: (
+      <>
+        US<img src="/emoji.png" alt="emoji" className=" -ml-2 w-7" />
+      </>
+    ), 
+    icon: Info 
+  },
+];
 
   return (
     <div className="min-h-screen bg-background overflow-hidden">
@@ -27,16 +34,10 @@ const Layout = ({ children }: LayoutProps) => {
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <NavLink to="/" className="flex flex-col items-center text-center">
-              <span className="text-white text-2xl font-normal font-pacifico leading-tight">
-                Redhot Africa
-              </span>
-              <span className="text-white tracking-[0.2em] text-xs font-bold mt-[-4px]">
-                BOOKS TO LOVE
-              </span>
-              <span className="text-[#B39B47] italic text-sm font-semibold mt-[-2px]">
-                Storymoja Gold Standard
-              </span>
+            <NavLink to="/" className="flex items-center gap-5 text-center">
+              <img src="/Redhot_logo_curves_white.png" alt="" className=' w-32' />
+               <img src="/Storymoja_logo_1.png" alt="" className=' w-28' />
+              
             </NavLink>
 
             {/* Desktop Navigation */}
@@ -49,7 +50,7 @@ const Layout = ({ children }: LayoutProps) => {
                       className={`gap-2 transition-all duration-300 ${
                         isActive
                           ? 'bg-gold-gradient text-primary-foreground shadow-glow'
-                          : 'hover:bg-primary/10 hover:text-primary text-submain'
+                          : 'hover:bg-primary/10 hover:text-primary text-yellow-500'
                       }`}
                     >
                       <Icon className="w-4 h-4" />

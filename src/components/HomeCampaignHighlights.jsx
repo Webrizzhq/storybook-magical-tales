@@ -11,17 +11,17 @@ export default function HomeCampaignHighlights() {
       title: "The Wild Legacy Campaign",
       goal: "Preserve African wildlife stories in literature",
       description:
-        "Support the creation and distribution of children's books celebrating Africa's rich wildlife heritage, fostering environmental awareness through storytelling.",
+        "Africa's gift to the world is its living model of coexistence with wildlife. By engaging with powerful wildlife stories, this campaign will inspire 1 million Kenyan children to rediscover that heritage and protect their natural world",
       icon: Leaf,
       color: "bg-gradient-forest",
       image: "wild-legacy.png",
     },
     {
       id: 2,
-      title: "Online Safety Campaign",
+      title: "Online Safety Campaign in partnership with Meta",
       goal: "Educate 5,000 children on digital safety",
       description:
-        "Empowering young readers with knowledge to navigate the digital world safely through engaging stories and interactive online safety workshops.",
+        "100+ school book clubs were inspired by stories from Deception and Other Stories to create their own online safety codes",
       icon: Shield,
       color: "bg-gradient-sky",
       image: "online-campaign.png",
@@ -40,11 +40,10 @@ export default function HomeCampaignHighlights() {
           className="text-center mb-16"
         >
           <h2 className="text-5xl font-bold text-primary mb-6 mt-40">
-            Current Campaigns
+            Live Campaigns
           </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            From preserving African wildlife stories to protecting kids online — 
-            our campaigns spark imagination and empower communities.
+          <p className="text-lg text-black max-w-3xl mx-auto">
+            Redhot Experiences bring books to life. Through book clubs, gamified challenges, competitions, immersive launches and musicals, we transform stories into experiences that ignite a love of reading and create lasting change
           </p>
         </motion.div>
 
@@ -85,7 +84,7 @@ export default function HomeCampaignHighlights() {
                   <h3 className="text-xl font-semibold text-yellow-300 mb-2">
                     {campaign.title}
                   </h3>
-                  <p className="text-sm text-white/50 mb-3">{campaign.goal}</p>
+                  <p className="text-sm text-white/80 mb-3">{campaign.goal}</p>
                   <p className="text-white/90 text-base leading-relaxed mb-6 flex-grow">
                     {campaign.description}
                   </p>

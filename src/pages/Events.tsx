@@ -156,8 +156,8 @@ const Events = () => {
 
   return (
     <Layout>
-      {/* Hero */}
-      <section className="relative py-20 bg-gradient-redhot overflow-hidden text-white/50 text-center">
+     
+      <section className="relative py-20 bg-gradient-redhot overflow-hidden text-white text-center h-[400px]">
         <div className="absolute inset-0">
           <img
             src={hero}
@@ -173,13 +173,12 @@ const Events = () => {
           transition={{ duration: 0.8 }}
           className="container mx-auto px-4 relative z-10"
         >
-          <CalendarIcon className="w-16 h-16 mx-auto mb-6" />
-          <h1 className="text-5xl md:text-6xl font-bold mb-4">Redhot Live: From Page to Stage</h1>
-          <p className="text-xl text-white/40 max-w-2xl mx-auto">
-            Celebrate Africa — one Redhot event at a time.
-          </p>
+          
+          <h1 className="text-5xl md:text-6xl font-bold mb-4 mt-20">Redhot Live</h1>
+         
         </motion.div>
       </section>
+      
 
       {/* Around the Corner */}
       <section className="py-20 bg-red-100 dark:bg-red-900">
@@ -196,7 +195,7 @@ const Events = () => {
               Around the Corner
             </Badge>
             <h2 className="text-4xl font-bold text-submain">Don’t Miss These!</h2>
-            <p className="text-muted-foreground mt-2">
+            <p className="text-black mt-2">
               Events with deadlines coming up soon — secure your spot now.
             </p>
           </motion.div>
@@ -221,8 +220,8 @@ const Events = () => {
                         <Badge variant="outline">Upcoming</Badge>
                       </div>
                       <h3 className="text-2xl font-bold text-submain mb-4">{event.title}</h3>
-                      <p className="text-muted-foreground mb-4">{event.description}</p>
-                      <div className="space-y-2 text-muted-foreground text-sm">
+                      <p className="text-black mb-4">{event.description}</p>
+                      <div className="space-y-2 text-black text-sm">
                         <div className="flex gap-2 items-center"><CalendarIcon className="w-4 h-4" /> {formatDate(event.date)}</div>
                         <div className="flex gap-2 items-center"><Clock className="w-4 h-4" /> {event.time}</div>
                         <div className="flex gap-2 items-center"><MapPin className="w-4 h-4" /> {event.location}</div>
@@ -246,7 +245,7 @@ const Events = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-4xl font-bold text-submain text-center mb-12"
+            className="text-4xl font-bold text-yellow-500 text-center mb-12"
           >
             More Upcoming Events
           </motion.h2>
@@ -263,8 +262,8 @@ const Events = () => {
                   <CardContent className="p-6">
                     <Badge className="mb-2 bg-submain/10 text-submain">{event.type}</Badge>
                     <h4 className="text-lg font-semibold text-submain mb-2">{event.title}</h4>
-                    <p className="text-sm text-muted-foreground mb-3">{event.description}</p>
-                    <div className="space-y-1 text-muted-foreground text-sm">
+                    <p className="text-sm text-black mb-3">{event.description}</p>
+                    <div className="space-y-1 text-black text-sm">
                       <div className="flex gap-2 items-center"><CalendarIcon className="w-4 h-4" /> {formatDate(event.date)}</div>
                       <div className="flex gap-2 items-center"><Clock className="w-4 h-4" /> {event.time}</div>
                       <div className="flex gap-2 items-center"><MapPin className="w-4 h-4" /> {event.location}</div>
@@ -289,7 +288,7 @@ const Events = () => {
         >
           <BookOpen className="w-16 h-16 mx-auto mb-4 text-submain" />
           <h2 className="text-3xl font-bold text-submain mb-2">Event Calendar</h2>
-          <p className="text-muted-foreground mb-6 max-w-xl mx-auto">
+          <p className="text-black mb-6 max-w-xl mx-auto">
             See all upcoming events in calendar view — then download to keep track.
           </p>
 
@@ -334,7 +333,7 @@ const Events = () => {
             </Button>
           </motion.div>
 
-          <p className="text-sm text-muted-foreground mt-3">
+          <p className="text-sm text-black mt-3">
             {selectedFormat === 'ics'
               ? 'Download as ICS file to import into your calendar app (Google Calendar, Outlook, etc.)'
               : 'Download as text file for printing or manual entry'}

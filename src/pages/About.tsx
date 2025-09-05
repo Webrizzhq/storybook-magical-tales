@@ -55,33 +55,27 @@ const About = () => {
     <Layout>
       {/* Hero Section with Background Image */}
       <section
-        className="relative py-20 bg-main overflow-hidden "
+        className="relative py-20 bg-main overflow-hidden h-[400px] "
         
       >
         <div className="absolute inset-0">
                   <img
-                    src='about-hero.png' // <-- replace with your own image path
+                    src='about-hero.png' 
                     alt="Books background"
                     className="w-full h-full object-cover opacity-20"
                   />
-                  <div className="absolute inset-0 bg-main/20" /> {/* overlay */}
+                  <div className="absolute inset-0 bg-main/20" /> 
                 </div>
 
        
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center max-w-4xl mx-auto text-white">
-            <Sparkles className="w-16 h-16 mx-auto mb-6 animate-sparkle text-gold-400" />
-            <h1 className="text-3xl md:text-6xl font-bold mb-6 drop-shadow-lg">
+        
+            <h1 className="text-3xl md:text-6xl font-bold mb-6 drop-shadow-lg mt-20">
               Our Story
             </h1>
-            <p className="md:text-xl text- text-white/90 leading-relaxed drop-shadow">
-              When you can't see yourself in the story, flip the script.
-              <br /><br />
-              Redhot Africa books star smart African kids who solve, invent, rebel
-              and rise. They are not waiting for rescue, they are not sidekicks or victims.
-              They are the main characters reimagining Africa on their own terms.
-            </p>
+            
           </div>
         </div>
       </section>
@@ -98,10 +92,10 @@ const About = () => {
               <h2 className="text-4xl font-bold text-submain mb-6">
                 Relevant stories rooted in Africanicity
               </h2>
-              <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+              <p className="text-lg text-black leading-relaxed mb-6">
                 Ignite young minds everywhere.
               </p>
-              <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+              <p className="text-lg text-black leading-relaxed mb-8">
                 Build a global community of storytellers, dreamers and rebels.
               </p>
               <div className="flex gap-4">
@@ -144,10 +138,10 @@ const About = () => {
       <section className="py-20 bg-main">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-submain mb-6">
+            <h2 className="text-4xl font-bold text-yellow-500 mb-6">
               What do we stand for?
             </h2>
-            <p className="text-xl text-muted-foreground max-w-4xl mx-auto">
+            <p className="text-xl text-white max-w-4xl mx-auto">
               We tell stories that taste like nyama choma and sound like the stomp of Zulu dancers when their feet hit the ground. We re-vibrate excitement into childrens' minds by drawing universes where they are heroes. Redhot Africa is where imagination meets identity. We publish books that make kids laugh, gasp, question and cheer, all the while proudly repping African Culture.
             </p>
           </div>
@@ -166,7 +160,7 @@ const About = () => {
                   <h3 className="text-xl font-bold text-submain mb-4">
                     {value.title}
                   </h3>
-                  <p className="text-muted-foreground leading-relaxed">
+                  <p className="text-black leading-relaxed">
                     {value.description}
                   </p>
                 </CardContent>
@@ -187,7 +181,7 @@ const About = () => {
             <h2 className="text-4xl font-bold text-submain mb-6">
               Our Leadership
             </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-xl text-black max-w-2xl mx-auto">
               Guided by experience, creativity, and passion for African storytelling.
             </p>
           </div>

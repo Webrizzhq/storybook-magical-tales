@@ -11,7 +11,16 @@ const BookCarousel = () => {
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const [imageLoadedMap, setImageLoadedMap] = useState<{ [id: string]: boolean }>({});
 
-  const allBooks = books.slice(0, 8);
+  // Helper to extract the minimum age number from the ageRange
+  const getMinAge = (range: string) => {
+    const match = range.match(/\d+/);
+    return match ? parseInt(match[0], 10) : 0;
+  };
+
+  // Sort by youngest → oldest
+  const allBooks = [...books]
+    .sort((a, b) => getMinAge(b.ageRange) - getMinAge(a.ageRange))
+    
 
   // Auto-advance carousel
   useEffect(() => {
@@ -34,7 +43,7 @@ const BookCarousel = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#660000] via-[#670000] to-[#630000] pb-40 ">
-      <div className="container mx-auto px-4 relative z-10 mt-10">
+      <div className="container mx-auto px-4 relative z-10 mt-5">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
 
           {/* Left Side - Book Showcase */}
@@ -49,7 +58,10 @@ const BookCarousel = () => {
                 className="relative group"
               >
                 <div className="relative bg-transparent rounded-2xl p-5 shadow-2xl">
-                  
+                  <Badge className="bg-white/20 text-white border-white/30 px-4 py-2 text-sm ">
+                    {currentBook.category}
+                  </Badge>
+
                   {/* Spinner */}
                   {!imageLoadedMap[currentBook.id] && (
                     <div className="absolute inset-0 flex items-center justify-center">
@@ -95,14 +107,15 @@ const BookCarousel = () => {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -50 }}
               transition={{ duration: 0.5, ease: "easeOut" }}
-              className="text-white space-y-6 md:-mt-20"
+              className="text-white space-y-6 md:-mt-14"
             >
-              <Badge className="bg-white/20 text-white border-white/30 px-4 py-2 text-sm md:mb-6 ">
-                {currentBook.category}
-              </Badge>
+
+              <Badge variant="outline" className="border-white/50 text-white px-4 py-2">
+                  {currentBook.ageRange} years
+                </Badge>
 
               <h1 className="text-3xl md:text-5xl font-bold leading-tight md:mb-5">
-                <span className="bg-gradient-to-r from-yellow-300 via-orange-300 to-pink-300 bg-clip-text text-transparent">
+                <span className="bg-yellow-500 bg-clip-text text-transparent">
                   {currentBook.title}
                 </span>
               </h1>
@@ -111,9 +124,7 @@ const BookCarousel = () => {
                 <span className="text-yellow-300 font-semibold py-5">
                   by {currentBook.author}
                 </span>
-                <Badge variant="outline" className="border-white/30 text-white">
-                  {currentBook.ageRange}
-                </Badge>
+               
               </div>
 
               <p className="md:text-base text-sm text-white/90 leading-relaxed max-w-xl">

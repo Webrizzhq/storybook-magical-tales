@@ -116,11 +116,11 @@ const Campaigns = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-redhot overflow-hidden">
+      <section className="relative py-20 bg-gradient-redhot h-[400px] overflow-hidden">
 
         <div className="absolute inset-0">
           <img
-            src={hero} // <-- replace with your own image path
+            src={hero} 
             alt="Books background"
             className="w-full h-full  object-cover opacity-20"
           />
@@ -130,17 +130,11 @@ const Campaigns = () => {
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center max-w-3xl mx-auto text-white">
-            <Heart className="w-16 h-16 mx-auto mb-6 animate-bounce-gentle" />
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">
+         
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 mt-20">
               Reading Campaigns
             </h1>
-            <p className="text-xl text-white/80 leading-relaxed">
-              When kids read tales rooted in their heritage, they grow taller in spirit and
-              bolder in thought. 
-              <br /><br />
-              Our campaigns put African books into the hands of the next generation so
-              they can imagine more, believe bigger and be the leaders Africa aspires for.
-            </p>
+           
           </div>
         </div>
       </section>
@@ -155,7 +149,7 @@ const Campaigns = () => {
             <h2 className="text-4xl font-bold text-primary mb-4">
               Our Current Priorities
             </h2>
-            <p className="text-lg text-muted-foreground">
+            <p className="text-lg text-black">
               These two campaigns are at the heart of our mission right now —
               preserving African heritage and empowering the next generation with
               safe, inspiring stories.
@@ -169,11 +163,11 @@ const Campaigns = () => {
                   <div className={`w-20 h-20 ${campaign.color} rounded-full flex items-center justify-center mb-6`}>
                     <campaign.icon className="w-10 h-10 text-white" />
                   </div>
-                  <h3 className="text-3xl font-bold text-primary mb-4">{campaign.title}</h3>
-                  <p className="text-muted-foreground mb-6 leading-relaxed">{campaign.description}</p>
+                  <h3 className="text-3xl font-bold text-yellow-500 mb-4">{campaign.title}</h3>
+                  <p className="text-white mb-6 leading-relaxed">{campaign.description}</p>
                   <div className="bg-muted/50 rounded-lg p-4 mb-6">
                     <h4 className="font-semibold text-foreground mb-2">Impact So Far:</h4>
-                    <p className="text-sm text-foreground">{campaign.impact}</p>
+                    <p className="text-sm text-black">{campaign.impact}</p>
                   </div>
                   <div className="flex gap-4 mt-auto">
                     <Button className="bg-gold-gradient hover:shadow-glow">Support</Button>
@@ -197,7 +191,7 @@ const Campaigns = () => {
             <h2 className="text-4xl font-bold text-primary mb-4">
               Excite. Empower. Inspire.
             </h2>
-            <p className="text-lg text-muted-foreground">
+            <p className="text-lg text-black">
               Beyond our top priorities, these featured campaigns are shaping
               communities and building a love for African literature.
             </p>
@@ -212,14 +206,14 @@ const Campaigns = () => {
                       <campaign.icon className="w-8 h-8 text-white" />
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-2xl font-bold text-primary mb-2">{campaign.title}</h3>
-                      <p className="text-muted-foreground text-sm">{campaign.goal}</p>
+                      <h3 className="text-2xl font-bold text-yellow-500 mb-2">{campaign.title}</h3>
+                      <p className="text-white text-sm">{campaign.goal}</p>
                     </div>
                   </div>
-                  <p className="text-muted-foreground mb-6 leading-relaxed">{campaign.description}</p>
+                  <p className="text-white mb-6 leading-relaxed">{campaign.description}</p>
                   <div className="bg-muted/50 rounded-lg p-4 mb-6">
-                    <h4 className="font-semibold text-foreground mb-2">Impact So Far:</h4>
-                    <p className="text-sm text-foreground">{campaign.impact}</p>
+                    <h4 className="font-semibold text-black mb-2">Impact So Far:</h4>
+                    <p className="text-sm text-black">{campaign.impact}</p>
                   </div>
                   <div className="flex gap-3">
                     <Button className="flex-1 bg-gold-gradient hover:shadow-glow">Support</Button>
@@ -239,7 +233,7 @@ const Campaigns = () => {
             <h2 className="text-4xl font-bold text-primary mb-4">
               Push the Plot Forward
             </h2>
-            <p className="text-lg text-muted-foreground">
+            <p className="text-lg text-black">
               Every campaign adds a new chapter to Africa’s story. Explore more
               ways you can make a difference in young readers’ lives.
             </p>
@@ -254,13 +248,13 @@ const Campaigns = () => {
                       <campaign.icon className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold text-primary">{campaign.title}</h3>
-                      <p className="text-sm text-muted-foreground">{campaign.goal}</p>
+                      <h3 className="text-xl font-bold text-yellow-500">{campaign.title}</h3>
+                      <p className="text-sm text-white">{campaign.goal}</p>
                     </div>
                   </div>
-                  <p className="text-muted-foreground text-sm mb-4 leading-relaxed">{campaign.description}</p>
+                  <p className="text-white text-sm mb-4 leading-relaxed">{campaign.description}</p>
                   <div className="rounded-lg p-3 mb-4">
-                    <p className="text-xs text-muted-foreground">{campaign.impact}</p>
+                    <p className="text-xs text-white">{campaign.impact}</p>
                   </div>
                   <Button variant="outline" className="w-full hover:bg-primary hover:text-primary-foreground">
                     Join Campaign
