@@ -17,6 +17,8 @@ import { useLocation } from "react-router-dom";
 import ScrollToTopButton from "./components/ui/ScrollToTopButton";
 import DarkModeToggle from "./components/ui/DarkModeToggle";
 import { AnimatedLayout } from "./components/AnimatedLayout";
+import Retail from "./pages/Retail";
+import FAQ from "./pages/FAQ";
 
 const queryClient = new QueryClient();
 
@@ -39,6 +41,8 @@ const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/gamification" element={<GamificationPage />} />
           <Route path="/calendar" element={<CalendarPage />} />
+          <Route path="/retail" element={<Retail />} />
+          <Route path="/faq" element={<FAQ />} />
           </Route>
           
 

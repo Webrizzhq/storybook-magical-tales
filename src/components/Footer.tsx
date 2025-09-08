@@ -39,7 +39,7 @@ const Footer = () => {
             variants={fadeInUp}
             custom={0.5}
           >
-            Books that burn boring to the ground.
+            Books that burn boring to the ground!
           </motion.p>
 
           <motion.p

@@ -24,19 +24,26 @@ const BooksGridSkeleton = () => {
 // Mapping display categories to actual book categories
 const categoryMap = {
   "All Books": "All Books",
-  "RedHot Picture Books (< 8yrs)": "Picture Books",
-  "SUDEF ( 8-10 yrs )": "SUDEF Wildlife Detective Fiction",
-  "Shizu ( 10 - 14 yrs )": "Shizu Historical Fiction",
-  "Best African Series (13+ yrs )": "Best African Series",
+  "Redhot Novels (+15 years)": "Redhot Novels",
+  "Shizu Historical Series (+14 years)": "Shizu Historical Series",
+  "Best African Series (13+ years)": "Best African Series",
+  "SUDEF Wildlife Detective Series (8–11 years)": "SUDEF Wildlife Detective Series",
+  "Case Crackers (7–8 years)": "Case Crackers",
+  "Redhot Picture Books (<9 years)": "Redhot Picture Books",
+  "Redhot Reality (All Ages)": "Redhot Reality",
 };
 
 // Display order from oldest to youngest
 const categoryAgeOrder = [
-  "Best African Series (13+ yrs )",
-  "Shizu ( 10 - 14 yrs )",
-  "SUDEF ( 8-10 yrs )",
-  "RedHot Picture Books (< 8yrs)",
+  "Redhot Novels (+15 years)",
+  "Shizu Historical Series (+14 years)",
+  "Best African Series (13+ years)",
+  "SUDEF Wildlife Detective Series (8–11 years)",
+  "Case Crackers (7–8 years)",
+  "Redhot Picture Books (<9 years)",
+  "Redhot Reality (All Ages)", // stays last since it’s universal
 ];
+
 
 const Books = () => {
   const [selectedCategory, setSelectedCategory] = useState("All Books");
@@ -85,11 +92,16 @@ const Books = () => {
           <div className="absolute inset-0 bg-main/20" />
         </div>
         <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center max-w-3xl mx-auto">
+          <div className="text-center  mx-auto">
             
-            <h1 className="text-3xl md:text-6xl mt-20 font-bold text-white mb-6 drop-shadow-lg">
-              Our Books
+            <h1 className="text-3xl md:text-5xl mt-8 font-bold text-white mb-14 drop-shadow-lg">
+              Redhot Page Turners & Mind Twisters 
             </h1>
+
+            <p className="text-lg text-gray-200">Explore our curated collection of African Children’s Literature.
+African History Reloaded. Culture Remixed. Claws, Clues and Cunning kids. 
+Redhot Books star African children who solve, invent, rebel and rise. They do not wait for rescue. They are not sidekicks or victims. They are the main characters reimagining Africa on their own terms.
+</p>
             
           </div>
         </div>

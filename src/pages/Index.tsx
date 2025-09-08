@@ -48,7 +48,7 @@ const seriesCategories = [
               Read Redhot Africa
             </Badge>
             <h2 className="text-3xl font-bold text-yellow-400 mb-6">
-              SMART STORIES FOR SHARP KIDS
+              SMART STORIES FOR SHARP MINDS
             </h2>
             <p className="text-lg text-white/90 max-w-2xl mx-auto">
               Fuel for curious minds. Books with a Redhot Africa spine because bland stories are for

@@ -10,14 +10,14 @@ export interface Book {
 }
 
 export const books: Book[] = [
-  // Historical Fiction
+  // 🔹 Shizu Historical Series
   {
     id: "queen-mkabayi",
     title: "Queen Mkabayi Zulu Kingmaker",
     author: "Hellen Akeyo",
-    category: "Shizu Historical Fiction",
-    ageRange: "Ages 11–13",
-    synopsis: "Twins, Kaya and Vusi time travel to the 18th Century Zulu Kingdom, in present-day South Africa. The king is dead and powerful Ndwandwe warriors fight to take over the Zulu Kingdom. How much blood will Queen Mkabayi need to spill to impose a suitable Zulu king? Will the twins survive the war and make it back home?",
+    category: "Shizu Historical Series",
+    ageRange: "+14 years",
+    synopsis: "Twins, Kaya and Vusi time travel to the 18th Century Zulu Kingdom...",
     coverImage: '/BookCovers/Queen Mkabayi mock-up 1.png',
     featured: true
   },
@@ -25,9 +25,9 @@ export const books: Book[] = [
     id: "princess-njinga",
     title: "Princess Njinga Bane of the Portuguese",
     author: "Emily Khalayi Wekulo",
-    category: "Shizu Historical Fiction",
-    ageRange: "Ages 11–13",
-    synopsis: "Twins Lara and Moises time travel back to the 17th century Ndongo kingdom, in the country now known as Angola. The kingdom is under attack. Can Princess Njinga, a fierce warrior leader, protect the kingdom from dangerous Imbangala warriors and powerful Portuguese invaders? Will the twins survive the attacks and make it back home?",
+    category: "Shizu Historical Series",
+    ageRange: "+14 years",
+    synopsis: "Twins Lara and Moises time travel back to the 17th century Ndongo kingdom...",
     coverImage: '/BookCovers/Princess Njinga mock-up 1.png',
     featured: true
   },
@@ -35,38 +35,57 @@ export const books: Book[] = [
     id: "two-faces-chief-odera",
     title: "Two Faces of Chief Odera",
     author: "Michael Oluoch",
-    category: "Shizu Historical Fiction",
-    ageRange: "Ages 11–13",
-    synopsis: "When Apiyo and Odongo are zapped back to 1915 Kenya, they encounter the formidable Chief Odera Akang'o, who is pushing his people to adopt what seem to them strange and dangerous ideas. His council of elders lead a rebellion against the radical reforms. As tensions rise and the threat of civil war looms, Apiyo and Odongo find themselves caught in the crossfire.",
+    category: "Shizu Historical Series",
+    ageRange: "+14 years",
+    synopsis: "When Apiyo and Odongo are zapped back to 1915 Kenya...",
     coverImage: '/BookCovers/Two Faces of Chief Odera mock-up 1.png'
   },
   {
     id: "calamity-of-the-kasigau",
     title: "Calamity of the Kasigau",
     author: "Makenzi K.G",
-    category: "Shizu Historical Fiction",
-    ageRange: "Ages 11–13",
-    synopsis: "In a time-travel twist, twins, Safari and Betty, land in the Kasigau community on the border of Kenya and Tanzania, during the First World War. As the Kasigau cannot tell apart sworn enemies – British and German colonial soldiers – they end up betraying one to the other. Deemed traitors, they are condemned to die. Safari, Betty and their new-found Kasigau family are compelled to embark on a journey where danger looms at every turn. Will the twins make it out alive? Will the Kasigau survive or be silenced forever?",
+    category: "Shizu Historical Series",
+    ageRange: "+14 years",
+    synopsis: "In a time-travel twist, twins, Safari and Betty, land in the Kasigau community...",
     coverImage: "/BookCovers/Calamity of the Kasigau mock-up 1.png"
   },
   {
     id: "janga-la-wakasigau",
     title: "Janga La Wakasigau",
     author: "Makenzi K.G",
-    category: "Shizu Historical Fiction",
-    ageRange: "Ages 11–13",
-    synopsis: "Katika msuko wa safari ya wakati, Safari na Betty, ambao ni mapacha, wanajipata katikati ya jamii ya Wakasigau wanaoishi kwenye mpaka wa Kenya na Tanzania, wakati wa Vita Vikuu vya Kwanza vya Dunia. Kwa vile Wakasigau hawakuweza kuwatofautisha maadui sugu – wanajeshi wa kikoloni wa Uingereza na Ujerumani, wanadaiwa kusaliti mrengo mmoja dhidi ya mwingine. Kutokana na tuhuma ya uhaini, wanahukumiwa kifo. Safari, Betty na familia yao mpya ya Wakasigau wanalazimishwa kufunga safari hatari ambayo inawakutanisha na balaa bin beluwa kwa kila hatua wanayosonga. Je, mapacha hao watanusurika? Je, Wakasigau wataishi au watanyamazishwa milele?",
+    category: "Shizu Historical Series",
+    ageRange: "+14 years",
+    synopsis: "Katika msuko wa safari ya wakati, Safari na Betty...",
     coverImage: "/BookCovers/Janga la Wakasigau Cover- mock-up.png"
   },
+  // Coming soon
+  {
+    id: "rwot-awic",
+    title: "Rwot Awic Defender of the Acoli",
+    author: "TBD",
+    category: "Shizu Historical Series",
+    ageRange: "+14 years",
+    synopsis: "Coming soon...",
+    coverImage: ""
+  },
+  {
+    id: "mekatilili",
+    title: "Mekatilili the Drumbeat of Freedom",
+    author: "TBD",
+    category: "Shizu Historical Series",
+    ageRange: "+14 years",
+    synopsis: "Coming soon...",
+    coverImage: ""
+  },
 
-  // Wildlife Detective Fiction
+  // 🔹 SUDEF Wildlife Detective Series
   {
     id: "targeted-turtles",
     title: "Case of Targeted Turtles",
     author: "Shaleen Keshavjee-Gulam",
-    category: "SUDEF Wildlife Detective Fiction",
-    ageRange: "Ages 8–10",
-    synopsis: "Sandeep promises his dying grandfather to protect the eggs of endangered green turtles. Also, someone is poaching the turtles and their eggs are in grave danger. Will Sandeep and his fellow wildlife detectives, Kendi and Lemunyatta, solve the mystery of the disappearing turtles and protect the eggs before they hatch?",
+    category: "SUDEF Wildlife Detective Series",
+    ageRange: "8–11 years",
+    synopsis: "Sandeep promises his dying grandfather to protect the eggs of endangered green turtles...",
     coverImage: '/BookCovers/The Case of Targeted Turtles mock-up 1.png',
     featured: true
   },
@@ -74,85 +93,172 @@ export const books: Book[] = [
     id: "kisa-cha-kasa-wanaolengwa",
     title: "Kisa Cha Kasa Wanaolengwa",
     author: "Shaleen Keshavjee-Gulam",
-    category: "SUDEF Wildlife Detective Fiction",
-    ageRange: "Ages 8–10",
-    synopsis: "Sandeep ana hamu ya kuwatazama kasa wakianguliwa ufukweni pamoja na babu yake. Sasa babu yake ni mgonjwa na mayai ya kasa yametoweka. Je, yeye na marafiki zake wadogo wataweza kufumbua fumbo hilo?",
+    category: "SUDEF Wildlife Detective Series",
+    ageRange: "8–11 years",
+    synopsis: "Sandeep ana hamu ya kuwatazama kasa wakianguliwa ufukweni...",
     coverImage: "/BookCovers/Kisa Cha Kasa  Cover mockup - 2.png"
   },
   {
     id: "persecuted-pangolins",
     title: "Case of Persecuted Pangolins",
     author: "Muthoni Wa Gichuru",
-    category: "SUDEF Wildlife Detective Fiction",
-    ageRange: "Ages 8–10",
-    synopsis: "Vaati wants to help her father show researchers pangolins near village. But someone is digging up burrows and her father disappears. What can she do? Groundbreaking stories by African writers exploring issues about our wildlife Heritage.",
+    category: "SUDEF Wildlife Detective Series",
+    ageRange: "8–11 years",
+    synopsis: "Vaati wants to help her father show researchers pangolins near village...",
     coverImage: '/BookCovers/The Case of Persecuted Pangolins mock-up 1.png'
   },
   {
     id: "case-of-the-prowling-panther",
     title: "Case of the Prowling Panther",
     author: "Vaishnavi Ram Mohan",
-    category: "SUDEF Wildlife Detective Fiction",
-    ageRange: "Ages 8–10",
-    synopsis: "Lemunyatta hoped to see fabled black panther during a visit to its forest home. But rumours are rife saying the black panther is an evil curse. Can she separate the facts from fiction? Groundbreaking stories by African writers exploring issues about our wildlife Heritage.",
+    category: "SUDEF Wildlife Detective Series",
+    ageRange: "8–11 years",
+    synopsis: "Lemunyatta hoped to see fabled black panther during a visit...",
     coverImage: "/BookCovers/The Case of the Prowiling Panther mock-up 1.png"
   },
+  {
+    id: "jinxed-giraffes",
+    title: "The Case of the Jinxed Giraffes",
+    author: "TBD",
+    category: "SUDEF Wildlife Detective Series",
+    ageRange: "8–11 years",
+    synopsis: "Coming soon...",
+    coverImage: ""
+  },
 
-  // Picture Books
+  // 🔹 Case Crackers
+  {
+    id: "missing-set",
+    title: "Mystery of the Missing Set",
+    author: "TBD",
+    category: "Case Crackers",
+    ageRange: "7–8 years",
+    synopsis: "Coming soon...",
+    coverImage: ""
+  },
+  {
+    id: "absent-scouts",
+    title: "Mystery of the Absent Scouts Uniforms",
+    author: "TBD",
+    category: "Case Crackers",
+    ageRange: "7–8 years",
+    synopsis: "Coming soon...",
+    coverImage: ""
+  },
+  {
+    id: "lost-child",
+    title: "Mystery of the Lost Child",
+    author: "TBD",
+    category: "Case Crackers",
+    ageRange: "7–8 years",
+    synopsis: "Coming soon...",
+    coverImage: ""
+  },
+  {
+    id: "crazy-drawings",
+    title: "Mystery of the Crazy Drawings",
+    author: "TBD",
+    category: "Case Crackers",
+    ageRange: "7–8 years",
+    synopsis: "Coming soon...",
+    coverImage: ""
+  },
+
+  // 🔹 Redhot Picture Books
   {
     id: "matatu-from-watamu",
-    title: "Matatu From Watamu",
+    title: "The Matatu from Watamu Drove into the Sea",
     author: "Muthoni Muchemi",
-    category: "Picture Books",
-    ageRange: "Ages 5–7",
-    synopsis: "A Rasta driver drives his matatu into the deep blue Indian Ocean. Hoping to make lots of money from shy passengers, he hires an octopus as his tout. When the matatu drives as badly in the sea as it does on land, sea creatures are shocked and outraged. Read along, cheering for or against the Matatu From Watamu.",
+    category: "Redhot Picture Books",
+    ageRange: "<9 years",
+    synopsis: "A Rasta driver drives his matatu into the deep blue Indian Ocean...",
     coverImage: '/BookCovers/The Matatu from Watamu mockup 3.png'
   },
   {
-    id: "koko-riko-african-tales",
-    title: "Koko Riko African Tales",
+    id: "koko-riko",
+    title: "Koko Riko",
     author: "Muthoni Muchemi",
-    category: "Picture Books",
-    ageRange: "Ages 5–7",
-    synopsis: "Join Koko Riko as he faces off against shadow monsters, belts out tunes in unexpected places, and finds himself in the middle of a cat-astrophe. You'll be left clucking for more Koko Riko adventures!",
+    category: "Redhot Picture Books",
+    ageRange: "<9 years",
+    synopsis: "Join Koko Riko as he faces off against shadow monsters...",
     coverImage: "/BookCovers/Koko Riko mockup 3.png"
   },
   {
     id: "boy-and-lion",
     title: "The Boy and the Lion",
     author: "Mike Saito with Turk Pipkin",
-    category: "Picture Books",
-    ageRange: "Ages 5–7",
-    synopsis: "Five-year-old Sitoti is lost and alone in the vast Mara far from his Maasai village. As the sun begins to set, a pair of glowing eyes watches him from the tall grass. What happens next will change his life forever.",
+    category: "Redhot Picture Books",
+    ageRange: "<9 years",
+    synopsis: "Five-year-old Sitoti is lost and alone in the vast Mara...",
     coverImage: '/BookCovers/The Boy and the Lion eng mockup 3.png'
   },
   {
     id: "mvulana-na-simba",
     title: "Mvulana na Simba",
     author: "Mike Saito with Turk Pipkin",
-    category: "Picture Books",
-    ageRange: "Ages 5–7",
-    synopsis: "Saitoti, mwenye umri wa miaka mitano, amepotea na yuko peke yake katika eneo kubwa la Maasai Mara, mbali na kijiji chake cha Maasai. Jua linapoanza kuchwa, macho yanayong'aa yanamwangalia kutoka kwenye nyasi ndefu. Kinachotokea baadaye kitabadilisha maisha yake milele.",
+    category: "Redhot Picture Books",
+    ageRange: "<9 years",
+    synopsis: "Saitoti, mwenye umri wa miaka mitano, amepotea na yuko peke yake...",
     coverImage: "/BookCovers/Book mock-up kiswahili 2.png"
   },
   {
-    id: "enkatini-e-nyayioni-o-lowuaru",
+    id: "enkatini-e-nyayioni",
     title: "Enkatini e-nyayioni o-lowuaru",
     author: "Mike Saito with Turk Pipkin",
-    category: "Picture Books",
-    ageRange: "Ages 5–7",
-    synopsis: "Ore Saitoti naa enkayioni kiti oolarin imiet. Eimina ninye te Maasai Mara, nelo alakwaniki emurua namanya oshi ninche. Ore peyie eiteru enkolong' adoyio, nedol inkonyek are naalioo eitiil tiatua irkujit in'gorita ninye. Ore I'mbaa naasuju neibelekeny enkishui enye intarasi.",
+    category: "Redhot Picture Books",
+    ageRange: "<9 years",
+    synopsis: "Ore Saitoti naa enkayioni kiti oolarin imiet...",
     coverImage: "/BookCovers/Book mock-up Maasai 1.png"
   },
+  {
+    id: "forever-tree",
+    title: "The Forever Tree",
+    author: "TBD",
+    category: "Redhot Picture Books",
+    ageRange: "<9 years",
+    synopsis: "Coming soon...",
+    coverImage: ""
+  },
+  {
+    id: "rhino-book",
+    title: "My Amazing Rhino Book",
+    author: "TBD",
+    category: "Redhot Picture Books",
+    ageRange: "<9 years",
+    synopsis: "Coming soon...",
+    coverImage: ""
+  },
 
-  // Best African Series
+  // 🔹 Redhot Novels
+  {
+    id: "infestations",
+    title: "Infestations",
+    author: "TBD",
+    category: "Redhot Novels",
+    ageRange: "+15 years",
+    synopsis: "Coming soon...",
+    coverImage: ""
+  },
+
+  // 🔹 Redhot Reality
+  {
+    id: "our-african-animals",
+    title: "Our African Animals",
+    author: "TBD",
+    category: "Redhot Reality",
+    ageRange: "All Ages",
+    synopsis: "Coming soon...",
+    coverImage: ""
+  },
+
+  // 🔹 Best African Series (kept from old list)
   {
     id: "deception-and-other-stories",
     title: "Deception and Other Stories",
     author: "Multiple Authors",
     category: "Best African Series",
-    ageRange: "Ages 14–15",
-    synopsis: "See the world from an insider's point of view. In Deception, feel the thrill of online gambling with Amadi as he seeks to finance the soft life he desires. In Where Pumpkin Leaves Dwell, experience the life of a young girl left in the village with her grandparents when her mother leaves for school in the city. In #Good Times Ahead, find out if a lifelong friendship can survive online trolling and social class differences. See how a coastal community grapples with the wrath of an ancient sea god in The God of the Sea. These and more are the thought-provoking, terrifying and intriguing stories you will interact with in this outstanding collection.",
+    ageRange: "13+ years",
+    synopsis: "See the world from an insider's point of view...",
     coverImage: "/BookCovers/Deception mock-up 1.png",
     featured: true
   },
@@ -161,29 +267,30 @@ export const books: Book[] = [
     title: "Zero Tolerance and Other Stories",
     author: "Multiple Authors",
     category: "Best African Series",
-    ageRange: "Ages 14–15",
-    synopsis: "In a world that demands Zero Tolerance for injustice, these powerful African stories illuminate paths of resistance and hope. From the darkened depths of a sunless world to the bright halls of an elite school, the anthology explores corruption, identity, and the courage to stand up for what's right.",
-    coverImage: '/BookCovers/Zero Tolerance mock-up 1.png',
-    
+    ageRange: "13+ years",
+    synopsis: "In a world that demands Zero Tolerance for injustice...",
+    coverImage: '/BookCovers/Zero Tolerance mock-up 1.png'
   },
   {
     id: "fire-within",
     title: "A Fire Within and Other Stories",
     author: "Multiple Authors",
     category: "Best African Series",
-    ageRange: "Ages 14–15",
-    synopsis: "A Fire Within and Other Stories is an anthology of short stories, written by award-winning authors from across Africa, to highlight or address the African continent's social and political issues.",
+    ageRange: "13+ years",
+    synopsis: "A Fire Within and Other Stories is an anthology of short stories...",
     coverImage: '/BookCovers/A Fire Within mock-up 1.png'
   }
 ];
 
 export const categories = [
   "All Books",
-  "RedHot Picture Books (< 8yrs)",
-  "SUDEF ( 9-12 yrs )",
-  "Shizu ( 10 - 14 yrs )",
-  "Best African Series (13+ yrs )", 
-  
+  "Redhot Novels (+15 years)",
+  "Shizu Historical Series (+14 years)",
+  "SUDEF Wildlife Detective Series (8–11 years)",
+  "Case Crackers (7–8 years)",
+  "Redhot Picture Books (<9 years)",
+  "Redhot Reality (All Ages)",
+  "Best African Series (13+ years)"
 ];
 
 export const getFeaturedBooks = () => books.filter(book => book.featured);
@@ -191,8 +298,7 @@ export const getBooksByCategory = (category: string) =>
   category === "All Books" ? books : books.filter(book => book.category === category);
 export const getBookById = (id: string) => books.find(book => book.id === id);
 
-export const getBooksByAge = (ageRange: string) => 
+export const getBooksByAge = (ageRange: string) =>
   ageRange === "All Ages"
     ? books
-    : books.filter(book => book.ageRange.includes(ageRange.split(" ")[1])); 
-
+    : books.filter(book => book.ageRange.includes(ageRange.split(" ")[0]));

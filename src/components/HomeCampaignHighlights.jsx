@@ -96,7 +96,7 @@ export default function HomeCampaignHighlights() {
                         size="sm"
                         className="bg-gold-gradient text-white px-6 py-2 rounded-lg hover:shadow-md transition-all duration-300"
                       >
-                        Support Campaign
+                        Get Involved
                       </Button>
                     </motion.div>
                   </Link>

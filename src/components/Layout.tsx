@@ -13,14 +13,16 @@ const Layout = ({ children }: LayoutProps) => {
   const [mobileOpen, setMobileOpen] = useState(false);
 const navItems = [
   { to: '/', label: 'Home', icon: Sparkles },
-  { to: '/events', label: 'REDHOT LIVE', icon: Calendar },
   { to: '/books', label: 'Books', icon: BookOpen },
+  { to: '/events', label: 'Events', icon: Calendar },
   { to: '/campaigns', label: 'Campaigns', icon: Users },
+  { to: '/retail', label: 'Redhot-Retail', icon: Users },
+  { to: '/faq', label: 'FAQ', icon: Users },
   { 
     to: '/about', 
     label: (
       <>
-        US<img src="/emoji.png" alt="emoji" className=" -ml-2 w-7" />
+        Team<img src="/emoji.png" alt="emoji" className=" -ml-2 w-7" />
       </>
     ), 
     icon: Info 
@@ -41,7 +43,7 @@ const navItems = [
             </NavLink>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center gap-2">
+            <div className="hidden md:flex items-center ">
               {navItems.map(({ to, label, icon: Icon }) => (
                 <NavLink key={to} to={to}>
                   {({ isActive }) => (
@@ -59,7 +61,7 @@ const navItems = [
                   )}
                 </NavLink>
               ))}
-              <div className="ml-10">
+              <div className="ml-">
                 <DarkModeToggle />
               </div>
             </div>

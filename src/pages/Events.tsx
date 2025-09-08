@@ -174,7 +174,9 @@ const Events = () => {
           className="container mx-auto px-4 relative z-10"
         >
           
-          <h1 className="text-5xl md:text-6xl font-bold mb-4 mt-20">Redhot Live</h1>
+          <h1 className="text-5xl md:text-5xl font-bold mb-8 mt-14">Redhot Live</h1>
+
+          <p className='text-xl text-gray-200'>We don’t just launch books, we engineer adventures. The Redhot Experiences team transforms pages into buzzing book clubs, high-stakes challenges, musical takeovers, and story-fuelled competitions. Every event they craft flips reading into a live experience that lingers long after the final page</p>
          
         </motion.div>
       </section>
@@ -194,7 +196,7 @@ const Events = () => {
               <Star className="w-4 h-4 mr-2" />
               Around the Corner
             </Badge>
-            <h2 className="text-4xl font-bold text-submain">Don’t Miss These!</h2>
+            <h2 className="text-4xl font-bold text-submain">Upcoming Events</h2>
             <p className="text-black mt-2">
               Events with deadlines coming up soon — secure your spot now.
             </p>
@@ -287,9 +289,9 @@ const Events = () => {
           className="container mx-auto px-4 text-center"
         >
           <BookOpen className="w-16 h-16 mx-auto mb-4 text-submain" />
-          <h2 className="text-3xl font-bold text-submain mb-2">Event Calendar</h2>
+          <h2 className="text-3xl font-bold text-submain mb-2">Redhot Event Calendar</h2>
           <p className="text-black mb-6 max-w-xl mx-auto">
-            See all upcoming events in calendar view — then download to keep track.
+             Your backstage pass to every Redhot adventure. Track upcoming book clubs, competitions, and stage takeovers, so you never miss a moment where stories come alive.
           </p>
 
           <div className="flex justify-center mb-8">
