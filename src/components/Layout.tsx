@@ -30,7 +30,7 @@ const navItems = [
 ];
 
   return (
-    <div className="min-h-screen bg-background overflow-hidden">
+    <div className="min-h-screen bg-white  overflow-hidden">
       {/* Magical Navigation */}
       <nav className="sticky top-0 z-50 bg-main backdrop-blur-md border-b border-b-black/10">
         <div className="container mx-auto px-4 py-4">

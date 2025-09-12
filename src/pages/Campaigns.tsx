@@ -64,7 +64,7 @@ const Campaigns: React.FC = () => {
                     <h3 className="text-3xl font-bold text-yellow-500 mb-4">{c.title}</h3>
                     <p className="text-white mb-6 leading-relaxed">{c.description}</p>
                     {c.impact && (
-                      <div className="bg-muted/50 rounded-lg p-4 mb-6">
+                      <div className="bg-muted/90 rounded-lg p-4 mb-6">
                         <h4 className="font-semibold text-foreground mb-2">Track Milestones:</h4>
                         <p className="text-sm text-black">{c.impact}</p>
                       </div>

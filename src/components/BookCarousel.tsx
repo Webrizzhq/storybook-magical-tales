@@ -111,7 +111,7 @@ const BookCarousel = () => {
             >
 
               <Badge variant="outline" className="border-white/50 text-white px-4 py-2">
-                  {currentBook.ageRange} years
+                 Age {currentBook.ageRange} 
                 </Badge>
 
               <h1 className="text-3xl md:text-5xl font-bold leading-tight md:mb-5">

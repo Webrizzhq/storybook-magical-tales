@@ -19,6 +19,8 @@ import DarkModeToggle from "./components/ui/DarkModeToggle";
 import { AnimatedLayout } from "./components/AnimatedLayout";
 import Retail from "./pages/Retail";
 import FAQ from "./pages/FAQ";
+import { CookieBanner } from "./components/CookieBanner";
+
 
 const queryClient = new QueryClient();
 
@@ -48,6 +50,8 @@ const App = () => (
 
           <Route path="*" element={<NotFound />} />
         </Routes>
+
+         <CookieBanner />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

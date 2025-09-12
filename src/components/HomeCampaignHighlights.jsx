@@ -61,7 +61,7 @@ export default function HomeCampaignHighlights() {
               }}
               viewport={{ once: true }}
             >
-              <Card className="group border-0 bg-main hover:shadow-xl transition-all duration-500 hover:-translate-y-1 overflow-hidden rounded-2xl">
+              <Card className="group border-0 bg-main hover:shadow-xl transition-all duration-500 hover:-translate-y-1 overflow-hidden rounded-2xl flex flex-col h-full">
                 {/* Campaign Image */}
                 <div className="relative h-40 w-full overflow-hidden">
                   <img

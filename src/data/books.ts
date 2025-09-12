@@ -7,9 +7,10 @@ export interface Book {
   synopsis: string;
   coverImage: string;
   featured?: boolean;
+  comingSoon?: boolean; // 🔹 new flag
 }
 
-export const books: Book[] = [
+const allBooks: Book[] = [
   // 🔹 Shizu Historical Series
   {
     id: "queen-mkabayi",
@@ -66,7 +67,8 @@ export const books: Book[] = [
     category: "Shizu Historical Series",
     ageRange: "+14 years",
     synopsis: "Coming soon...",
-    coverImage: ""
+    coverImage: "",
+    comingSoon: true
   },
   {
     id: "mekatilili",
@@ -75,7 +77,8 @@ export const books: Book[] = [
     category: "Shizu Historical Series",
     ageRange: "+14 years",
     synopsis: "Coming soon...",
-    coverImage: ""
+    coverImage: "",
+    comingSoon: true
   },
 
   // 🔹 SUDEF Wildlife Detective Series
@@ -123,7 +126,8 @@ export const books: Book[] = [
     category: "SUDEF Wildlife Detective Series",
     ageRange: "8–11 years",
     synopsis: "Coming soon...",
-    coverImage: ""
+    coverImage: "",
+    comingSoon: true
   },
 
   // 🔹 Case Crackers
@@ -134,7 +138,8 @@ export const books: Book[] = [
     category: "Case Crackers",
     ageRange: "7–8 years",
     synopsis: "Coming soon...",
-    coverImage: ""
+    coverImage: "",
+    comingSoon: true
   },
   {
     id: "absent-scouts",
@@ -143,7 +148,8 @@ export const books: Book[] = [
     category: "Case Crackers",
     ageRange: "7–8 years",
     synopsis: "Coming soon...",
-    coverImage: ""
+    coverImage: "",
+    comingSoon: true
   },
   {
     id: "lost-child",
@@ -152,7 +158,8 @@ export const books: Book[] = [
     category: "Case Crackers",
     ageRange: "7–8 years",
     synopsis: "Coming soon...",
-    coverImage: ""
+    coverImage: "",
+    comingSoon: true
   },
   {
     id: "crazy-drawings",
@@ -161,7 +168,8 @@ export const books: Book[] = [
     category: "Case Crackers",
     ageRange: "7–8 years",
     synopsis: "Coming soon...",
-    coverImage: ""
+    coverImage: "",
+    comingSoon: true
   },
 
   // 🔹 Redhot Picture Books
@@ -217,7 +225,8 @@ export const books: Book[] = [
     category: "Redhot Picture Books",
     ageRange: "<9 years",
     synopsis: "Coming soon...",
-    coverImage: ""
+    coverImage: "",
+    comingSoon: true
   },
   {
     id: "rhino-book",
@@ -226,7 +235,8 @@ export const books: Book[] = [
     category: "Redhot Picture Books",
     ageRange: "<9 years",
     synopsis: "Coming soon...",
-    coverImage: ""
+    coverImage: "",
+    comingSoon: true
   },
 
   // 🔹 Redhot Novels
@@ -237,7 +247,8 @@ export const books: Book[] = [
     category: "Redhot Novels",
     ageRange: "+15 years",
     synopsis: "Coming soon...",
-    coverImage: ""
+    coverImage: "",
+    comingSoon: true
   },
 
   // 🔹 Redhot Reality
@@ -248,10 +259,11 @@ export const books: Book[] = [
     category: "Redhot Reality",
     ageRange: "All Ages",
     synopsis: "Coming soon...",
-    coverImage: ""
+    coverImage: "",
+    comingSoon: true
   },
 
-  // 🔹 Best African Series (kept from old list)
+  // 🔹 Best African Series
   {
     id: "deception-and-other-stories",
     title: "Deception and Other Stories",
@@ -293,12 +305,23 @@ export const categories = [
   "Best African Series (13+ years)"
 ];
 
-export const getFeaturedBooks = () => books.filter(book => book.featured);
+export const books = allBooks.filter(book => !book.comingSoon);
+
+export const getFeaturedBooks = () =>
+  books.filter(book => book.featured);
+
 export const getBooksByCategory = (category: string) =>
-  category === "All Books" ? books : books.filter(book => book.category === category);
-export const getBookById = (id: string) => books.find(book => book.id === id);
+  category === "All Books"
+    ? books
+    : books.filter(book => book.category === category);
+
+export const getBookById = (id: string) =>
+  books.find(book => book.id === id);
 
 export const getBooksByAge = (ageRange: string) =>
   ageRange === "All Ages"
     ? books
-    : books.filter(book => book.ageRange.includes(ageRange.split(" ")[0]));
+    : books.filter(book =>
+        book.ageRange.includes(ageRange.split(" ")[0])
+      );
+
