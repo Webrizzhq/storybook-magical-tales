@@ -53,7 +53,7 @@ const About = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="relative py-20 bg-main overflow-hidden h-[400px] ">
+      <section className="relative py-20  bg-main overflow-hidden h-[400px] ">
         <div className="absolute inset-0">
           <img
             src='about-hero.png' 
@@ -174,7 +174,7 @@ const About = () => {
       <Partners />
 
       {/* Social CTA */}
-      <section className="py-20 bg-gradient-redhot text-white">
+      <section className="py-20 md:mx-20 mx-2 mb-20 rounded-md bg-gradient-redhot text-white">
         <div className="container mx-auto px-4 text-center">
           <Share2 className="w-16 h-16 mx-auto mb-6 animate-bounce-gentle" />
           <h2 className="text-4xl font-bold mb-6">Stay Connected</h2>

@@ -55,7 +55,7 @@ const Retail = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="relative py-20 bg-main overflow-hidden h-[400px]">
+      <section className="relative py-20 bg-main overflow-hidden md:h-[400px]">
         <div className="absolute inset-0">
           <img
             src={hero}

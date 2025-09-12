@@ -82,7 +82,7 @@ const Books = () => {
     <Layout>
       {/* Hero Section (optional) */}
       
-      <section className="relative py-20 bg-main h-[400px] overflow-hidden">
+      <section className="relative py-20 bg-main md:h-[400px] overflow-hidden">
         <div className="absolute inset-0">
           <img
             src={hero}
@@ -98,7 +98,7 @@ const Books = () => {
               Redhot Page Turners & Mind Twisters 
             </h1>
 
-            <p className="text-lg text-gray-200">Explore our curated collection of African Children’s Literature.
+            <p className="md:text-lg text-gray-200">Explore our curated collection of African Children’s Literature.
 African History Reloaded. Culture Remixed. Claws, Clues and Cunning kids. 
 Redhot Books star African children who solve, invent, rebel and rise. They do not wait for rescue. They are not sidekicks or victims. They are the main characters reimagining Africa on their own terms.
 </p>

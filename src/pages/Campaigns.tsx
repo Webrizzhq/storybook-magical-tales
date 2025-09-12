@@ -29,7 +29,7 @@ const Campaigns: React.FC = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-redhot h-[400px] overflow-hidden">
+      <section className="relative py-20 bg-gradient-redhot md:h-[400px] overflow-hidden">
         <div className="absolute inset-0">
           <img src={hero} alt="Books background" className="w-full h-full object-cover opacity-20" />
           <div className="absolute inset-0 bg-main/20" />
@@ -223,9 +223,9 @@ const Campaigns: React.FC = () => {
 
 
       {/* Call to Action */}
-      <section className="py-20 bg-primary text-primary-foreground">
+      <section className="my-10 bg-main mx-20 py-20 text-primary-foreground rounded-md">
         <div className="container mx-auto px-4 text-center">
-          <Users className="w-16 h-16 mx-auto mb-6 text-accent animate-bounce-gentle" />
+          <Users className="w-16 h-16 mx-auto mb-6 text-yellow-500 animate-bounce-gentle" />
           <h2 className="text-4xl font-bold mb-6">Start Your Own Campaign</h2>
           <p className="text-xl text-primary-foreground/90 max-w-2xl mx-auto mb-8 leading-relaxed">
             Have an idea for promoting African children's literature in your community? We'd love to help you turn your vision into reality.

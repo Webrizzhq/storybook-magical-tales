@@ -157,7 +157,7 @@ const Events = () => {
   return (
     <Layout>
      
-      <section className="relative py-20 bg-gradient-redhot overflow-hidden text-white text-center h-[400px]">
+      <section className="relative py-20 bg-gradient-redhot overflow-hidden text-white text-center md:h-[400px]">
         <div className="absolute inset-0">
           <img
             src={hero}
