@@ -11,20 +11,20 @@ export default function HomeCampaignHighlights() {
       title: "The Wild Legacy Campaign",
       goal: "Preserve African wildlife stories in literature",
       description:
-        "Africa's gift to the world is its living model of coexistence with wildlife. By engaging with powerful wildlife stories, this campaign will inspire 1 million Kenyan children to rediscover that heritage and protect their natural world",
+        "Africa's gift to the world is its living model of coexistence with wildlife. By engaging with powerful wildlife stories, this campaign will inspire one million Kenyan children to rediscover that heritage and protect their natural world.",
       icon: Leaf,
       color: "bg-gradient-forest",
-      image: "wild-legacy.png",
+      image: "Latest/wild-legacy.png",
     },
     {
       id: 2,
       title: "Online Safety Campaign in partnership with Meta",
-      goal: "Educate 5,000 children on digital safety",
+      goal: "100 schools trained, 1500 teachers, 15000 students",
       description:
-        "100+ school book clubs were inspired by stories from Deception and Other Stories to create their own online safety codes",
+        "100+ school book clubs were inspired by stories from Deception and Other Stories to create their own online safety codes.",
       icon: Shield,
       color: "bg-gradient-sky",
-      image: "online-campaign.png",
+      image: "Latest/online-campaign.png",
     },
   ];
 
@@ -63,7 +63,7 @@ export default function HomeCampaignHighlights() {
             >
               <Card className="group border-0 bg-main hover:shadow-xl transition-all duration-500 hover:-translate-y-1 overflow-hidden rounded-2xl flex flex-col h-full">
                 {/* Campaign Image */}
-                <div className="relative h-40 w-full overflow-hidden">
+                <div className="relative h-full w-full ">
                   <img
                     src={campaign.image}
                     alt={campaign.title}
@@ -71,11 +71,7 @@ export default function HomeCampaignHighlights() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-black/70"></div>
                   <div className="absolute top-4 left-4 flex items-center gap-2">
-                    <div
-                      className={`w-12 h-12 ${campaign.color} rounded-full flex items-center justify-center shadow-lg`}
-                    >
-                      <campaign.icon className="w-6 h-6 text-white" />
-                    </div>
+                   
                   </div>
                 </div>
 

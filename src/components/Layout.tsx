@@ -1,7 +1,7 @@
 import { ReactNode, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { BookOpen, Calendar, Users, Info, Sparkles, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import Footer from './Footer';
 import DarkModeToggle from './ui/DarkModeToggle';
 
@@ -11,40 +11,40 @@ interface LayoutProps {
 
 const Layout = ({ children }: LayoutProps) => {
   const [mobileOpen, setMobileOpen] = useState(false);
-const navItems = [
-  { to: '/', label: 'Home', icon: Sparkles },
-  { to: '/books', label: 'Books', icon: BookOpen },
-  { to: '/events', label: 'Events', icon: Calendar },
-  { to: '/campaigns', label: 'Campaigns', icon: Users },
-  { to: '/retail', label: 'Redhot-Retail', icon: Users },
-  { to: '/faq', label: 'FAQ', icon: Users },
-  { 
-    to: '/about', 
-    label: (
-      <>
-        Team<img src="/emoji.png" alt="emoji" className=" -ml-2 w-7" />
-      </>
-    ), 
-    icon: Info 
-  },
-];
+
+  const navItems = [
+    { to: '/', label: 'Home', icon: '/icons/Home.png' },
+    { to: '/books', label: 'Books', icon: '/icons/Books.png' },
+    { to: '/events', label: 'Events', icon: '/icons/Redhot Live.png' },
+    { to: '/campaigns', label: 'Campaigns', icon: '/icons/Campaigns.png' },
+    { to: '/retail', label: 'Redhot-Retail', icon: '/icons/Redhot Retail.png' },
+    { to: '/faq', label: 'FAQ', icon: '/icons/FAQ.png' },
+    { 
+      to: '/about', 
+      label: (
+        <>
+          Team <img src="/emoji.png" alt="emoji" className="-ml-2 w-7 inline" />
+        </>
+      ), 
+      icon: '/icons/Team.png'
+    },
+  ];
 
   return (
-    <div className="min-h-screen bg-white  overflow-hidden">
+    <div className="min-h-screen bg-white overflow-hidden">
       {/* Magical Navigation */}
       <nav className="sticky top-0 z-50 bg-main backdrop-blur-md border-b border-b-black/10">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             {/* Logo */}
             <NavLink to="/" className="flex items-center gap-5 text-center">
-              <img src="/Redhot_logo_curves_white.png" alt="" className=' w-32' />
-               <img src="/Storymoja_logo_1.png" alt="" className=' w-28' />
-              
+              <img src="icons/Redhot logo for website.png" alt="" className="w-32" />
+              <img src="icons/Storymoja logo for website.png" alt="" className="w-28" />
             </NavLink>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center ">
-              {navItems.map(({ to, label, icon: Icon }) => (
+            <div className="hidden md:flex items-center">
+              {navItems.map(({ to, label, icon }) => (
                 <NavLink key={to} to={to}>
                   {({ isActive }) => (
                     <Button
@@ -55,7 +55,7 @@ const navItems = [
                           : 'hover:bg-primary/10 hover:text-primary text-yellow-500'
                       }`}
                     >
-                      <Icon className="w-4 h-4" />
+                      <img src={icon} alt="" className="w-4 h-4" />
                       {label}
                     </Button>
                   )}
@@ -102,7 +102,7 @@ const navItems = [
 
         {/* Navigation Links */}
         <div className="flex flex-col gap-4">
-          {navItems.map(({ to, label, icon: Icon }) => (
+          {navItems.map(({ to, label, icon }) => (
             <NavLink
               key={to}
               to={to}
@@ -115,7 +115,7 @@ const navItems = [
                 }`
               }
             >
-              <Icon className="w-5 h-5" />
+              <img src={icon} alt="" className="w-5 h-5" />
               {label}
             </NavLink>
           ))}

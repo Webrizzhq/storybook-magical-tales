@@ -84,7 +84,7 @@ const allBooks: Book[] = [
   // 🔹 SUDEF Wildlife Detective Series
   {
     id: "targeted-turtles",
-    title: "Case of Targeted Turtles",
+    title: "The Case of Targeted Turtles",
     author: "Shaleen Keshavjee-Gulam",
     category: "SUDEF Wildlife Detective Series",
     ageRange: "8–11 years",
@@ -103,7 +103,7 @@ const allBooks: Book[] = [
   },
   {
     id: "persecuted-pangolins",
-    title: "Case of Persecuted Pangolins",
+    title: "The Case of Persecuted Pangolins",
     author: "Muthoni Wa Gichuru",
     category: "SUDEF Wildlife Detective Series",
     ageRange: "8–11 years",
@@ -112,7 +112,7 @@ const allBooks: Book[] = [
   },
   {
     id: "case-of-the-prowling-panther",
-    title: "Case of the Prowling Panther",
+    title: "The Case of the Prowling Panther",
     author: "Vaishnavi Ram Mohan",
     category: "SUDEF Wildlife Detective Series",
     ageRange: "8–11 years",
@@ -126,50 +126,50 @@ const allBooks: Book[] = [
     category: "SUDEF Wildlife Detective Series",
     ageRange: "8–11 years",
     synopsis: "Coming soon...",
-    coverImage: "",
-    comingSoon: true
+    coverImage: "/BookCovers/Giraffe COVER.png",
+    
   },
 
   // 🔹 Case Crackers
   {
     id: "missing-set",
-    title: "Mystery of the Missing Set",
-    author: "TBD",
+    title: "Mystery of the Stolen Sets",
+    author: "Uumbi Guthaka",
     category: "Case Crackers",
     ageRange: "7–8 years",
     synopsis: "Coming soon...",
-    coverImage: "",
-    comingSoon: true
+    coverImage: "/BookCovers/Mystery of the Stolen Sets.jpg",
+    
   },
   {
     id: "absent-scouts",
-    title: "Mystery of the Absent Scouts Uniforms",
-    author: "TBD",
+    title: "Mystery of the Absent Uniforms",
+    author: "Vivian Hinga",
     category: "Case Crackers",
     ageRange: "7–8 years",
     synopsis: "Coming soon...",
-    coverImage: "",
-    comingSoon: true
+    coverImage: "/BookCovers/Mystery of the Absent Uniforms.jpg",
+    
   },
   {
     id: "lost-child",
     title: "Mystery of the Lost Child",
-    author: "TBD",
+    author: "Nyarinda Moraa",
     category: "Case Crackers",
     ageRange: "7–8 years",
     synopsis: "Coming soon...",
-    coverImage: "",
-    comingSoon: true
+    coverImage: "/BookCovers/Mystery of the Lost Child.jpg",
+    
   },
   {
     id: "crazy-drawings",
     title: "Mystery of the Crazy Drawings",
-    author: "TBD",
+    author: "Dawn Kaliaus",
     category: "Case Crackers",
     ageRange: "7–8 years",
     synopsis: "Coming soon...",
-    coverImage: "",
-    comingSoon: true
+    coverImage: "/BookCovers/Mystery of the Crazy Drawings.jpg",
+    
   },
 
   // 🔹 Redhot Picture Books
@@ -221,22 +221,22 @@ const allBooks: Book[] = [
   {
     id: "forever-tree",
     title: "The Forever Tree",
-    author: "TBD",
+    author: "Grace Wangari",
     category: "Redhot Picture Books",
     ageRange: "<9 years",
     synopsis: "Coming soon...",
-    coverImage: "",
-    comingSoon: true
+    coverImage: "/BookCovers/The Forever Tree front.jpg",
+    
   },
   {
     id: "rhino-book",
     title: "My Amazing Rhino Book",
-    author: "TBD",
+    author: "Paula Kahumbu",
     category: "Redhot Picture Books",
     ageRange: "<9 years",
-    synopsis: "Coming soon...",
-    coverImage: "",
-    comingSoon: true
+    synopsis: "Horns belong to rhinos, not to people",
+    coverImage: "/BookCovers/My Amazing Rhino.jpg",
+    
   },
 
   // 🔹 Redhot Novels
@@ -254,13 +254,13 @@ const allBooks: Book[] = [
   // 🔹 Redhot Reality
   {
     id: "our-african-animals",
-    title: "Our African Animals",
-    author: "TBD",
+    title: "Our African Wildlife",
+    author: "Monity Odera",
     category: "Redhot Reality",
     ageRange: "All Ages",
-    synopsis: "Coming soon...",
-    coverImage: "",
-    comingSoon: true
+    synopsis: "Meeting 100 amazing species found in Africa",
+    coverImage: "/BookCovers/Our African Wildlife.jpg",
+    
   },
 
   // 🔹 Best African Series
