@@ -4,11 +4,12 @@ export interface Book {
   author: string;
   category: string;
   ageRange: string;
+  language?: string;
   synopsis: string;
   coverImage: string;
   featured?: boolean;
   comingSoon?: boolean;
-  purchaseLink?: string; // 🔹 Added purchase link field
+  purchaseLink?: string;
 }
 
 const allBooks: Book[] = [
@@ -61,6 +62,7 @@ const allBooks: Book[] = [
     author: "Makenzi K.G",
     category: "Shizu Historical Series",
     ageRange: "+14 years",
+    language: "Swahili",
     synopsis: "Katika msuko wa safari ya wakati, Safari na Betty...",
     coverImage: "/BookCovers/Janga la Wakasigau Cover- mock-up.png",
     purchaseLink: "https://storymojaafrica.co.ke/estore/redhot-africa/shizu-historia/janga-la-wakasigau-494_81"
@@ -105,6 +107,7 @@ const allBooks: Book[] = [
     author: "Shaleen Keshavjee-Gulam",
     category: "SUDEF Wildlife Detective Series",
     ageRange: "8–11 years",
+    language: "Swahili",
     synopsis: "Sandeep ana hamu ya kuwatazama kasa wakianguliwa ufukweni...",
     coverImage: "/BookCovers/Kisa Cha Kasa  Cover mockup - 2.png",
     purchaseLink: "https://storymojaafrica.co.ke/estore/redhot-africa/sudef-wanyamapori/kisa-cha-kasa-wanaolengwa-490_79"
@@ -194,6 +197,7 @@ const allBooks: Book[] = [
     author: "Muthoni Muchemi",
     category: "Redhot Picture Books",
     ageRange: "<9 years",
+    language: "English",
     synopsis: "Join Koko Riko as he faces off against shadow monsters...",
     coverImage: "/BookCovers/Koko Riko mockup 3.png",
     purchaseLink: "https://storymojaafrica.co.ke/estore/redhot-africa/redhot-picture-books/koko-riko-491_73"
@@ -214,6 +218,7 @@ const allBooks: Book[] = [
     author: "Mike Saito with Turk Pipkin",
     category: "Redhot Picture Books",
     ageRange: "<9 years",
+    language: "Swahili",
     synopsis: "Saitoti, mwenye umri wa miaka mitano, amepotea na yuko peke yake...",
     coverImage: "/BookCovers/Book mock-up kiswahili 2.png",
     purchaseLink: "https://storymojaafrica.co.ke/estore/redhot-africa/redhot-picture-books/mvulana-na-simba-590_73"
@@ -224,6 +229,7 @@ const allBooks: Book[] = [
     author: "Mike Saito with Turk Pipkin",
     category: "Redhot Picture Books",
     ageRange: "<9 years",
+    language: "Maa (Maasai)",
     synopsis: "Ore Saitoti naa enkayioni kiti oolarin imiet...",
     coverImage: "/BookCovers/Book mock-up Maasai 1.png",
     purchaseLink: "https://storymojaafrica.co.ke/estore/redhot-africa/redhot-picture-books/enkatini-e-nkayioni-o-lowuaru-591_73"
@@ -304,6 +310,11 @@ const allBooks: Book[] = [
   }
 ];
 
+// 🔹 Helper function to get non-English books
+export const getNonEnglishBooks = () => {
+  return books.filter(book => book.language && book.language !== "English");
+};
+
 export const categories = [
   "All Books",
   "Redhot Novels (+15 years)",
@@ -316,6 +327,8 @@ export const categories = [
 ];
 
 export const books = allBooks.filter(book => !book.comingSoon);
+
+
 
 export const getFeaturedBooks = () =>
   books.filter(book => book.featured);

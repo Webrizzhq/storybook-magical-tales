@@ -3,8 +3,8 @@ import Layout from "@/components/Layout";
 import BookCard from "@/components/BookCard";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { books, getBooksByCategory } from "@/data/books";
-import { BookOpen, Filter } from "lucide-react";
+import { books, getBooksByCategory, getNonEnglishBooks } from "@/data/books"; // 🔹 Added getNonEnglishBooks
+import { BookOpen, Filter, Globe } from "lucide-react"; // 🔹 Added Globe icon
 import hero from "@/assets/hero-reading.jpg";
 
 // Skeleton Loader for Books Grid
@@ -41,9 +41,8 @@ const categoryAgeOrder = [
   "SUDEF Wildlife Detective Series (8–11 years)",
   "Case Crackers (7–8 years)",
   "Redhot Picture Books (<9 years)",
-  "Redhot Reality (All Ages)", // stays last since it’s universal
+  "Redhot Reality (All Ages)", // stays last since it's universal
 ];
-
 
 const Books = () => {
   const [selectedCategory, setSelectedCategory] = useState("All Books");
@@ -78,10 +77,12 @@ const Books = () => {
     });
   };
 
+  // Get non-English books for special section
+  const nonEnglishBooks = getNonEnglishBooks();
+
   return (
     <Layout>
-      {/* Hero Section (optional) */}
-      
+      {/* Hero Section */}
       <section className="relative py-20 bg-main md:h-[400px] overflow-hidden">
         <div className="absolute inset-0">
           <img
@@ -92,21 +93,21 @@ const Books = () => {
           <div className="absolute inset-0 bg-main/20" />
         </div>
         <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center  mx-auto">
-            
+          <div className="text-center mx-auto">
             <h1 className="text-3xl md:text-5xl mt-8 font-bold text-white mb-14 drop-shadow-lg">
               Redhot Page Turners & Mind Twisters 
             </h1>
 
-            <p className="md:text-lg text-gray-200">Explore our curated collection of African Children’s Literature.
-African History Reloaded. Culture Remixed. Claws, Clues and Cunning kids. 
-Redhot Books star African children who solve, invent, rebel and rise. They do not wait for rescue. They are not sidekicks or victims. They are the main characters reimagining Africa on their own terms.
-</p>
-            
+            <p className="md:text-lg text-gray-200">
+              Explore our curated collection of African Children's Literature.
+              African History Reloaded. Culture Remixed. Claws, Clues and Cunning kids. 
+              Redhot Books star African children who solve, invent, rebel and rise. 
+              They do not wait for rescue. They are not sidekicks or victims. 
+              They are the main characters reimagining Africa on their own terms.
+            </p>
           </div>
         </div>
       </section>
-    
 
       {/* Category Filter */}
       <section className="py-12 bg-red-100 dark:bg-red-900">
@@ -140,29 +141,61 @@ Redhot Books star African children who solve, invent, rebel and rise. They do no
           {loading ? (
             <BooksGridSkeleton />
           ) : selectedCategory === "All Books" ? (
-            categoryAgeOrder.map((category) => {
-              const categoryBooks = getBooksForDisplay(category);
-              if (categoryBooks.length === 0) return null;
+            <>
+              {/* Main Categories */}
+              {categoryAgeOrder.map((category) => {
+                const categoryBooks = getBooksForDisplay(category);
+                if (categoryBooks.length === 0) return null;
 
-              return (
-                <div key={category} className="mb-12">
-                  <h3 className="text-2xl font-bold text-primary mb-4">
-                    {category}
-                  </h3>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-                    {categoryBooks.map((book, index) => (
+                return (
+                  <div key={category} className="mb-12">
+                    <h3 className="text-2xl font-bold text-primary mb-4">
+                      {category}
+                    </h3>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+                      {categoryBooks.map((book, index) => (
+                        <div
+                          key={book.id}
+                          className="text-center animate-fade-in-up"
+                          style={{ animationDelay: `${index * 100}ms` }}
+                        >
+                          <BookCard book={book} />
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                );
+              })}
+
+              {/* 🔹 Non-English Books Section - Always shown at bottom */}
+              {nonEnglishBooks.length > 0 && (
+                <div className="mt-20 pt-12 border-t border-border/50">
+                  <div className=" mb-12">
+                    <h2 className="text-3xl font-bold text-primary mb-4 flex  gap-3">
+                      <Globe className="w-8 h-8 text-accent" />
+                      Other Languages
+                    </h2>
+                    <p className="text-muted-foreground max-w-2xl">
+                      Discover our books in other diverse languages
+                    </p>
+                  </div>
+                  
+                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                    {nonEnglishBooks.map((book, index) => (
                       <div
                         key={book.id}
                         className="text-center animate-fade-in-up"
-                        style={{ animationDelay: `${index * 100}ms` }}
+                        style={{ animationDelay: `${index * 150}ms` }}
                       >
                         <BookCard book={book} />
                       </div>
                     ))}
                   </div>
+
+                
                 </div>
-              );
-            })
+              )}
+            </>
           ) : (
             <div className="mb-12">
               <h3 className="text-2xl font-bold text-primary mb-4">
