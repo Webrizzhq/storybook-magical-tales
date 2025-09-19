@@ -1,15 +1,14 @@
-import { Mail, Phone, Facebook, Twitter, Instagram } from "lucide-react";
 import { motion } from "framer-motion";
 import { NavLink } from "react-router-dom";
-
-
+import { MdEmail, MdPhone } from "react-icons/md";
+import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
-    transition: { delay: i * 0.2, duration: 0.6, ease: "easeOut" },
+    transition: { delay: i * 0.2, duration: 0.6, ease: "easeOut" } as const,
   }),
 };
 
@@ -28,10 +27,9 @@ const Footer = () => {
         >
           <div>
             <NavLink to="/" className="flex items-center gap-5 text-center">
-                          <img src="/Redhot_logo_curves_white.png" alt="" className=' w-32' />
-                           <img src="/Storymoja_logo_1.png" alt="" className=' w-28' />
-                          
-                        </NavLink>
+              <img src="icons/Redhot logo for website.png" alt="" className="w-32" />
+              <img src="icons/Storymoja logo for website.png" alt="" className="w-28" />
+            </NavLink>
           </div>
 
           <motion.p
@@ -47,17 +45,10 @@ const Footer = () => {
             variants={fadeInUp}
             custom={0.6}
           >
-           
-          Our Redhot Africa books are made with love and heart, and help children imagine, think and learn. Our SHIZU books uncover African's legends and ancient kingdoms. Our SUDEF Wildlife Detectives solve awful crimes against Africa's amazing wildlife. Our REDHOT PICTURE BOOKS are fun, feisty frolics that stimulate imagination and nurture a love of stories. 
-          </motion.p>
-
-         
-          <motion.p
-            className="text-lg font-bold text-yellow-500"
-            variants={fadeInUp}
-            custom={0.8}
-          >
-            Bilingual. Bold. Built for Dreamers.
+            Our Redhot Africa books are made with love and heart, and help children imagine, think and learn. 
+            Our SHIZU books uncover African legends and ancient kingdoms. 
+            Our SUDEF Wildlife Detectives solve awful crimes against Africa's amazing wildlife. 
+            Our REDHOT PICTURE BOOKS are fun, feisty frolics that stimulate imagination and nurture a love of stories. 
           </motion.p>
         </motion.div>
 
@@ -114,7 +105,7 @@ const Footer = () => {
                 variants={fadeInUp}
                 custom={1.2}
               >
-                <Mail className="w-5 h-5 text-yellow-300" />
+                <MdEmail className="w-5 h-5 text-yellow-300" />
                 <span>redhot@storymojaafrica.co.ke</span>
               </motion.div>
               <motion.div
@@ -122,7 +113,7 @@ const Footer = () => {
                 variants={fadeInUp}
                 custom={1.3}
               >
-                <Phone className="w-5 h-5 text-yellow-300" />
+                <MdPhone className="w-5 h-5 text-yellow-300" />
                 <span>
                   +254 733 838161
                   <br />+254 202 089595
@@ -137,16 +128,38 @@ const Footer = () => {
               whileInView={{ opacity: 1 }}
               transition={{ delay: 1.5, duration: 0.6 }}
             >
-              {[Facebook, Twitter, Instagram].map((Icon, i) => (
-                <motion.div
-                  key={i}
-                  whileHover={{ scale: 1.2, rotate: 8 }}
-                  whileTap={{ scale: 0.9 }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                >
-                  <Icon className="w-6 h-6 cursor-pointer text-yellow-300 hover:text-white" />
-                </motion.div>
-              ))}
+              <motion.a
+                href="https://web.facebook.com/profile.php?id=100068118230998#"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.2, rotate: 8 }}
+                whileTap={{ scale: 0.9 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <FaFacebookF className="w-6 h-6 cursor-pointer text-yellow-300 hover:text-white" />
+              </motion.a>
+
+              <motion.a
+                href="https://x.com/africa_redhot?s=11" 
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.2, rotate: 8 }}
+                whileTap={{ scale: 0.9 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <FaTwitter className="w-6 h-6 cursor-pointer text-yellow-300 hover:text-white" />
+              </motion.a>
+
+              <motion.a
+                href="https://www.instagram.com/p/DITkd1HMNwL/"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.2, rotate: 8 }}
+                whileTap={{ scale: 0.9 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <FaInstagram className="w-6 h-6 cursor-pointer text-yellow-300 hover:text-white" />
+              </motion.a>
             </motion.div>
           </div>
         </motion.div>

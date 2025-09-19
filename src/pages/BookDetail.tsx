@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
 import { getBookById, books } from '@/data/books';
-import { ArrowLeft, ExternalLink, BookOpen, Users, Clock, Star } from 'lucide-react';
+import { ArrowLeft, ExternalLink, BookOpen, Users, Clock, Star, MapPin } from 'lucide-react';
 
 const BookDetail = () => {
   const { id } = useParams<{ id: string }>();
@@ -72,16 +72,44 @@ const BookDetail = () => {
                 
                 {/* Purchase Actions */}
                 <div className="mt-8 space-y-4">
-                  <Button 
-                    className="w-full bg-gradient-magic hover:shadow-glow transition-all duration-300"
-                    size="lg"
-                  >
-                    <ExternalLink className="w-5 h-5 mr-2" />
-                    Where to Buy
-                  </Button>
-                  <p className="text-sm text-muted-foreground text-center">
-                    Available at leading bookstores and online retailers
-                  </p>
+                  {book.purchaseLink ? (
+                    <Button 
+                      asChild
+                      className="w-full bg-gradient-magic hover:shadow-glow transition-all duration-300"
+                      size="lg"
+                    >
+                      <a href={book.purchaseLink} target="_blank" rel="noopener noreferrer">
+                        <ExternalLink className="w-5 h-5 mr-2" />
+                        Buy on eStore
+                      </a>
+                    </Button>
+                  ) : (
+                    <>
+                      <Button 
+                        className="w-full bg-gradient-magic hover:shadow-glow transition-all duration-300"
+                        size="lg"
+                        disabled
+                      >
+                        <MapPin className="w-5 h-5 mr-2" />
+                        Coming Soon
+                      </Button>
+                      <p className="text-sm text-muted-foreground text-center">
+                        Available at leading bookstores in Kenya:
+                      </p>
+                      <div className="grid grid-cols-2 gap-2 text-xs text-muted-foreground">
+                        <div className="text-left">
+                          • Text Book Center<br/>
+                          • Naivas Supermarket<br/>
+                          • Soma Nami Books
+                        </div>
+                        <div className="text-right">
+                          • Bookstop<br/>
+                          • Educate Yourself<br/>
+                          • Nairobi National Museum
+                        </div>
+                      </div>
+                    </>
+                  )}
                 </div>
               </div>
             </div>
