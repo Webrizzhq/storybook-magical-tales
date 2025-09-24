@@ -2,7 +2,7 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 
 // Import faqs.json with type: json
 import faqs from "../src/data/faqs.json" assert { type: "json" };
-// For Node.js >= 20.10.0, use this instead if the above fails:
+// For Node.js >= 20.10.0, use this if assert fails:
 // import faqs from "../src/data/faqs.json" with { type: "json" };
 
 interface Request {
@@ -37,6 +37,13 @@ export default async function handler(req: Request, res: Response) {
     // Log for debugging
     console.log("Request headers:", req.headers);
     console.log("Raw req.body:", req.body);
+    console.log("Content-Type:", req.headers["content-type"]);
+
+    // Validate Content-Type
+    const contentType = req.headers["content-type"]?.toLowerCase();
+    if (!contentType || !contentType.includes("application/json")) {
+      throw new Error(`Invalid Content-Type: ${contentType || "none"}. Expected application/json`);
+    }
 
     // Handle empty body
     if (!req.body) {
@@ -49,6 +56,7 @@ export default async function handler(req: Request, res: Response) {
       try {
         body = JSON.parse(req.body);
       } catch (parseErr) {
+        console.error("JSON parse error:", parseErr);
         throw new Error(`Invalid JSON in request body: ${req.body}`);
       }
     } else {

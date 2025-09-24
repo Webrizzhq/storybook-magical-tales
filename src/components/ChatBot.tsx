@@ -28,15 +28,17 @@ export default function ChatBot() {
     setMessages(prev => [...prev, userMsg]);
 
     try {
+      const payload = JSON.stringify({ message: input });
+      console.log("Sending payload:", payload); // Debug client-side payload
       const res = await fetch("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: input }),
+        body: payload,
       });
 
       const data = await res.json();
       if (!res.ok) {
-        throw new Error(data.details || "Failed to fetch response");
+        throw new Error(data.details || `HTTP error ${res.status}`);
       }
 
       const botMsg: Message = { role: "assistant", content: data.reply };
