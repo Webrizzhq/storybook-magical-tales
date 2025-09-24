@@ -11,6 +11,7 @@ export default function ChatBot() {
   const [input, setInput] = useState("");
   const [isOpen, setIsOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   // Scroll to bottom of messages when new messages are added
@@ -21,6 +22,7 @@ export default function ChatBot() {
   const sendMessage = async () => {
     if (!input.trim()) return;
     setIsLoading(true);
+    setError(null);
 
     const userMsg: Message = { role: "user", content: input };
     setMessages(prev => [...prev, userMsg]);
@@ -31,14 +33,20 @@ export default function ChatBot() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message: input }),
       });
-      if (!res.ok) throw new Error("Failed to fetch response");
+
       const data = await res.json();
+      if (!res.ok) {
+        throw new Error(data.details || "Failed to fetch response");
+      }
+
       const botMsg: Message = { role: "assistant", content: data.reply };
       setMessages(prev => [...prev, botMsg]);
-    } catch (err) {
+    } catch (err: any) {
+      console.error("Client error:", err);
+      setError(err.message || "Something went wrong. Please try again.");
       setMessages(prev => [
         ...prev,
-        { role: "assistant", content: "⚠️ Something went wrong. Please try again." }
+        { role: "assistant", content: `⚠️ ${err.message || "Something went wrong. Please try again."}` },
       ]);
     } finally {
       setIsLoading(false);
@@ -101,6 +109,11 @@ export default function ChatBot() {
                 </div>
               ))
             )}
+            {error && (
+              <div className="mb-3 p-2 rounded-lg max-w-[80%] bg-red-100 mr-auto text-red-900">
+                <p className="text-sm"><b>Error:</b> {error}</p>
+              </div>
+            )}
             <div ref={messagesEndRef} />
           </div>
 
@@ -119,7 +132,7 @@ export default function ChatBot() {
               <button
                 className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-300 disabled:opacity-50 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 onClick={sendMessage}
-                disabled={isLoading}
+                disabled={isLoading || !input.trim()}
               >
                 {isLoading ? (
                   <svg

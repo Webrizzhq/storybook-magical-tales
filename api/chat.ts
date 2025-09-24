@@ -1,7 +1,8 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
 interface Request {
-  body: string;
+  body: string | any; // Allow string or object
+  headers: { [key: string]: string | undefined };
 }
 
 interface Response {
@@ -29,7 +30,33 @@ const findBestMatch = (faqs: any[], userQuestion: string) => {
 
 export default async function handler(req: Request, res: Response) {
   try {
-    const { message } = JSON.parse(req.body);
+    // Log for debugging
+    console.log("Request headers:", req.headers);
+    console.log("Raw req.body:", req.body);
+
+    // Handle empty body
+    if (!req.body) {
+      throw new Error("Request body is empty");
+    }
+
+    // Parse req.body
+    let body;
+    if (typeof req.body === "string") {
+      try {
+        body = JSON.parse(req.body);
+      } catch (parseErr) {
+        throw new Error(`Invalid JSON in request body: ${req.body}`);
+      }
+    } else {
+      body = req.body; // If already parsed (unlikely in Vercel)
+    }
+
+    // Validate message field
+    const { message } = body;
+    if (!message || typeof message !== "string") {
+      throw new Error("Message field is missing or invalid");
+    }
+
     const faqs = await loadFaqs();
     const faq = findBestMatch(faqs, message);
     const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || "");
