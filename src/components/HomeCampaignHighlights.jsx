@@ -8,8 +8,8 @@ export default function HomeCampaignHighlights() {
   const highlights = [
     {
       id: 1,
-      title: "The Wild Legacy Campaign",
-      goal: "Preserve African wildlife stories in literature",
+      title: "The Wild Legacy Campaign.",
+      goal: "Preserve African wildlife stories in literature.",
       description:
         "Africa's gift to the world is its living model of coexistence with wildlife. By engaging with powerful wildlife stories, this campaign will inspire one million Kenyan children to rediscover that heritage and protect their natural world.",
       icon: Leaf,
@@ -18,8 +18,8 @@ export default function HomeCampaignHighlights() {
     },
     {
       id: 2,
-      title: "Online Safety Campaign in partnership with Meta",
-      goal: "100 schools trained, 1500 teachers, 15000 students",
+      title: "Online Safety Campaign in partnership with Meta.",
+      goal: "100 schools trained, 1500 teachers, 15000 students.",
       description:
         "100+ school book clubs were inspired by stories from Deception and Other Stories to create their own online safety codes.",
       icon: Shield,
@@ -43,7 +43,7 @@ export default function HomeCampaignHighlights() {
             Live Campaigns
           </h2>
           <p className="text-lg text-black max-w-3xl mx-auto">
-            Redhot Experiences bring books to life. Through book clubs, gamified challenges, competitions, immersive launches and musicals, we transform stories into experiences that ignite a love of reading and create lasting change
+            Redhot Experiences bring books to life. Through book clubs, gamified challenges, competitions, immersive launches and musicals, we transform stories into experiences that ignite a love of reading and create lasting change.
           </p>
         </motion.div>
 

@@ -33,7 +33,7 @@ const Footer = () => {
           </div>
 
           <motion.p
-            className="text-xl font-semibold text-yellow-500 leading-relaxed"
+            className="text-xl font-semibold text-yellow-500 hover:text-white leading-relaxed"
             variants={fadeInUp}
             custom={0.5}
           >
@@ -41,7 +41,7 @@ const Footer = () => {
           </motion.p>
 
           <motion.p
-            className="text-yellow-400 leading-relaxed"
+            className="text-yellow-400 hover:text-white leading-relaxed"
             variants={fadeInUp}
             custom={0.6}
           >
@@ -99,13 +99,13 @@ const Footer = () => {
             >
               Contact Us
             </motion.h5>
-            <div className="space-y-4 text-yellow-300">
+            <div className="space-y-4 text-yellow-300 hover:text-white">
               <motion.div
                 className="flex items-center space-x-3"
                 variants={fadeInUp}
                 custom={1.2}
               >
-                <MdEmail className="w-5 h-5 text-yellow-300" />
+                <MdEmail className="w-5 h-5 text-yellow-300 hover:text-white" />
                 <span>redhot@storymojaafrica.co.ke</span>
               </motion.div>
               <motion.div
@@ -113,7 +113,7 @@ const Footer = () => {
                 variants={fadeInUp}
                 custom={1.3}
               >
-                <MdPhone className="w-5 h-5 text-yellow-300" />
+                <MdPhone className="w-5 h-5 text-yellow-300 hover:text-white" />
                 <span>
                   +254 733 838161
                   <br />+254 202 089595

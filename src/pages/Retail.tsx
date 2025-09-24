@@ -172,7 +172,7 @@ const Retail = () => {
               size="lg"
               className="border-white text-white bg-gold-gradient hover:bg-white hover:text-submain"
             >
-              Subscribe to Retail Newsletter
+              Share your vision
             </Button>
           </div>
         </div>

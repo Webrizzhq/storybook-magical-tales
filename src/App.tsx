@@ -20,6 +20,8 @@ import { AnimatedLayout } from "./components/AnimatedLayout";
 import Retail from "./pages/Retail";
 import FAQ from "./pages/FAQ";
 import { CookieBanner } from "./components/CookieBanner";
+import ChatBot from "./components/ChatBot";
+
 
 
 const queryClient = new QueryClient();
@@ -31,7 +33,8 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-      <ScrollToTopButton />
+      
+      <ChatBot />
      
         <Routes>
           <Route element={<AnimatedLayout />}>
@@ -52,6 +55,8 @@ const App = () => (
         </Routes>
 
          <CookieBanner />
+
+         
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

@@ -56,7 +56,7 @@ const seriesCategories = [
             </h2>
             <p className="text-lg text-white/90 max-w-2xl mx-auto">
               Fuel for curious minds. Books with a Redhot Africa spine because bland stories are for
-              boring kids
+              boring kids.
             </p>
           </motion.div>
 
@@ -98,7 +98,7 @@ const seriesCategories = [
      {
     title: "Redhot Novels",
     ageRange: "+15 years",
-    description: "Novels for older teens, exploring gripping narratives and adventures",
+    description: "Novels for older teens, exploring gripping narratives and adventures.",
     image: "https://images.unsplash.com/photo-1622567905740-74539aa99bcf?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     books: "Infestations, Other Titles Coming Soon",
     tag: "Upcoming Series"
@@ -106,7 +106,7 @@ const seriesCategories = [
   {
     title: "Shizu Historical Series",
     ageRange: "+14 years",
-    description: "Rich historical fiction and thought-provoking anthologies",
+    description: "Rich historical fiction and thought provoking anthologies.",
     image: "https://images.unsplash.com/photo-1726347915002-c8bc173e995c?q=80&w=1264&auto=format&fit=crop",
     books: "Princess Njinga, Zero Tolerance Stories",
     tag: null
@@ -114,7 +114,7 @@ const seriesCategories = [
   {
     title: "Best African Series",
     ageRange: "13+ years",
-    description: "Collections of diverse African voices for young readers",
+    description: "Collections of diverse African voices for young readers.",
     image: "https://images.unsplash.com/photo-1589998059171-988d887df646?q=80&w=1170&auto=format&fit=crop",
     books: "African Futures, Stories of Us",
     tag: null
@@ -122,7 +122,7 @@ const seriesCategories = [
   {
     title: "SUDEF Wildlife Detective Series",
     ageRange: "8–11 years",
-    description: "Exciting detective stories featuring African wildlife and conservation",
+    description: "Exciting detective stories featuring African wildlife and conservation.",
     image: "https://images.unsplash.com/photo-1627907228041-fe3291346dfb?q=80&w=1074&auto=format&fit=crop",
     books: "Case of Targeted Turtles, Persecuted Pangolins",
     tag: null
@@ -130,7 +130,7 @@ const seriesCategories = [
   {
     title: "Case Crackers",
     ageRange: "7–8 years",
-    description: "New thrilling cases for young detectives – stay tuned!",
+    description: "New thrilling cases for young detectives, stay tuned!",
     image: "case-crackers.png",
     books: "Coming Soon",
     tag: "Upcoming Series"
@@ -138,7 +138,7 @@ const seriesCategories = [
   {
     title: "Redhot Picture Books",
     ageRange: "<9 years",
-    description: "Colorful illustrations and simple stories perfect for beginning readers",
+    description: "Colorful illustrations and simple stories perfect for beginning readers.",
     image: "https://images.unsplash.com/photo-1608120663473-a4aa3472786b?q=80&w=1170&auto=format&fit=crop",
     books: "Matatu From Watamu, The Boy and the Lion",
     tag: null
@@ -146,7 +146,7 @@ const seriesCategories = [
   {
     title: "Redhot Reality",
     ageRange: "All Ages",
-    description: "Non-fiction and reality-based stories for curious minds",
+    description: "Non fiction and reality based stories for curious minds.",
     image: "https://images.unsplash.com/photo-1662060180911-9bbf84c40122?q=80&w=1235&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     books: "Our African Animals",
     tag: "Upcoming Series"

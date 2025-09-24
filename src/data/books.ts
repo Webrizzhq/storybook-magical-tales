@@ -14,23 +14,24 @@ export interface Book {
 
 const allBooks: Book[] = [
   // 🔹 Shizu Historical Series
+
   {
-    id: "queen-mkabayi",
-    title: "Queen Mkabayi Zulu Kingmaker",
-    author: "Hellen Akeyo",
+    id: "calamity-of-the-kasigau",
+    title: "Calamity of the Kasigau",
+    author: "Makenzi K.G",
     category: "Shizu Historical Series",
-    ageRange: "+14 years",
-    synopsis: "Twins, Kaya and Vusi time travel to the 18th Century Zulu Kingdom...",
-    coverImage: '/BookCovers/Queen Mkabayi mock-up 1.png',
-    featured: true,
-    purchaseLink: "https://storymojaafrica.co.ke/estore/redhot-africa/shizu-history/queen-mkabayi-zulu-kingmaker-484_80"
+    ageRange: "11-14 years",
+    synopsis: "In a time-travel twist, twins, Safari and Betty, land in the Kasigau community...",
+    coverImage: "/BookCovers/Calamity of the Kasigau mock-up 1.png",
+    purchaseLink: "https://storymojaafrica.co.ke/estore/redhot-africa/shizu-history/calamity-of-the-kasigau-485_80"
   },
+  
   {
     id: "princess-njinga",
     title: "Princess Njinga Bane of the Portuguese",
     author: "Emily Khalayi Wekulo",
     category: "Shizu Historical Series",
-    ageRange: "+14 years",
+    ageRange: "11-14 years",
     synopsis: "Twins Lara and Moises time travel back to the 17th century Ndongo kingdom...",
     coverImage: '/BookCovers/Princess Njinga mock-up 1.png',
     featured: true,
@@ -41,27 +42,29 @@ const allBooks: Book[] = [
     title: "Two Faces of Chief Odera",
     author: "Michael Oluoch",
     category: "Shizu Historical Series",
-    ageRange: "+14 years",
+    ageRange: "11-14 years",
     synopsis: "When Apiyo and Odongo are zapped back to 1915 Kenya...",
     coverImage: '/BookCovers/Two Faces of Chief Odera mock-up 1.png',
     purchaseLink: "https://storymojaafrica.co.ke/estore/redhot-africa/shizu-history/two-faces-of-chief-odera-486_80"
   },
+  
   {
-    id: "calamity-of-the-kasigau",
-    title: "Calamity of the Kasigau",
-    author: "Makenzi K.G",
+    id: "queen-mkabayi",
+    title: "Queen Mkabayi Zulu Kingmaker",
+    author: "Hellen Akeyo",
     category: "Shizu Historical Series",
-    ageRange: "+14 years",
-    synopsis: "In a time-travel twist, twins, Safari and Betty, land in the Kasigau community...",
-    coverImage: "/BookCovers/Calamity of the Kasigau mock-up 1.png",
-    purchaseLink: "https://storymojaafrica.co.ke/estore/redhot-africa/shizu-history/calamity-of-the-kasigau-485_80"
+    ageRange: "11-14 years",
+    synopsis: "Twins, Kaya and Vusi time travel to the 18th Century Zulu Kingdom...",
+    coverImage: '/BookCovers/Queen Mkabayi mock-up 1.png',
+    featured: true,
+    purchaseLink: "https://storymojaafrica.co.ke/estore/redhot-africa/shizu-history/queen-mkabayi-zulu-kingmaker-484_80"
   },
   {
     id: "janga-la-wakasigau",
     title: "Janga La Wakasigau",
     author: "Makenzi K.G",
     category: "Shizu Historical Series",
-    ageRange: "+14 years",
+    ageRange: "11-14 years",
     language: "Swahili",
     synopsis: "Katika msuko wa safari ya wakati, Safari na Betty...",
     coverImage: "/BookCovers/Janga la Wakasigau Cover- mock-up.png",
@@ -73,7 +76,7 @@ const allBooks: Book[] = [
     title: "Rwot Awic Defender of the Acoli",
     author: "TBD",
     category: "Shizu Historical Series",
-    ageRange: "+14 years",
+    ageRange: "11-14 years",
     synopsis: "Coming soon...",
     coverImage: "",
     comingSoon: true
@@ -83,7 +86,7 @@ const allBooks: Book[] = [
     title: "Mekatilili the Drumbeat of Freedom",
     author: "TBD",
     category: "Shizu Historical Series",
-    ageRange: "+14 years",
+    ageRange: "11-14 years",
     synopsis: "Coming soon...",
     coverImage: "",
     comingSoon: true
@@ -259,7 +262,7 @@ const allBooks: Book[] = [
     title: "Infestations",
     author: "TBD",
     category: "Redhot Novels",
-    ageRange: "+15 years",
+    ageRange: "15+ years",
     synopsis: "Coming soon...",
     coverImage: "",
     comingSoon: true
@@ -277,12 +280,23 @@ const allBooks: Book[] = [
   },
 
   // 🔹 Best African Series
+
+  {
+    id: "fire-within",
+    title: "A Fire Within and Other Stories",
+    author: "Multiple Authors",
+    category: "Best African Series",
+    ageRange: "14+ years",
+    synopsis: "A Fire Within and Other Stories is an anthology of short stories...",
+    coverImage: '/BookCovers/A Fire Within mock-up 1.png',
+    purchaseLink: "https://storymojaafrica.co.ke/estore/redhot-africa/redhot-anthologies/a-fire-within-and-other-stories-368_77"
+  },
   {
     id: "deception-and-other-stories",
     title: "Deception and Other Stories",
     author: "Multiple Authors",
     category: "Best African Series",
-    ageRange: "13+ years",
+    ageRange: "14+ years",
     synopsis: "See the world from an insider's point of view...",
     coverImage: "/BookCovers/Deception mock-up 1.png",
     featured: true,
@@ -293,21 +307,12 @@ const allBooks: Book[] = [
     title: "Zero Tolerance and Other Stories",
     author: "Multiple Authors",
     category: "Best African Series",
-    ageRange: "13+ years",
+    ageRange: "14+ years",
     synopsis: "In a world that demands Zero Tolerance for injustice...",
     coverImage: '/BookCovers/Zero Tolerance mock-up 1.png',
     purchaseLink: "https://storymojaafrica.co.ke/estore/redhot-africa/redhot-anthologies/zero-tolerance-and-other-stories-586_77"
   },
-  {
-    id: "fire-within",
-    title: "A Fire Within and Other Stories",
-    author: "Multiple Authors",
-    category: "Best African Series",
-    ageRange: "13+ years",
-    synopsis: "A Fire Within and Other Stories is an anthology of short stories...",
-    coverImage: '/BookCovers/A Fire Within mock-up 1.png',
-    purchaseLink: "https://storymojaafrica.co.ke/estore/redhot-africa/redhot-anthologies/a-fire-within-and-other-stories-368_77"
-  }
+  
 ];
 
 // 🔹 Helper function to get non-English books
@@ -317,13 +322,14 @@ export const getNonEnglishBooks = () => {
 
 export const categories = [
   "All Books",
-  "Redhot Novels (+15 years)",
-  "Shizu Historical Series (+14 years)",
+  "Redhot Novels (15+ years)",
+  "Best African Series (14+ years)",
+  "Shizu Historical Series (11-14 years)",
   "SUDEF Wildlife Detective Series (8–11 years)",
   "Case Crackers (7–8 years)",
   "Redhot Picture Books (<9 years)",
   "Redhot Reality (All Ages)",
-  "Best African Series (13+ years)"
+  
 ];
 
 export const books = allBooks.filter(book => !book.comingSoon);
@@ -335,8 +341,13 @@ export const getFeaturedBooks = () =>
 
 export const getBooksByCategory = (category: string) =>
   category === "All Books"
-    ? books
-    : books.filter(book => book.category === category);
+    ? books.filter(book => !book.language || book.language === "English")
+    : books.filter(
+        book =>
+          book.category === category &&
+          (!book.language || book.language === "English")
+      );
+
 
 export const getBookById = (id: string) =>
   books.find(book => book.id === id);

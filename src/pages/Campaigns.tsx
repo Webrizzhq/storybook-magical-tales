@@ -34,6 +34,7 @@ const Campaigns: React.FC = () => {
           <img src={hero} alt="Books background" className="w-full h-full object-cover opacity-20" />
           <div className="absolute inset-0 bg-main/20" />
         </div>
+        {/* */}
         <div className="container mx-auto px-4 relative z-10 text-center text-white">
           <h1 className="text-5xl md:text-6xl font-bold mb-6 mt-20">Redhot Campaigns</h1>
           <p>
@@ -47,13 +48,17 @@ const Campaigns: React.FC = () => {
       {topCampaigns.length > 0 && (
         <section className="py-20 bg-red-50 dark:bg-red-900">
           <div className="container mx-auto px-4">
+           
             <div className="text-center mb-12 max-w-2xl mx-auto">
               <Badge className="bg-gold-gradient text-white px-4 py-2 mb-4">Top Campaigns</Badge>
+               {/* 
               <h2 className="text-4xl font-bold text-primary mb-4">Our Current Priorities</h2>
               <p className="text-lg text-black">
                 These two campaigns are at the heart of our mission right now — preserving African heritage and empowering the next generation with safe, inspiring stories.
               </p>
+               */}
             </div>
+           
             <div className="grid md:grid-cols-2 gap-8">
               {topCampaigns.map(c => (
                 <Card key={c.id} className="border-0 bg-main shadow-magical">

@@ -176,7 +176,7 @@ const Events = () => {
           
           <h1 className="text-5xl md:text-5xl font-bold mb-8 mt-14">Redhot Live</h1>
 
-          <p className='text-xl text-gray-200'>We don’t just launch books, we engineer adventures. The Redhot Experiences team transforms pages into buzzing book clubs, high-stakes challenges, musical takeovers, and story-fuelled competitions. Every event they craft flips reading into a live experience that lingers long after the final page</p>
+          <p className='text-xl text-gray-200'>We don’t just launch books, we engineer adventures. The Redhot Experiences team transforms pages into buzzing book clubs, high-stakes challenges, musical takeovers, and story-fuelled competitions. Every event they craft flips reading into a live experience that lingers long after the final page.</p>
          
         </motion.div>
       </section>

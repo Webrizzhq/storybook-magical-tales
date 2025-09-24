@@ -24,9 +24,9 @@ const BooksGridSkeleton = () => {
 // Mapping display categories to actual book categories
 const categoryMap = {
   "All Books": "All Books",
-  "Redhot Novels (+15 years)": "Redhot Novels",
-  "Shizu Historical Series (+14 years)": "Shizu Historical Series",
-  "Best African Series (13+ years)": "Best African Series",
+  "Redhot Novels (15+ years)": "Redhot Novels",
+  "Shizu Historical Series (11-14 years)": "Shizu Historical Series",
+  "Best African Series (14+ years)": "Best African Series",
   "SUDEF Wildlife Detective Series (8–11 years)": "SUDEF Wildlife Detective Series",
   "Case Crackers (7–8 years)": "Case Crackers",
   "Redhot Picture Books (<9 years)": "Redhot Picture Books",
@@ -35,9 +35,9 @@ const categoryMap = {
 
 // Display order from oldest to youngest
 const categoryAgeOrder = [
-  "Redhot Novels (+15 years)",
-  "Shizu Historical Series (+14 years)",
-  "Best African Series (13+ years)",
+  "Redhot Novels (15+ years)",
+  "Best African Series (14+ years)",
+  "Shizu Historical Series (11-14 years)",
   "SUDEF Wildlife Detective Series (8–11 years)",
   "Case Crackers (7–8 years)",
   "Redhot Picture Books (<9 years)",
