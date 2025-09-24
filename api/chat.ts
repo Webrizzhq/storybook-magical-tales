@@ -1,5 +1,10 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
+// Import faqs.json with type: json
+import faqs from "../src/data/faqs.json" assert { type: "json" };
+// For Node.js >= 20.10.0, use this instead if the above fails:
+// import faqs from "../src/data/faqs.json" with { type: "json" };
+
 interface Request {
   body: string | any; // Allow string or object
   headers: { [key: string]: string | undefined };
@@ -11,8 +16,7 @@ interface Response {
 }
 
 async function loadFaqs() {
-  const faqs = await import("../src/data/faqs.json");
-  return faqs.default;
+  return faqs; // Use the imported faqs directly
 }
 
 const findBestMatch = (faqs: any[], userQuestion: string) => {
@@ -57,8 +61,8 @@ export default async function handler(req: Request, res: Response) {
       throw new Error("Message field is missing or invalid");
     }
 
-    const faqs = await loadFaqs();
-    const faq = findBestMatch(faqs, message);
+    const faqsData = await loadFaqs();
+    const faq = findBestMatch(faqsData, message);
     const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || "");
     const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
     const prompt = `

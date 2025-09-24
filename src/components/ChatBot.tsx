@@ -43,10 +43,11 @@ export default function ChatBot() {
       setMessages(prev => [...prev, botMsg]);
     } catch (err: any) {
       console.error("Client error:", err);
-      setError(err.message || "Something went wrong. Please try again.");
+      const errorMessage = err.message || "Something went wrong. Please try again.";
+      setError(errorMessage);
       setMessages(prev => [
         ...prev,
-        { role: "assistant", content: `⚠️ ${err.message || "Something went wrong. Please try again."}` },
+        { role: "assistant", content: `⚠️ ${errorMessage}` },
       ]);
     } finally {
       setIsLoading(false);
