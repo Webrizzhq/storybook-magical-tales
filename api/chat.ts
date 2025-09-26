@@ -4,7 +4,7 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 
 // *** CORRECTION 1: The import name and path are now correct ***
 // Assuming "@/data/faqs" correctly points to the new faqs.ts file
-import faqsData from '../src/data/faqs' 
+import faqsData from './faqs' 
 
 
 interface Request {
