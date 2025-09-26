@@ -31,23 +31,56 @@ const About = () => {
 
   const team = [
     {
-      name: "Dr. Amara Okafor",
-      role: "Founder & Editorial Director",
-      image: "👩🏾‍🎓",
-      quote: "Books should taste like mangoes and sound like drums."
+      name: "Linda Were",
+      image: "Team/Were.jpg",
+      quote: "Call me the story surgeon. I cut the fluff, stitch the soul, and save the plot."
     },
     {
-      name: "Kwame Asante",
-      role: "Chief Marketing Lead", 
-      image: "👨🏿‍💼",
-      quote: "Stories are bridges. They connect us all."
+      name: "Cecilia Wambui",
+      image: "Team/cecilia.jpg",
+      quote: "Stories are puzzles, I fit the tiniest pieces till they shine."
     },
     {
-      name: "Fatima Al-Rashid",
-      role: "Chief Editor",
-      image: "👩🏽‍💻",
-      quote: "Every child deserves to see themselves in a story."
-    }
+      name: "Clifford Jibran Bukheri",
+      image: "Team/JB.jpg",
+      quote: "I see what you missed… and I’ll laugh with you while fixing it."
+    },
+    {
+      name: "Linet Kerubo Okui",
+      image: "Team/Linet.jpg",
+      quote: "I polish pages with the discipline of a teacher and the imagination of a dreamer."
+    },
+    {
+      name: "Grace Aloyo Nyapal",
+      image: "Team/Grace.jpg",
+      quote: "I delete. Therefore I AM."
+    },
+    {
+      name: "Faith Kyalo",
+      image: "Team/Faith.png",
+      quote: "I cut the clutter so the story can finally breathe."
+    },
+    {
+      name: "Samuel Musungu Moturi",
+      image: "Team/Samuel.JPG",
+      quote: "Even the boldest tales need roots, I make sure they hold firm."
+    },
+    {
+      name: "Anita Jebiwott",
+      image: "Team/Anita.jpg",
+      quote: "I carry light in my pockets and sprinkle it on every story I touch."
+    },
+    {
+      name: "Vanesser Wangui",
+      image: "Team/Vanessa.jpg",
+      quote: "CTRL + ALT + EDIT. I am fluent in tech & typos."
+    },
+    {
+      name: "Muthoni Garland",
+      image: "Team/Muthoni.jpg",
+      quote: "Like a current, I float through plots, protagonists, place, and prose, guiding writers and editors toward deeper, clearer waters."
+    },
+    
   ];
 
   return (
@@ -145,25 +178,30 @@ const About = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12 relative">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 relative">
             {team.map((member, index) => (
               <div key={member.name} className="relative flex justify-center">
                 {/* Card */}
                 <Card className="border-0 bg-card hover:shadow-magical transition-all duration-500 hover:-translate-y-2 animate-fade-in-up text-center w-72">
                   <CardContent className="p-6">
-                    <div className="text-6xl mb-4">{member.image}</div>
-                    <h3 className="text-xl font-bold text-submain mb-2">{member.name}</h3>
-                    <Badge className="mb-4 bg-accent/10 text-accent">{member.role}</Badge>
+                   <div className="text-6xl mb-4">
+  <img src={member.image} alt={member.name} className="w-[250px] h-[250px] object-cover" />
+</div>
+                    <h3 className="text-xl font-bold text-submain mb-2 text-center">{member.name}</h3>
+                    <p className=' text-sm italic'>“{member.quote}”</p>
+                    
                   </CardContent>
                 </Card>
 
-                {/* Thought Bubble */}
+                {/* Thought Bubble 
                 <div className="absolute -top-12 w-64">
                   <div className="relative bg-yellow-100 text-black p-4 rounded-2xl shadow-xl transform rotate-[-3deg]">
                     <p className="text-sm font-medium">“{member.quote}”</p>
                     <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-[12px] border-r-[12px] border-t-[12px] border-l-transparent border-r-transparent border-t-yellow-100"></div>
                   </div>
+                  
                 </div>
+                */}
               </div>
             ))}
           </div>

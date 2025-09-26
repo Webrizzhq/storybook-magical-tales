@@ -99,7 +99,7 @@ const seriesCategories = [
     title: "Redhot Novels",
     ageRange: "+15 years",
     description: "Novels for older teens, exploring gripping narratives and adventures.",
-    image: "https://images.unsplash.com/photo-1622567905740-74539aa99bcf?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "Banners/Redhot-Novels.jpg",
     books: "Infestations, Other Titles Coming Soon",
     tag: "Upcoming Series"
   },
@@ -107,7 +107,7 @@ const seriesCategories = [
     title: "Shizu Historical Series",
     ageRange: "+14 years",
     description: "Rich historical fiction and thought provoking anthologies.",
-    image: "https://images.unsplash.com/photo-1726347915002-c8bc173e995c?q=80&w=1264&auto=format&fit=crop",
+    image: "Banners/Shizu-Historical-Series.jpg",
     books: "Princess Njinga, Zero Tolerance Stories",
     tag: null
   },
@@ -123,7 +123,7 @@ const seriesCategories = [
     title: "SUDEF Wildlife Detective Series",
     ageRange: "8–11 years",
     description: "Exciting detective stories featuring African wildlife and conservation.",
-    image: "https://images.unsplash.com/photo-1627907228041-fe3291346dfb?q=80&w=1074&auto=format&fit=crop",
+    image: "Banners/SUDEF-Series.jpg",
     books: "Case of Targeted Turtles, Persecuted Pangolins",
     tag: null
   },
@@ -139,7 +139,7 @@ const seriesCategories = [
     title: "Redhot Picture Books",
     ageRange: "<9 years",
     description: "Colorful illustrations and simple stories perfect for beginning readers.",
-    image: "https://images.unsplash.com/photo-1608120663473-a4aa3472786b?q=80&w=1170&auto=format&fit=crop",
+    image: "Banners/Redhot-Picture-Books.jpg",
     books: "Matatu From Watamu, The Boy and the Lion",
     tag: null
   },
@@ -147,7 +147,7 @@ const seriesCategories = [
     title: "Redhot Reality",
     ageRange: "All Ages",
     description: "Non fiction and reality based stories for curious minds.",
-    image: "https://images.unsplash.com/photo-1662060180911-9bbf84c40122?q=80&w=1235&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "Banners/Redhot-Reality.jpg",
     books: "Our African Animals",
     tag: "Upcoming Series"
   }
