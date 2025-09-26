@@ -1,4 +1,10 @@
-[
+
+export interface FaqSection {
+  title: string;
+  faqs: { q: string; a: string }[];
+}
+
+const faqsData: FaqSection[] = [
   {
     "title": "Publishing & Submissions",
     "faqs": [
@@ -63,4 +69,6 @@
       }
     ]
   }
-]
+];
+
+export default faqsData;

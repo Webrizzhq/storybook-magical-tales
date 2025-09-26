@@ -1,9 +1,9 @@
+// api/chat.ts
+
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
-// Import faqs.json with type: json
-import faqs from "../src/data/faqs.json" assert { type: "json" };
-// For Node.js >= 20.10.0, use this if assert fails:
-// import faqs from "../src/data/faqs.json" with { type: "json" };
+// Import data directly from the new .ts file
+import faqs from "../src/data/faqs.ts";
 
 interface Request {
   body: string | any; // Allow string or object
@@ -15,8 +15,9 @@ interface Response {
   json: (data: any) => void;
 }
 
-async function loadFaqs() {
-  return faqs; // Use the imported faqs directly
+// Simplified function to return the already loaded faqs data
+function loadFaqs() {
+  return faqs; 
 }
 
 const findBestMatch = (faqs: any[], userQuestion: string) => {
@@ -69,10 +70,18 @@ export default async function handler(req: Request, res: Response) {
       throw new Error("Message field is missing or invalid");
     }
 
-    const faqsData = await loadFaqs();
+    const faqsData = loadFaqs(); // No need for await anymore
     const faq = findBestMatch(faqsData, message);
-    const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || "");
+    
+    // **CRITICAL REMINDER**: Ensure GEMINI_API_KEY is set in Vercel environment variables
+    const apiKey = process.env.GEMINI_API_KEY;
+    if (!apiKey) {
+      throw new Error("GEMINI_API_KEY environment variable is not set.");
+    }
+    
+    const genAI = new GoogleGenerativeAI(apiKey);
     const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+    
     const prompt = `
 You are Redhot's helpful AI assistant.
 Always prioritize the following FAQ context:
