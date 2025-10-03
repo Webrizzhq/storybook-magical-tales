@@ -100,7 +100,7 @@ const seriesCategories = [
     ageRange: "+15 years",
     description: "Novels for older teens, exploring gripping narratives and adventures.",
     image: "Banners/Redhot-Novels.jpg",
-    books: "Coming Soon",
+    books: "Infestations.",
     tag: "Upcoming Series"
   },
   {
@@ -116,7 +116,7 @@ const seriesCategories = [
     ageRange: "11-14 years",
     description: "Rich historical fiction and thought provoking anthologies.",
     image: "Banners/Shizu-Historical-Series.jpg",
-    books: "Princess Njinga Bane of the Portuguese, Calamity of the Kasigau",
+    books: "Rwot Awic Defender of the Acoli, Mekatilili the Drumbeat of Freedom.",
     tag: null
   },
   
@@ -125,7 +125,7 @@ const seriesCategories = [
     ageRange: "8–11 years",
     description: "Exciting detective stories featuring African wildlife and conservation.",
     image: "Banners/SUDEF-Series.jpg",
-    books: "The Case of Targeted Turtles, The Case of Persecuted Pangolins",
+    books: "The Case of the Jinxed Giraffes, The case of Missing Monkeys ",
     tag: null
   },
   {
@@ -141,7 +141,7 @@ const seriesCategories = [
     ageRange: "<9 years",
     description: "Colorful illustrations and simple stories perfect for beginning readers.",
     image: "Banners/Redhot-Picture-Books.jpg",
-    books: "The Matatu From Watamu, The Boy and the Lion",
+    books: "The Forever Tree",
     tag: null
   },
   {
@@ -149,7 +149,7 @@ const seriesCategories = [
     ageRange: "All Ages",
     description: "Non fiction and reality based stories for curious minds.",
     image: "Banners/Redhot-Reality.jpg",
-    books: "Our African Wildlife",
+    books: "Our African Animals",
     tag: "Upcoming Series"
   }
   ].map((category, index) => (
@@ -188,7 +188,7 @@ const seriesCategories = [
             {category.description}
           </p>
           <p className="text-sm text-black mb-4 font-medium">
-            Books: {category.books}
+            Coming Soon: {category.books}
           </p>
           <Link to="/books">
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>

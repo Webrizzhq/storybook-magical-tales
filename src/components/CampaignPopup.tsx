@@ -52,6 +52,60 @@ export default function CampaignPopup() {
           Co-led by Storymoja and Start a Library Trust, the Wild Legacy campaign seeks to reach one million children in Kenya through culturally relevant wildlife-themed books, teacher trainings, school book clubs, and immersive experiences.
         </p>
       </div>,
+      <div key="vision" className="mb-4 p-4 bg-white/10 shadow-md border-l-4 border-yellow-500 text-white rounded-lg">
+        <h3 className="text-xl font-bold mb-2 text-yellow-500">Vision</h3>
+        <p className="text-white">
+          Cultivate a living legacy of environmental protectors by empowering 1 million children with wildlife conservation books and participation in school programs and competitions that spark empathy, ignite curiosity, and inspire lasting action.
+        </p>
+      </div>,
+      <div key="why" className="mb-4 p-4 bg-white/10 shadow-md border-l-4 border-yellow-500 text-white rounded-lg">
+        <h3 className="text-xl font-bold mb-2 text-yellow-500">Why?</h3>
+        <p className="text-white">
+          Research shows that conservation is still perceived by Kenyan children as something led by foreigners, disconnected from their own identities and environments. African youth feel alienated from mainstream conservation narratives, and are especially unaware of the sea as part of their own cultural and ecological heritage.
+        </p>
+      </div>,
+      <div key="experience" className="mb-4 p-4 bg-white/10 shadow-md border-l-4 border-yellow-500 text-white rounded-lg">
+        <h3 className="text-xl font-bold mb-2 text-yellow-500">Our Experience</h3>
+        <p className="text-white">
+          Storymoja & Start A Library Trust (SAL) bring experience in book development (600 titles), and in organising school programs & teacher training at scale e.g. National Read aloud, SAL library launches, Quest to Publish Children competition, 100 Storymoja Festival Bookclubs, Online Safety Code Schools Competition, Annual CBC Teacher Training. See this: <a href="https://www.youtube.com/watch?feature=shared&v=pnlZAwsuuEI" target="_blank" className="underline text-blue-500">Watch on YouTube</a>.
+        </p>
+      </div>,
+      <div key="partners" className="mb-4 p-4 bg-white/10 shadow-md border-l-4 border-yellow-500 text-white rounded-lg">
+        <h3 className="text-xl font-bold mb-2 text-yellow-500">Consortium Partners Bring</h3>
+        <ul className="text-white list-disc list-inside space-y-1">
+          <li>Conservation Expertise</li>
+          <li>Experience & Credibility lend knowledge and weight to the campaign.</li>
+          <li>Community Access: Direct connections or programs with schools, youth groups, conservation clubs, or civic organizations.</li>
+          <li>Reach & Influence: Connections that can amplify campaign nationally & globally.</li>
+        </ul>
+      </div>,
+      <div key="phase1" className="mb-4 p-4 bg-white/10 shadow-md border-l-4 border-yellow-500 text-white rounded-lg">
+        <h3 className="text-xl font-bold mb-2 text-yellow-500">Phase One - Aug/Sept</h3>
+        <p className="text-white mb-2">Join Consortium</p>
+        <ul className="text-white list-disc list-inside space-y-1 mb-0">
+          <li>Sign the MOU to formalize Consortium partnership</li>
+          <li>Assign a Dedicated Point Person with decision-making authority.</li>
+          <li>Input to shape the campaign & clarify roles & process.</li>
+          <li>Share creative assets</li>
+        </ul>
+      </div>,
+      <div key="phase2" className="mb-4 p-4 bg-white/10 shadow-md border-l-4 border-yellow-500 text-white rounded-lg">
+        <h3 className="text-xl font-bold mb-2 text-yellow-500">Phase Two - Sept-Nov</h3>
+        <p className="text-white mb-2">Fundraise</p>
+        <ul className="text-white list-disc list-inside space-y-1 mb-0">
+          <li>Partner pre-order commitment of 2,000+ books via Kickstarter or Indiegogo affiliate link by Oct.</li>
+          <li>Partner promotes to crowdfund 20,000+ books through own networks in Nov.</li>
+          <li>Host a Consortium Strategy Meeting Sept 2026</li>
+        </ul>
+      </div>,
+      <div key="phase3" className="mb-4 p-4 bg-white/10 shadow-md border-l-4 border-yellow-500 text-white rounded-lg">
+        <h3 className="text-xl font-bold mb-2 text-yellow-500">Phase Three - Jan-Sept 2026</h3>
+        <p className="text-white mb-2">Launch and deliver the 4 pillars of the Conservation Campaign at scale</p>
+        <ul className="text-white list-disc list-inside space-y-1 mb-0">
+          <li>Impact Monitoring & Evaluation</li>
+          <li>Review & plan next 2 years to cement the legacy.</li>
+        </ul>
+      </div>,
       <div key="goals" className="mb-4 p-4 bg-white/10 shadow-md border-l-4 border-yellow-500 text-white rounded-lg">
         <h3 className="text-xl font-bold mb-2 text-yellow-500">2026 Goals</h3>
         <p className="text-white">
@@ -89,7 +143,7 @@ export default function CampaignPopup() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="fixed inset-0 bg-black/90 flex items-center justify-center z-50 p-4"
+        className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4"
         onClick={handleClose}
       >
         <motion.div
@@ -99,7 +153,7 @@ export default function CampaignPopup() {
           className="relative max-w-2xl w-full"
           onClick={(e) => e.stopPropagation()}
         >
-          <Card className="group border-0 bg-main hover:shadow-xl transition-all duration-500 overflow-hidden  flex flex-col h-full">
+          <Card className="group border-0 bg-main hover:shadow-xl transition-all duration-500 overflow-hidden rounded-2xl flex flex-col h-full">
             {/* Close Button */}
             <button
               onClick={handleClose}
@@ -125,7 +179,7 @@ export default function CampaignPopup() {
                 alt={campaignData.title}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
-              <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-black/70 group-hover:scale-105"></div>
+              <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-black/70"></div>
               <div className="absolute top-4 left-4 flex items-center gap-2">
                 <div className={`${campaignData.color} p-2 rounded-lg`}>
                   <campaignData.icon className="w-5 h-5 text-white" />
