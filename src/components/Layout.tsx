@@ -18,7 +18,6 @@ const Layout = ({ children }: LayoutProps) => {
     { to: '/events', label: 'Events', icon: '/icons/Redhot Live.png' },
     { to: '/campaigns', label: 'Campaigns', icon: '/icons/Campaigns.png' },
     { to: '/retail', label: 'Redhot-Retail', icon: '/icons/Redhot Retail.png' },
-    { to: '/faq', label: 'FAQ', icon: '/icons/FAQ.png' },
     { 
       to: '/about', 
       label: (

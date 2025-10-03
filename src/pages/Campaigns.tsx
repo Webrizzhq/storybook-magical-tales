@@ -22,7 +22,7 @@ const Campaigns: React.FC = () => {
   const closeModal = () => setModalData({ ...modalData, isOpen: false });
 
   // Categorize campaigns
-  const topCampaigns = campaigns.filter(c => c.featured).slice(0, 2);
+  const topCampaigns = campaigns.filter(c => c.featured).slice(0, 1);
   const otherFeatured = campaigns.filter(c => c.featured && !topCampaigns.includes(c));
   const otherCampaigns = campaigns.filter(c => !c.featured);
 
@@ -62,11 +62,15 @@ const Campaigns: React.FC = () => {
             <div className="grid md:grid-cols-2 gap-8">
               {topCampaigns.map(c => (
                 <Card key={c.id} className="border-0 bg-main shadow-magical">
-                  <CardContent className="p-8 flex flex-col">
-                    <div className={`w-20 h-20 ${c.color} rounded-full flex items-center justify-center mb-6`}>
-                      <c.icon className="w-10 h-10 text-white" />
-                    </div>
-                    <h3 className="text-3xl font-bold text-yellow-500 mb-4">{c.title}</h3>
+                  <CardContent className=" flex flex-col">
+                    
+                      <img
+                    src={c.image}
+                    alt={c.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                   
+                    <h3 className="text-3xl font-bold text-yellow-500 mb-4 mt-10">{c.title}</h3>
                     <p className="text-white mb-6 leading-relaxed">{c.description}</p>
                     {c.impact && (
                       <div className="bg-muted/90 rounded-lg p-4 mb-6">

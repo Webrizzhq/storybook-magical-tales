@@ -23,7 +23,7 @@ const Retail = () => {
       icon: Star,
       title: "Buzz & Connection",
       description:
-        "Host author signings and live events in bookshops, sparking excitement and building reader–writer bonds."
+        "Host author signings and live events in bookshops, sparking excitement and building reader writer bonds."
     },
     {
       icon: Award,
@@ -38,17 +38,17 @@ const Retail = () => {
     {
       name: "Bookstop Yaya",
       quote: "Redhot books fly off our shelves – kids ask for them by name!",
-      image: "https://via.placeholder.com/150"
+      image: "https://www.yaya-centre.com/Images/ShopImage/52.jpg"
     },
     {
       name: "Prestige Bookshop",
       quote: "Stocking African children’s books is a statement of pride for us.",
-      image: "https://via.placeholder.com/150"
+      image: "https://prestigebookshop.com/wp-content/uploads/2024/03/logo-big.png"
     },
     {
-      name: "Airport Duty-Free Nairobi",
-      quote: "Travelers love taking a piece of African storytelling home.",
-      image: "https://via.placeholder.com/150"
+      name: "Text Book Center",
+      quote: "At Text Book Centre, we believe in the power of stories, especially those that reflect our communities, cultures.",
+      image: "https://textbookcentre.com/?seraph_accel_gi=wp-content%2Fsmush-webp%2F2025%2F04%2FTBC-logo-2nd.jpg.webp&n=0bivL5LYzCkfO8cWQC8w"
     }
   ];
 
@@ -71,7 +71,7 @@ const Retail = () => {
             </h1>
             <p className="text-xl text-white/90 leading-relaxed">
               We dream about how to make Redhot books unmissable. Our retail journey is still
-              taking shape — and we’d love your ideas on how to bring it to life.
+              taking shape and we’d love your ideas on how to bring it to life.
             </p>
           </div>
         </div>
@@ -89,7 +89,7 @@ const Retail = () => {
               Where do we see Redhot Retail?
             </h2>
             <p className="text-lg text-black max-w-3xl mx-auto">
-              From airports to supermarkets, from bookshops to online platforms — African children’s
+              From airports to supermarkets, from bookshops to online platforms. African children’s
               stories deserve to shine everywhere. And we want retailers to be the torchbearers.
             </p>
           </div>
@@ -140,7 +140,7 @@ const Retail = () => {
                   <img
                     src={retailer.image}
                     alt={retailer.name}
-                    className="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
+                    className="h-[70px] rounded-full mx-auto mb-4 object-containh"
                   />
                   <h3 className="text-xl font-bold text-yellow-500 mb-2">{retailer.name}</h3>
                   <p className="italic text-white/80 text-sm leading-relaxed">

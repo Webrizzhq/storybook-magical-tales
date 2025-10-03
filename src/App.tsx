@@ -21,6 +21,9 @@ import Retail from "./pages/Retail";
 import FAQ from "./pages/FAQ";
 import { CookieBanner } from "./components/CookieBanner";
 import ChatBot from "./components/ChatBot";
+import CampaignPopup from "./components/CampaignPopup";
+
+
 
 
 
@@ -55,6 +58,7 @@ const App = () => (
         </Routes>
 
          <CookieBanner />
+         <CampaignPopup />
 
          
       </BrowserRouter>

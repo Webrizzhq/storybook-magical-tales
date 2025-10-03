@@ -196,7 +196,7 @@ const allBooks: Book[] = [
   },
   {
     id: "koko-riko",
-    title: "Koko Riko",
+    title: "Koko Riko : Award Winning African Tales",
     author: "Muthoni Muchemi",
     category: "Redhot Picture Books",
     ageRange: "<9 years",

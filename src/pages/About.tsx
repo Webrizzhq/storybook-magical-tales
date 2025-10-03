@@ -77,9 +77,75 @@ const About = () => {
     },
     {
       name: "Muthoni Garland",
-      image: "Team/Muthoni.jpg",
+      image: "Team/Muthoni.png",
       quote: "Like a current, I float through plots, protagonists, place, and prose, guiding writers and editors toward deeper, clearer waters."
     },
+    {
+      name: "Judy Nyakio",
+      image: "Team/Judy.jpg",
+      quote: "Each book carries a life of its own. I help kids hear it, feel it, love it."
+    },
+    {
+      name: " Job Makwani",
+      image: "Team/Job.jpg",
+      quote: "Stories flow better when the room feels lighter, that’s my lane."
+    },
+    {
+      name: "Nashon Kabale",
+      image: "Team/Nashon.jpg",
+      quote: "If it's not fun, it's not me."
+    },
+    {
+      name: "Ruth Juma Rebee",
+      image: "Team/Ruth.jpg",
+      quote: "Give me the energy I give you !!!"
+    },
+    {
+      name: "Mary Ndunge",
+      image: "Team/Mary.jpg",
+      quote: "I hold the energy of stories, then release them in sparks kids can feel."
+    },
+    {
+      name: "Rahab Nyambura",
+      image: "Team/Rahab.jpg",
+      quote: "I carry light into stories so kids can carry joy out."
+    },
+    {
+      name: "Samuel Kitonyi",
+      image: "Team/Kitonyi.jpg",
+      quote: "Every story needs an anchor, I’m that calm strength behind the scenes."
+    },
+    {
+      name: "Shilla Lwanga",
+      image: "Team/Shilla.jpg",
+      quote: "Every story needs an anchor, I’m that calm strength behind the scenes."
+    },
+    {
+      name: "Georgina Wambui",
+      image: "Team/Georgina.jpg",
+      quote: "Why just read a story when you can dance with it?"
+    },
+    {
+      name: "Alice Maina Nyakiyua",
+      image: "Team/Alice.png",
+      quote: "I hold the line so our stories never lose their way to the kids."
+    },
+    {
+      name: "Gakinia Karinga",
+      image: "Team/Gakenia.png",
+      quote: "With colours and curves, I give stories the wings to fly."
+    },
+    {
+      name: "Sandra Nadege",
+      image: "Team/Nadege.png",
+      quote: "I have a concern..."
+    },
+    {
+      name: "Lindah Nayebare Mutungi",
+      image: "Team/Nayebare.png",
+      quote: "Running on audacity."
+    },
+   
     
   ];
 

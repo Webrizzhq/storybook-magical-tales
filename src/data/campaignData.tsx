@@ -6,6 +6,7 @@ export interface Campaign {
   title: string;
   description: string;
   impact: string;
+  image?: string;
   featured: boolean;
   icon: React.FC<any>;
   color: string;
@@ -20,6 +21,7 @@ export const campaigns: Campaign[] = [
     title: "The Wild Legacy Campaign",
     description: "Support the creation and distribution of children's books celebrating Africa's rich wildlife heritage.",
     impact: "700 books distributed • 10 communities engaged • 400 children inspired",
+    image: "/Latest/wild-legacy.png",
     featured: true,
     icon: Leaf,
     color: "bg-gradient-forest",

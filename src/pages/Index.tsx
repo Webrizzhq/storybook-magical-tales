@@ -100,31 +100,32 @@ const seriesCategories = [
     ageRange: "+15 years",
     description: "Novels for older teens, exploring gripping narratives and adventures.",
     image: "Banners/Redhot-Novels.jpg",
-    books: "Infestations, Other Titles Coming Soon",
+    books: "Coming Soon",
     tag: "Upcoming Series"
   },
   {
-    title: "Shizu Historical Series",
-    ageRange: "+14 years",
-    description: "Rich historical fiction and thought provoking anthologies.",
-    image: "Banners/Shizu-Historical-Series.jpg",
-    books: "Princess Njinga, Zero Tolerance Stories",
+    title: "Best African Series",
+    ageRange: "14+ years",
+    description: "Collections of diverse African voices for young readers.",
+    image: "https://images.unsplash.com/photo-1589998059171-988d887df646?q=80&w=1170&auto=format&fit=crop",
+    books: "A Fire Within and Other Stories, Deception and Other Stories",
     tag: null
   },
   {
-    title: "Best African Series",
-    ageRange: "13+ years",
-    description: "Collections of diverse African voices for young readers.",
-    image: "https://images.unsplash.com/photo-1589998059171-988d887df646?q=80&w=1170&auto=format&fit=crop",
-    books: "African Futures, Stories of Us",
+    title: "Shizu Historical Series",
+    ageRange: "11-14 years",
+    description: "Rich historical fiction and thought provoking anthologies.",
+    image: "Banners/Shizu-Historical-Series.jpg",
+    books: "Princess Njinga Bane of the Portuguese, Calamity of the Kasigau",
     tag: null
   },
+  
   {
     title: "SUDEF Wildlife Detective Series",
     ageRange: "8–11 years",
     description: "Exciting detective stories featuring African wildlife and conservation.",
     image: "Banners/SUDEF-Series.jpg",
-    books: "Case of Targeted Turtles, Persecuted Pangolins",
+    books: "The Case of Targeted Turtles, The Case of Persecuted Pangolins",
     tag: null
   },
   {
@@ -132,7 +133,7 @@ const seriesCategories = [
     ageRange: "7–8 years",
     description: "New thrilling cases for young detectives, stay tuned!",
     image: "case-crackers.png",
-    books: "Coming Soon",
+    books: "Mystery of the Lost Child, Mystery of the Stolen Sets",
     tag: "Upcoming Series"
   },
   {
@@ -140,7 +141,7 @@ const seriesCategories = [
     ageRange: "<9 years",
     description: "Colorful illustrations and simple stories perfect for beginning readers.",
     image: "Banners/Redhot-Picture-Books.jpg",
-    books: "Matatu From Watamu, The Boy and the Lion",
+    books: "The Matatu From Watamu, The Boy and the Lion",
     tag: null
   },
   {
@@ -148,7 +149,7 @@ const seriesCategories = [
     ageRange: "All Ages",
     description: "Non fiction and reality based stories for curious minds.",
     image: "Banners/Redhot-Reality.jpg",
-    books: "Our African Animals",
+    books: "Our African Wildlife",
     tag: "Upcoming Series"
   }
   ].map((category, index) => (
@@ -187,7 +188,7 @@ const seriesCategories = [
             {category.description}
           </p>
           <p className="text-sm text-black mb-4 font-medium">
-            Featured: {category.books}
+            Books: {category.books}
           </p>
           <Link to="/books">
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
