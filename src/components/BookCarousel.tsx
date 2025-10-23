@@ -139,7 +139,7 @@ const BookCarousel = () => {
                 transition={{ delay: 0.2, duration: 0.5 }}
                 className="flex flex-col sm:flex-row gap-4 pt-4 mb-10"
               >
-                <Link to={`/books/${currentBook.id}`}>
+                <Link to={`/book/${currentBook.id}`}>
                   <Button size="lg" className="bg-gold-gradient hover:from-yellow-500 hover:to-orange-600 text-white px-8 py-4 shadow-xl hover:shadow-2xl transition-all duration-300">
                     <BookOpen className="w-5 h-5 mr-2" />
                     View Collection
