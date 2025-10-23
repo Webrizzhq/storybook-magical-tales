@@ -2,7 +2,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, HashRouter } from "react-router-dom";
 import Index from "./pages/Index";
 import Books from "./pages/Books";
 import BookDetail from "./pages/BookDetail";
@@ -35,33 +35,26 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
-      
-      <ChatBot />
-     
+      <HashRouter>
+        <ChatBot />
         <Routes>
           <Route element={<AnimatedLayout />}>
-          <Route path="/" element={<Index />} />
-          <Route path="/books" element={<Books />} />
-          <Route path="/book/:id" element={<BookDetail />} />
-          <Route path="/events" element={<Events />} />
-          <Route path="/campaigns" element={<Campaigns />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/gamification" element={<GamificationPage />} />
-          <Route path="/calendar" element={<CalendarPage />} />
-          <Route path="/retail" element={<Retail />} />
-          <Route path="/faq" element={<FAQ />} />
+            <Route path="/" element={<Index />} />
+            <Route path="/books" element={<Books />} />
+            <Route path="/book/:id" element={<BookDetail />} />
+            <Route path="/events" element={<Events />} />
+            <Route path="/campaigns" element={<Campaigns />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/gamification" element={<GamificationPage />} />
+            <Route path="/calendar" element={<CalendarPage />} />
+            <Route path="/retail" element={<Retail />} />
+            <Route path="/faq" element={<FAQ />} />
           </Route>
-          
-
           <Route path="*" element={<NotFound />} />
         </Routes>
-
-         <CookieBanner />
-         <CampaignPopup />
-
-         
-      </BrowserRouter>
+        <CookieBanner />
+        <CampaignPopup />
+      </HashRouter>
     </TooltipProvider>
   </QueryClientProvider>
 );
