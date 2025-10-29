@@ -35,7 +35,7 @@ export const campaigns: Campaign[] = [
       <div className="mb-4 p-4 bg-white/10  shadow-md border-l-4 border-yellow-500">
         <h3 className="text-xl font-bold mb-2 text-yellow-500">2026 Goals</h3>
         <p className=' text-white'>
-          Distribute 200,000 books, train 3,000 teachers, engage 500,000 students in wildlife-themed competitions, and rally a million readers in a Guinness World Record read-aloud from <a href="http://localhost:8080/book/boy-and-lion" target="_blank" className="underline text-blue-500">The Boy and The Lion</a>.
+          Distribute 200,000 books, train 3,000 teachers, engage 500,000 students in wildlife-themed competitions, and rally a million readers in a Guinness World Record read-aloud from <a href="https://redhotafrica.net/book/boy-and-lion" target="_blank" className="underline text-blue-500">The Boy and The Lion</a>.
         </p>
       </div>,
       <div className="mb-4 p-4 bg-white/10 shadow-md border-l-4 border-yellow-500">

@@ -138,7 +138,7 @@ const allBooks: Book[] = [
   {
     id: "jinxed-giraffes",
     title: "The Case of the Jinxed Giraffes",
-    author: "TBD",
+    author: "Moraa Gitaa",
     category: "SUDEF Wildlife Detective Series",
     ageRange: "8–11 years",
     synopsis: "Coming soon...",

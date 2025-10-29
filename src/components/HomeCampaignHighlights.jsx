@@ -67,9 +67,9 @@ export default function HomeCampaignHighlights() {
                   <img
                     src={campaign.image}
                     alt={campaign.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover  transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-black/70"></div>
+                  <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-black/70 "></div>
                   <div className="absolute top-4 left-4 flex items-center gap-2">
                    
                   </div>
@@ -86,7 +86,7 @@ export default function HomeCampaignHighlights() {
                   </p>
 
                   {/* Support Campaign Button */}
-                  <Link to={`/campaigns/${campaign.id}`} className="mt-auto">
+                  <Link to={`/campaigns`} className="mt-auto">
                     <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                       <Button
                         size="sm"

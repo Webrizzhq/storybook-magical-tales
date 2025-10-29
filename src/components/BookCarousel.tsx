@@ -5,11 +5,16 @@ import { ChevronLeft, ChevronRight, Star, BookOpen } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { books, getFeaturedBooks } from '@/data/books';
+import CampaignModal from '@/components/CampaignModal';
+import { campaignData } from '@/data/campaigns';
 
 const BookCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const [imageLoadedMap, setImageLoadedMap] = useState<{ [id: string]: boolean }>({});
+  const [campaignModalOpen, setCampaignModalOpen] = useState(false);
+  const [campaignModalTitle, setCampaignModalTitle] = useState('');
+  const [campaignModalContent, setCampaignModalContent] = useState<JSX.Element[] | string[]>([]);
 
   // Helper to extract the minimum age number from the ageRange
   const getMinAge = (range: string) => {
@@ -17,9 +22,52 @@ const BookCarousel = () => {
     return match ? parseInt(match[0], 10) : 0;
   };
 
-  // Sort by youngest → oldest
-  const allBooks = [...books]
-    .sort((a, b) => getMinAge(b.ageRange) - getMinAge(a.ageRange))
+  // Filter out Case Crackers and sort by youngest → oldest
+  const sortedBooks = [...books]
+    .filter(book => book.category !== "Case Crackers")
+    .sort((a, b) => getMinAge(b.ageRange) - getMinAge(a.ageRange));
+
+  // Insert the Wild Legacy campaign item: show first, then after every 3 books.
+  const allBooks: any[] = [];
+  const campaignBaseId = 'campaign-wild-legacy';
+  let campaignCount = 0;
+
+  // push campaign first
+  allBooks.push({
+    category: 'Campaign',
+    coverImage: campaignData.image,
+    title: campaignData.title,
+    featured: campaignData.featured,
+    ageRange: 'All',
+    author: 'Storymoja & Partners',
+    synopsis: campaignData.description,
+    learnMore: campaignData.learnMore,
+    getInvolved: campaignData.getInvolved,
+    id: `${campaignBaseId}-${campaignCount}`,
+  });
+
+  let groupCounter = 0;
+  for (let i = 0; i < sortedBooks.length; i++) {
+    allBooks.push(sortedBooks[i]);
+    groupCounter++;
+
+    if (groupCounter === 3) {
+      campaignCount++;
+      allBooks.push({
+        category: 'Campaign',
+        coverImage: campaignData.image,
+        title: campaignData.title,
+        featured: campaignData.featured,
+        ageRange: 'All',
+        author: 'Storymoja & Partners',
+        synopsis: campaignData.description,
+        learnMore: campaignData.learnMore,
+        getInvolved: campaignData.getInvolved,
+        id: `${campaignBaseId}-${campaignCount}`,
+      });
+      groupCounter = 0;
+    }
+  }
     
 
   // Auto-advance carousel
@@ -27,7 +75,7 @@ const BookCarousel = () => {
     if (!isAutoPlaying) return;
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % allBooks.length);
-    }, 5000);
+    }, 10000); // doubled from 5000 -> 10000
     return () => clearInterval(interval);
   }, [isAutoPlaying, allBooks.length]);
 
@@ -139,12 +187,41 @@ const BookCarousel = () => {
                 transition={{ delay: 0.2, duration: 0.5 }}
                 className="flex flex-col sm:flex-row gap-4 pt-4 mb-10"
               >
+                {currentBook.category === 'Campaign' ? (
+                  <>
+                    <Button
+                      size="lg"
+                      variant="outline"
+                      onClick={() => {
+                        setCampaignModalTitle(currentBook.title);
+                        setCampaignModalContent(currentBook.learnMore || [currentBook.synopsis]);
+                        setCampaignModalOpen(true);
+                      }}
+                      className="hover:bg-primary hover:text-primary-foreground flex-1 text-primary"
+                    >
+                      Learn More
+                    </Button>
+
+                    <Button
+                      size="lg"
+                      className="bg-gold-gradient hover:shadow-glow flex-1"
+                      onClick={() => {
+                        setCampaignModalTitle(currentBook.title + ' — Get Involved');
+                        setCampaignModalContent(currentBook.getInvolved || [currentBook.synopsis]);
+                        setCampaignModalOpen(true);
+                      }}
+                    >
+                      Get Involved
+                    </Button>
+                  </>
+                ) : (
                 <Link to={`/book/${currentBook.id}`}>
                   <Button size="lg" className="bg-gold-gradient hover:from-yellow-500 hover:to-orange-600 text-white px-8 py-4 shadow-xl hover:shadow-2xl transition-all duration-300">
                     <BookOpen className="w-5 h-5 mr-2" />
                     View Collection
                   </Button>
                 </Link>
+                )}
               </motion.div>
             </motion.div>
           </AnimatePresence>
@@ -190,6 +267,13 @@ const BookCarousel = () => {
           </motion.div>
         </div>
       </div>
+      {/* Campaign modal used by campaign slides */}
+      <CampaignModal
+        isOpen={campaignModalOpen}
+        onClose={() => setCampaignModalOpen(false)}
+        title={campaignModalTitle}
+        content={campaignModalContent}
+      />
     </section>
   );
 };

@@ -15,7 +15,7 @@ const Layout = ({ children }: LayoutProps) => {
   const navItems = [
     { to: '/', label: 'Home', icon: '/icons/Home.png' },
     { to: '/books', label: 'Books', icon: '/icons/Books.png' },
-    { to: '/events', label: 'Events', icon: '/icons/Redhot Live.png' },
+    { to: '/events', label: 'Live', icon: '/icons/Redhot Live.png' },
     { to: '/campaigns', label: 'Campaigns', icon: '/icons/Campaigns.png' },
     { to: '/retail', label: 'Redhot-Retail', icon: '/icons/Redhot Retail.png' },
     { 

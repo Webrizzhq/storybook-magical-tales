@@ -5,6 +5,7 @@ import { Leaf, X } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import CampaignModal from '@/components/CampaignModal';
+import { campaignData } from '@/data/campaigns';
 
 export default function CampaignPopup() {
   const [isVisible, setIsVisible] = useState(false);
@@ -22,6 +23,16 @@ export default function CampaignPopup() {
     return () => clearTimeout(timer);
   }, []);
 
+  // Prevent background scrolling when the popup is visible
+  useEffect(() => {
+    if (!isVisible) return;
+    const previous = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = previous || '';
+    };
+  }, [isVisible]);
+
   const handleClose = () => {
     setIsVisible(false);
     // Also close sub-modal if open
@@ -29,7 +40,9 @@ export default function CampaignPopup() {
   };
 
   const openSubModal = (title: string, content: JSX.Element[]) => {
+    // open the sub-modal and hide the main popup so only the modal is visible
     setSubModalData({ isOpen: true, title, content });
+    setIsVisible(false);
   };
 
   const closeSubModal = () => {
@@ -153,7 +166,7 @@ export default function CampaignPopup() {
           className="relative max-w-2xl w-full"
           onClick={(e) => e.stopPropagation()}
         >
-          <Card className="group border-0 bg-main hover:shadow-xl transition-all duration-500 overflow-hidden rounded-2xl flex flex-col h-full">
+          <Card className="group border-0 bg-main hover:shadow-xl transition-all duration-500 overflow-hidden rounded-2xl flex flex-col">
             {/* Close Button */}
             <button
               onClick={handleClose}
@@ -173,14 +186,20 @@ export default function CampaignPopup() {
             </div>
 
             {/* Campaign Image */}
-            <div className="relative h-48 w-full">
-              <img
-                src={campaignData.image}
-                alt={campaignData.title}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-              <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-black/70"></div>
-              <div className="absolute top-4 left-4 flex items-center gap-2">
+            <div className="relative w-full h-48 sm:h-56 md:h-64 lg:h-72 overflow-hidden">
+              <div className="flex items-center justify-center h-full bg-black">
+                <img
+                  src={campaignData.image}
+                  alt={campaignData.title}
+                  className="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+
+              {/* Gradient overlay limited to the image area */}
+              <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-black/70 pointer-events-none z-10"></div>
+
+              {/* Campaign icon */}
+              <div className="absolute top-4 left-4 flex items-center gap-2 z-20">
                 <div className={`${campaignData.color} p-2 rounded-lg`}>
                   <campaignData.icon className="w-5 h-5 text-white" />
                 </div>
@@ -188,7 +207,7 @@ export default function CampaignPopup() {
             </div>
 
             {/* Campaign Content */}
-            <CardContent className="p-6 flex flex-col h-full">
+            <CardContent className="p-6 flex flex-col">
               <h3 className="text-xl font-semibold text-yellow-300 mb-2">
                 {campaignData.title}
               </h3>
@@ -200,7 +219,7 @@ export default function CampaignPopup() {
               </p>
 
               {/* Buttons for Learn More and Get Involved */}
-              <div className="flex gap-4 mt-auto">
+              <div className="flex gap-4">
                 {campaignData.learnMore && (
                   <Button
                     variant="outline"

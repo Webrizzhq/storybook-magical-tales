@@ -16,6 +16,7 @@ import Calendar from 'react-calendar';
 import { motion } from 'framer-motion';
 import 'react-calendar/dist/Calendar.css';
 import hero from "@/assets/hero-reading.jpg";
+import PodcastSection from '@/components/PodcastSection';
 
 const events = [
   {
@@ -180,7 +181,8 @@ const Events = () => {
          
         </motion.div>
       </section>
-      
+
+      <PodcastSection />
 
       {/* Around the Corner */}
       <section className="py-20 bg-red-100 dark:bg-red-900">

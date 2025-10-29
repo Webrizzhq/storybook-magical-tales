@@ -82,7 +82,7 @@ export default function ChatBot() {
         <div className="bg-white w-80 sm:w-96 h-[32rem] rounded-lg shadow-xl flex flex-col transform transition-all duration-300 ease-in-out">
           {/* Header */}
           <div className="bg-gradient-to-r from-yellow-600 to-yellow-800 text-white p-4 rounded-t-lg flex justify-between items-center">
-            <h2 className="text-lg font-semibold">Redhot AI Assistant</h2>
+            <h2 className="text-lg font-semibold">Ask Red</h2>
             <button
               onClick={() => setIsOpen(false)}
               className="hover:bg-blue-900 rounded-full p-1 focus:outline-none focus:ring-2 focus:ring-white"
@@ -95,7 +95,7 @@ export default function ChatBot() {
           {/* Messages */}
           <div className="flex-1 overflow-y-auto p-4 bg-gray-50">
             {messages.length === 0 ? (
-              <p className="text-gray-500 text-center">Start chatting with me!</p>
+              <p className="text-gray-500 text-center">Hello, I'm Red. How can I assist you today?</p>
             ) : (
               messages.map((m, i) => (
                 <div
