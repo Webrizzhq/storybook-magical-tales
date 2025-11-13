@@ -12,7 +12,7 @@ export interface Book {
   purchaseLink?: string;
 }
 
-const allBooks: Book[] = [
+export const allBooks: Book[] = [
   // 🔹 Shizu Historical Series
 
   {
