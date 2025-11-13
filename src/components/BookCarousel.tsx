@@ -18,6 +18,7 @@ const BookCarousel = () => {
   const [campaignModalTitle, setCampaignModalTitle] = useState("");
   const [campaignModalContent, setCampaignModalContent] = useState<JSX.Element[] | string[]>([]);
 
+  
   // helper: extract min age number
   const getMinAge = (range: string) => {
     const match = range.match(/\d+/);
@@ -99,6 +100,13 @@ const BookCarousel = () => {
         Loading books...
       </div>
     );
+
+
+    const visibleDots = 5; // Number of dots to show at a time
+const half = Math.floor(visibleDots / 2);
+const start = Math.max(0, currentIndex - half);
+const end = Math.min(allBooks.length, currentIndex + half + 1);
+
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#660000] via-[#670000] to-[#630000] pb-40">
@@ -199,7 +207,7 @@ const BookCarousel = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2, duration: 0.5 }}
-                className="flex flex-col sm:flex-row gap-4 pt-4 mb-10"
+                className="sm:flex space-x-5 flex-col sm:flex-row gap-4 pt-4 mb-10"
               >
                 {currentBook.category === "Campaign" ? (
                   <>
@@ -258,19 +266,22 @@ const BookCarousel = () => {
           </motion.div>
 
           <div className="flex gap-2">
-            {allBooks.map((_, index) => (
-              <motion.button
-                key={index}
-                onClick={() => goToSlide(index)}
-                whileHover={{ scale: 1.2 }}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  index === currentIndex
-                    ? "bg-yellow-400 scale-125"
-                    : "bg-white/30 hover:bg-white/50"
-                }`}
-              />
-            ))}
-          </div>
+  {allBooks.slice(start, end).map((_, i) => {
+    const index = start + i;
+    return (
+      <motion.button
+        key={index}
+        onClick={() => goToSlide(index)}
+        whileHover={{ scale: 1.2 }}
+        className={`w-3 h-3 rounded-full transition-all duration-300 ${
+          index === currentIndex
+            ? "bg-yellow-400 scale-125"
+            : "bg-white/30 hover:bg-white/50"
+        }`}
+      />
+    );
+  })}
+</div>
 
           <motion.div whileTap={{ scale: 0.85 }}>
             <Button
